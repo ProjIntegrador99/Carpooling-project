@@ -6,12 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Carpooling.Controllers
 {
-    public class LobbyController : Controller
+    public class DriverController : Controller
     {
-        public IActionResult Choose()
+        public IActionResult DriverLobby()
         {
             return View();
         }
-
     }
 }

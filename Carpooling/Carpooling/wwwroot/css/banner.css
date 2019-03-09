@@ -1,0 +1,8 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600|Oxygen');
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: 20px;
+}

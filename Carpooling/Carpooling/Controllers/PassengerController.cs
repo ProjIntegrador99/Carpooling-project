@@ -8,8 +8,15 @@ namespace Carpooling.Controllers
 {
     public class PassengerController : Controller
     {
+
         public IActionResult Index()
         {
+
+        public IActionResult PassengerLobby()
+        {
+
+
+
             return View();
         }
     }

@@ -8,8 +8,9 @@ namespace Carpooling.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Profile()
-        {
+
+        public IActionResult Profile() { 
+
             return View();
         }
     }

@@ -16,13 +16,13 @@ Integrantes:
 - Alexis Bonilla
 
 # Importante:
-Para hacer funcionar el programa es necesario que pegue este código en la opción administrar secretos de usuarios en la carpeta secrets.json de la solucicón "Carpooling" (haciendo clic derecho sobre esta)
+Para hacer funcionar el programa es necesario hacer los siguientes pasos:
+1. Abrir la solución en visual y al proyecto "Carpooling" le damos click derecho y le damos a la opción administrar secretos de usuarios.
 
-- Fragmento de código:
-
+2. Pegamos el siguiente codigo:
 {
-
   "Authentication:Google:ClientId": "803903816430-l61oj5k49erk0bk4us4r7qqbqml1cqtv.apps.googleusercontent.com",
   "Authentication:Google:ClientSecret": "3F65VHMwBTTmU7Emq8PrUX4_"
-  
 }
+
+3. Ejecutamos el programa.

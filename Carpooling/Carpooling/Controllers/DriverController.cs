@@ -10,9 +10,10 @@ namespace Carpooling.Controllers
     {
         public IActionResult DriverLobby()
         {
-
-
-
+            return View();
+        }
+        public IActionResult Reservation()
+        {
             return View();
         }
     }

@@ -71,7 +71,7 @@ body {
 
 /*Profiles*/
 .info-profile {
-        
+    /*Cambia color de informacion titt*/
     float: left;
     position: absolute;
     top: 50%;
@@ -80,12 +80,10 @@ body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     width: 100%;
-    height: 530px;
-    background: #fff;
+    height: 500px;
+    background: #79f5f1;
     border-radius: 10px;
     z-index: 1;
-
-    
 }
 
 .card-profile {
@@ -176,7 +174,7 @@ body {
 .card-profile_user-infos {
     position: absolute;
     z-index: 3;
-    left: 100px;
+    left: 0;
     right: 0;
     margin: auto;
     top: calc(60% - 50px);
@@ -323,7 +321,8 @@ body {
             float: left;
             clear: both;
             width: 100%;
-            color: #B3B1B2;
+            /*nose*/
+            color: #C2C1C2;
             font-size: 14px;
             font-weight: 500;
             letter-spacing: -0.2px;

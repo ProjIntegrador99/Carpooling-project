@@ -52,9 +52,9 @@ body {
     width: 100%;
     margin: 13%;
     width: 65px;
-    border-radius: 50px 50% 50% 50%;
+    
     height: 65px;
-    background: #448ed3;
+   
     position: absolute;
     bottom: 50px;
 }
@@ -176,10 +176,11 @@ body {
 .card-profile_user-infos {
     position: absolute;
     z-index: 3;
-    left: 0;
+    left: 100px;
     right: 0;
     margin: auto;
-    top: calc(68% - 100px);
+    top: calc(60% - 50px);
+    /*Color del nombre usuario*/
     color: #fff;
     text-align: center;
 }
@@ -191,7 +192,7 @@ body {
     height: 100%;
     position: absolute;
     z-index: 0;
-    background: url(perfil.jpg) no-repeat center center/cover;
+    background: url("http://static.t13.cl/images/sizes/1200x675/1522676386-avengersageofultron2015movie-wide.jpg") no-repeat center center/cover;
     opacity: 0.5;
     mix-blend-mode: lighten;
 }
@@ -249,16 +250,18 @@ body {
     }
 
 .card-profile_user-stats {
-    background: #fff;
+    /*parte azul agua marina*/
+    background: #79f5f1;
     float: left;
     width: 100%;
-    height: calc(100% - 68% + 2px);
+    height: calc(70% - 68% + 2px);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
 }
 
 .info-profile_user-stats {
-    background: #fff;
+    /*Color informacion del usuario*/
+    background: #ffffff;
     float: left;
     width: 100%;
     /*height: calc(100% - 68% + 2px);*/

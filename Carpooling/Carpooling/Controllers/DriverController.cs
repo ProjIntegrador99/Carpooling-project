@@ -10,9 +10,6 @@ namespace Carpooling.Controllers
     {
         public IActionResult DriverLobby()
         {
-
-
-
             return View();
         }
     }

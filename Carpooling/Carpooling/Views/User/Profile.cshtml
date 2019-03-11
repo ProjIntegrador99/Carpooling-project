@@ -3,6 +3,10 @@
     ViewData["Title"] = "Profile";
 }
 
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
+
 <html>
 
 <head>
@@ -11,7 +15,7 @@
     <link rel="stylesheet" href="~/css/Profile.css" />
     <style>
         h1 {
-            color:#efefef;
+            color: #efefef;
         }
     </style>
 
@@ -23,13 +27,13 @@
             <div class="card-profile_visual"></div>
 
             <div class="card-profile_user-infos">
-                <span class="infos_name">Iron Man</span>
+                <span class="infos_name">@UserManager.GetUserName(User)</span>
 
 
                 <a href="#"></a>
             </div>
 
-            
+
 
 
             <div class="card-profile_user-stats">
@@ -56,106 +60,106 @@
 
     </div>
 
-   
-        <div class="cont">
+
+    <div class="cont">
 
 
-            <div class="info-profile">
-                <h1 align="center" color="#ffffff">Información de usuario  </h1>
-                <br /><br /><br />
+        <div class="info-profile">
+            <h1 align="center" color="#ffffff">Información de usuario  </h1>
+            <br /><br /><br />
 
-                <div class="info-profile_user-stats">
-                    <div class="stats-holder">
+            <div class="info-profile_user-stats">
+                <div class="stats-holder">
 
-                        <table  align="center">
-                            <tr>
+                    <table align="center">
+                        <tr>
 
-                                <td>
-                                    <div class="user-stats">
-                                        <strong>Nombre</strong>
-                                        <span>Iron Man</span>
-                                    </div>
-                                    <br />
-
-
-                                    <div class="user-stats">
-                                        <strong>Correo electrónico</strong>
-                                        <span>IronMan@nada.com</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Teléfono</strong>
-                                        <span>1234567890</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Área de trabajo</strong>
-                                        <span>Dueño</span>
-                                    </div>
+                            <td>
+                                <div class="user-stats">
+                                    <strong>Nombre</strong>
+                                    <span>Iron Man</span>
+                                </div>
+                                <br />
 
 
-                                    <br />
-                                    <div class="user-stats">
-                                        <strong>Calificación pasajero</strong>
-                                        <span>4.5</span>
-                                    </div>
-                                    <br />
-                                </td>
+                                <div class="user-stats">
+                                    <strong>Correo electrónico</strong>
+                                    <span>IronMan@nada.com</span>
+                                </div>
+                                <br />
 
-                                <td>
+                                <div class="user-stats">
+                                    <strong>Teléfono</strong>
+                                    <span>1234567890</span>
+                                </div>
+                                <br />
 
-                                    <br />
-                                    <br />
-                                    <div class="user-stats">
-                                        <strong>Calificación conductor</strong>
-                                        <span>4.5</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Cantidad de viajes realizados</strong>
-                                        <span>50</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Tipo Vehiculo</strong>
-                                        <span>Mazda 5</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Placa Vehiculo</strong>
-                                        <span>MD0-562</span>
-                                    </div>
-                                    <br />
-
-                                    <div class="user-stats">
-                                        <strong>Color Vehiculo</strong>
-                                        <span>Negro</span>
-                                    </div>
-                                    <br />
+                                <div class="user-stats">
+                                    <strong>Área de trabajo</strong>
+                                    <span>Dueño</span>
+                                </div>
 
 
+                                <br />
+                                <div class="user-stats">
+                                    <strong>Calificación pasajero</strong>
+                                    <span>4.5</span>
+                                </div>
+                                <br />
+                            </td>
 
-                                    <br />
-                                    <br />
+                            <td>
 
-                                </td>
-                            </tr>
-                        </table>
+                                <br />
+                                <br />
+                                <div class="user-stats">
+                                    <strong>Calificación conductor</strong>
+                                    <span>4.5</span>
+                                </div>
+                                <br />
 
-                    </div>
+                                <div class="user-stats">
+                                    <strong>Cantidad de viajes realizados</strong>
+                                    <span>50</span>
+                                </div>
+                                <br />
+
+                                <div class="user-stats">
+                                    <strong>Tipo Vehiculo</strong>
+                                    <span>Mazda 5</span>
+                                </div>
+                                <br />
+
+                                <div class="user-stats">
+                                    <strong>Placa Vehiculo</strong>
+                                    <span>MD0-562</span>
+                                </div>
+                                <br />
+
+                                <div class="user-stats">
+                                    <strong>Color Vehiculo</strong>
+                                    <span>Negro</span>
+                                </div>
+                                <br />
+
+
+
+                                <br />
+                                <br />
+
+                            </td>
+                        </tr>
+                    </table>
+
                 </div>
-
             </div>
 
         </div>
 
+    </div>
 
-    
+
+
 
 </body>
 

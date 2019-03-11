@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Carpooling.Controllers
 {
-    public class UserController : Controller
+    public class TribuController : Controller
     {
-
-        public IActionResult Profile() {
-          
+        public IActionResult Tribu()
+        {
             return View();
         }
     }

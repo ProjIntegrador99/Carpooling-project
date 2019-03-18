@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Carpooling.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Carpooling.Models;
 
 namespace Carpooling
 {
@@ -51,6 +52,9 @@ namespace Carpooling
 				googleOptions.ClientSecret = Configuration["Authentication:Google:ClientSecret"];
 			});
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<CarpoolingContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("CarpoolingContext")));
 
         }
 

@@ -13,7 +13,7 @@ namespace Carpooling.Models
 		const String DISPONIBLE = "DISPONIBLE";
 		public String Descripcion { get; set; }
 		public DateTime Hora { get; set; }
-		public String TipoViaje { get;set }
+		public String TipoViaje { get; set; }
 		public DateTime Fecha { get; set; }
 		public String Estado { get; set; }
 		public int CantidadCupos { get; set; }

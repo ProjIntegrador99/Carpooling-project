@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Models
+namespace Libreria
 {
     public partial class Usuario
     {
@@ -18,7 +19,7 @@ namespace Models
         {
             this.Vehiculos = new HashSet<Vehiculo>();
             this.Tribus = new HashSet<Tribu>();
-            this.Historial = new HashSet<Viaje>();
+            this.Historiales = new HashSet<Viaje>();
         }
 
         public int Id { get; set; }
@@ -31,10 +32,10 @@ namespace Models
         public String Telefono { get; set; }
         public String Clasificacion { get; set; }
         public String Contraseña { get; set; }
-        public HashSet<Viaje> Historial { get; set; }
-        public HashSet<Vehiculo> Vehiculos { get; set; }
-        public Viaje ViajeActual { get; set; }
-        public HashSet<Tribu> Tribus { get; set; }
+        public virtual ICollection<Viaje> Historiales { get; set; }
+        public virtual ICollection<Vehiculo> Vehiculos { get; set; }
+        public virtual Viaje ViajeActual { get; set; }
+        public virtual ICollection<Tribu> Tribus { get; set; }
     }
 
     public partial class Vehiculo
@@ -58,9 +59,9 @@ namespace Models
         [Required]
         public String Descripcion { get; set; }
         [Required]
-        public String[] Gustos { get; set; }
-
-        public HashSet<Usuario> Usuarios { get; set; }
+      
+        [NotMapped]
+        public virtual ICollection<Usuario> Usuarios { get; set; }
 
         public Tribu()
         {
@@ -87,8 +88,8 @@ namespace Models
         public String Estado { get; set; }
         [Required]
         public int CantidadCupos { get; set; }
-        public HashSet<Usuario> Cupos { get; set; }
-        public Usuario Conductor { get; set; }
+        public virtual ICollection<Usuario> Cupos { get; set; }
+        public virtual Usuario Conductor { get; set; }
 
         public Viaje()
         {

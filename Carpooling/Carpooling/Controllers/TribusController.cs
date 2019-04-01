@@ -5,26 +5,27 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Carpooling.Models;
+using Carpooling.Data;
+using Libreria;
 
 namespace Carpooling.Controllers
 {
-    public class ViajesController : Controller
+    public class TribusController : Controller
     {
-        private readonly CarpoolingContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public ViajesController(CarpoolingContext context)
+        public TribusController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Viajes
+        // GET: Tribus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Viaje.ToListAsync());
+            return View(await _context.Tribu.ToListAsync());
         }
 
-        // GET: Viajes/Details/5
+        // GET: Tribus/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -32,39 +33,39 @@ namespace Carpooling.Controllers
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje
+            var tribu = await _context.Tribu
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (viaje == null)
+            if (tribu == null)
             {
                 return NotFound();
             }
 
-            return View(viaje);
+            return View(tribu);
         }
 
-        // GET: Viajes/Create
+        // GET: Tribus/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Viajes/Create
+        // POST: Tribus/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descripcion,Hora,TipoViaje,Fecha,Estado,CantidadCupos")] Viaje viaje)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion")] Tribu tribu)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(viaje);
+                _context.Add(tribu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(viaje);
+            return View(tribu);
         }
 
-        // GET: Viajes/Edit/5
+        // GET: Tribus/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -72,22 +73,22 @@ namespace Carpooling.Controllers
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje.FindAsync(id);
-            if (viaje == null)
+            var tribu = await _context.Tribu.FindAsync(id);
+            if (tribu == null)
             {
                 return NotFound();
             }
-            return View(viaje);
+            return View(tribu);
         }
 
-        // POST: Viajes/Edit/5
+        // POST: Tribus/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,Hora,TipoViaje,Fecha,Estado,CantidadCupos")] Viaje viaje)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Nombre,Descripcion")] Tribu tribu)
         {
-            if (id != viaje.Id)
+            if (id != tribu.Id)
             {
                 return NotFound();
             }
@@ -96,12 +97,12 @@ namespace Carpooling.Controllers
             {
                 try
                 {
-                    _context.Update(viaje);
+                    _context.Update(tribu);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ViajeExists(viaje.Id))
+                    if (!TribuExists(tribu.Id))
                     {
                         return NotFound();
                     }
@@ -112,10 +113,10 @@ namespace Carpooling.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(viaje);
+            return View(tribu);
         }
 
-        // GET: Viajes/Delete/5
+        // GET: Tribus/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -123,30 +124,30 @@ namespace Carpooling.Controllers
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje
+            var tribu = await _context.Tribu
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (viaje == null)
+            if (tribu == null)
             {
                 return NotFound();
             }
 
-            return View(viaje);
+            return View(tribu);
         }
 
-        // POST: Viajes/Delete/5
+        // POST: Tribus/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var viaje = await _context.Viaje.FindAsync(id);
-            _context.Viaje.Remove(viaje);
+            var tribu = await _context.Tribu.FindAsync(id);
+            _context.Tribu.Remove(tribu);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ViajeExists(int id)
+        private bool TribuExists(int id)
         {
-            return _context.Viaje.Any(e => e.Id == id);
+            return _context.Tribu.Any(e => e.Id == id);
         }
     }
 }

@@ -42,9 +42,9 @@ namespace CarpoolingV2.Models
         public string Area { get; set; }
         [Required]
         public string Correo { get; set; }
-        [Required]
+        [Required, DataType(DataType.EmailAddress)]
         public string Telefono { get; set; }
-        [Required]
+        [Required,DataType(DataType.Password)]
         public string Contraseña { get; set; }
         public double CalificacionPromedioPasajero { get; set; }
         public double CalificacionPromedioConductor { get; set; }
@@ -104,14 +104,12 @@ namespace CarpoolingV2.Models
         [Required]
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        [Required]
+        [Required, DataType(DataType.DateTime)]
         public double Hora { get; set; }
-        [Required]
         public string TipoViaje { get; set; }
         [Required]
-        public System.DateTime Fecha { get; set; }
         public string Estado { get; set; }
-        [Required]
+        [Required, ]
         public string Cupos { get; set; }
 
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }

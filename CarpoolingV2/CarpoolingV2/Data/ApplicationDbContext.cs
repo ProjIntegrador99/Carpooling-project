@@ -27,11 +27,13 @@ namespace CarpoolingV2.Data
 
         }
 
-        public DbSet<CarpoolingV2.Models.Tribu> Tribu { get; set; }
+        public DbSet<CarpoolingV2.Models.Viaje> Viaje { get; set; }
 
         public DbSet<CarpoolingV2.Models.Usuario> Usuario { get; set; }
 
         public DbSet<CarpoolingV2.Models.Vehiculo> Vehiculo { get; set; }
+
+        public DbSet<CarpoolingV2.Models.Tribu> Tribu { get; set; }
 
 
     }

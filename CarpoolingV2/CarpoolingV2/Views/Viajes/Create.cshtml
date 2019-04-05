@@ -4,9 +4,9 @@
     ViewData["Title"] = "Create";
 }
 
-<h2>Create</h2>
 
-<h4>Viaje</h4>
+<h2>¡Crea tu viaje ahora!</h2>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,22 +19,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" />
+                <input asp-for="Hora" class="form-control" required/>
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TipoViaje" class="control-label"></label>
-                <input asp-for="TipoViaje" class="form-control" />
+                <select asp-for="TipoViaje" class="form-control" required>
+                    <option value="ida">Ida</option>
+                    <option value="regreso">Regreso</option>
+                </select>
                 <span asp-validation-for="TipoViaje" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <select asp-for="Estado" class="form-control" required>
+                    <option value="lleno">Lleno</option>
+                    <option value="disponible">Disponible</option>
+                </select>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cupos" class="control-label"></label>
-                <input asp-for="Cupos" class="form-control" />
+                <input asp-for="Cupos" class="form-control"type="number" required/>
                 <span asp-validation-for="Cupos" class="text-danger"></span>
             </div>
             <div class="form-group">

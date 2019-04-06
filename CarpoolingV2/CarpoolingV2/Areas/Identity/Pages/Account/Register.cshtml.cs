@@ -41,10 +41,6 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account
         {
 
             [Required]
-            [Display(Name = "Nombre Completo")]
-            public string Nombre { get; set; }
-
-            [Required]
             [Display(Name = "Nickname")]
             public string Nickname { get; set; }
 

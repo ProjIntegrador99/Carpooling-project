@@ -40,6 +40,8 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account
             [EmailAddress]
             public string Email { get; set; }
 
+           
+
             [Required]
             [DataType(DataType.Password)]
             public string Password { get; set; }

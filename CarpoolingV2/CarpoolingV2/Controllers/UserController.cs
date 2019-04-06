@@ -10,6 +10,8 @@ namespace CarpoolingV2.Controllers
     {
         public IActionResult Profile()
         {
+            ViewData["Correo"] = User.Identity.Name;
+           // ViewData["Telefono"] = User.Identity.
             return View();
         }
     }

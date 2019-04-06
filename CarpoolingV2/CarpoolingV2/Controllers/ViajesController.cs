@@ -46,6 +46,7 @@ namespace CarpoolingV2.Controllers
         // GET: Viajes/Create
         public IActionResult Create()
         {
+            ViewData["NombreConductor"] = User.Identity.Name;
             return View();
         }
 
@@ -54,7 +55,7 @@ namespace CarpoolingV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos")] Viaje viaje)
+        public async Task<IActionResult> Create([Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos,NombreConductor")] Viaje viaje)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +87,7 @@ namespace CarpoolingV2.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos")] Viaje viaje)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos,NombreConductor")] Viaje viaje)
         {
             if (id != viaje.Id)
             {

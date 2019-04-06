@@ -39,6 +39,11 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account.Manage
 
         public class InputModel
         {
+
+            [DataType(DataType.Text)]
+            [Display(Name = "Nombre completo")]
+            public string Nombre { get; set; }
+
             [Required]
             [EmailAddress]
             public string Email { get; set; }
@@ -64,6 +69,7 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account.Manage
 
             Input = new InputModel
             {
+              //  Nombre = user.Name
                 Email = email,
                 PhoneNumber = phoneNumber
             };

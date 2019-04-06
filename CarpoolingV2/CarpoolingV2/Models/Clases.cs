@@ -36,6 +36,8 @@ namespace CarpoolingV2.Models
         [Key]
         [Required]
         public int Id { get; set; }
+        [Required]
+        public string Nickname { get; set; }
         public string Nombre { get; set; }
         [Required]
         public string Area { get; set; }
@@ -108,8 +110,10 @@ namespace CarpoolingV2.Models
         public string TipoViaje { get; set; }
         [Required]
         public string Estado { get; set; }
-        [Required, ]
-        public string Cupos { get; set; }
+        [Required]
+        public int Cupos { get; set; }
+
+        public string NombreConductor { get; set; }
 
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
     }

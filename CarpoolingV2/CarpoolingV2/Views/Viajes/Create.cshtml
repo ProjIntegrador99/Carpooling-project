@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" required/>
+                <input asp-for="Hora" class="form-control" required />
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -40,9 +40,15 @@
             </div>
             <div class="form-group">
                 <label asp-for="Cupos" class="control-label"></label>
-                <input asp-for="Cupos" class="form-control"type="number" required/>
+                <input asp-for="Cupos" class="form-control" type="number" required />
                 <span asp-validation-for="Cupos" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="NombreConductor" class="control-label"></label>
+                <input asp-for="NombreConductor" class="form-control" value="@ViewData["NombreConductor"]"/>
+                <span asp-validation-for="NombreConductor" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>

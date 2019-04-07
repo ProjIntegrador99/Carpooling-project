@@ -89,7 +89,7 @@ namespace CarpoolingV2.Models
         public string Modelo { get; set; }
         [Required]
         public string Color { get; set; }
-        [NotMapped]
+        
         public int UsuarioId { get; set; }
 
         public virtual Usuario Usuario { get; set; }

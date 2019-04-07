@@ -39,6 +39,9 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account
 
         public class InputModel
         {
+            [Required]
+            [Display(Name = "UserName")]
+            public string UserName { get; set; }
 
             [Required]
             [Display(Name = "Nickname")]
@@ -79,7 +82,7 @@ namespace CarpoolingV2.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 //miguel
-                var user = new IdentityUser { UserName = Input.Nombre, Email = Input.Email, PhoneNumber=Input.PhoneNumber };
+                var user = new IdentityUser { UserName = Input.UserName,   Email = Input.Email, PhoneNumber=Input.PhoneNumber };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {

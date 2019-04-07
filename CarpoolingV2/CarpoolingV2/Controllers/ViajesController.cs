@@ -20,6 +20,11 @@ namespace CarpoolingV2.Controllers
         }
 
         // GET: Viajes
+        public void  Solicitar()
+        {
+            
+        }
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Viaje.ToListAsync());
@@ -71,6 +76,7 @@ namespace CarpoolingV2.Controllers
         // GET: Viajes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["NombreConductor"] = User.Identity.Name;
             if (id == null)
             {
                 return NotFound();

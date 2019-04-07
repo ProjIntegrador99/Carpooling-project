@@ -40,13 +40,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="Cupos" class="control-label"></label>
-                <input asp-for="Cupos" class="form-control" type="number" required />
+                <input asp-for="Cupos" class="form-control" type="number" min="1" required />
                 <span asp-validation-for="Cupos" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="NombreConductor" class="control-label"></label>
                 <select asp-for="NombreConductor" class="form-control" required>
-                    <option value="lleno">@ViewData["NombreConductor"]</option>
+                    <option value="@ViewData["NombreConductor"]">@ViewData["NombreConductor"]</option>
                 </select>
                 <span asp-validation-for="NombreConductor" class="text-danger"></span>
             </div>

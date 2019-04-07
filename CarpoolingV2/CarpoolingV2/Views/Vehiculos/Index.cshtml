@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Color)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +38,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Color)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Placa">Edit</a> |

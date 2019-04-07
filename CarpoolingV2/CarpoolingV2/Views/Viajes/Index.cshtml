@@ -4,11 +4,11 @@
     ViewData["Title"] = "Index";
 }
 
-<link rel="stylesheet" href="~/css/banner.css" />
+<link rel="stylesheet" href="~/css/index.css" />
 <h2>Publicaciones de cupos</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Publica tu cupo ahora mismo</a>
 </p>
 <table class="table">
     <thead>
@@ -57,6 +57,7 @@
                     @Html.DisplayFor(modelItem => item.NombreConductor)
                 </td>
                 <td>
+                    <a class="solicitar" asp-action="Solicitar" asp-route-id="@item.Id">Solicitar</a>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

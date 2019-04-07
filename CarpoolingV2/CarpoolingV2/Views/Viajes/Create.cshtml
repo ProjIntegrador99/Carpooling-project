@@ -46,7 +46,7 @@
             <div class="form-group">
                 <label asp-for="NombreConductor" class="control-label"></label>
                 <select asp-for="NombreConductor" class="form-control" required>
-                    <option value="lleno">@ViewData["NombreConductor"]</option>
+                    <option value="@ViewData["NombreConductor"]">@ViewData["NombreConductor"]</option>
                 </select>
                 <span asp-validation-for="NombreConductor" class="text-danger"></span>
             </div>

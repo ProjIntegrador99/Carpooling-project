@@ -106,7 +106,7 @@ namespace CarpoolingV2.Models
         public int Id { get; set; }
         public string Descripcion { get; set; }
         [Required, DataType(DataType.DateTime)]
-        public double Hora { get; set; }
+        public DateTime Hora { get; set; }
         public string TipoViaje { get; set; }
         [Required]
         public string Estado { get; set; }

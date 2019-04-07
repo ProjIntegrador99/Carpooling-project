@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CarpoolingV2.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace CarpoolingV2.Controllers
 {
     public class UserController : Controller
     {
-        public IActionResult Profile()
+        private readonly ApplicationDbContext _context;
+
+        public UserController(ApplicationDbContext context)
         {
-            ViewData["Correo"] = User.Identity;
-           // ViewData["Telefono"] = User.Identity.
-            return View();
+            _context = context;
+        }
+
+        public async Task<IActionResult> Profile()
+        {
+            return View(await _context.Viaje.ToListAsync());
         }
     }
 }

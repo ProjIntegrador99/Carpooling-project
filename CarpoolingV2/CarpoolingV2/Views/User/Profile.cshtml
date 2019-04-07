@@ -208,8 +208,9 @@
                             </thead>
                             <tbody>
                                
-                                @*@foreach (var item in Model)
+                                @foreach (var item in Model)
                                 {
+                                   // @Console.WriteLine();
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Descripcion)
@@ -231,7 +232,7 @@
                                         </td>
                                        
                                     </tr>
-                                }*@
+                                }
                             </tbody>
                         </table>
 

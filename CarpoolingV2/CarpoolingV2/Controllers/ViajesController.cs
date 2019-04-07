@@ -47,6 +47,7 @@ namespace CarpoolingV2.Controllers
         public IActionResult Create()
         {
             ViewData["NombreConductor"] = User.Identity.Name;
+            
             var valido = _context;
             return View();
         }

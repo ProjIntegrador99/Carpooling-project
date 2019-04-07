@@ -1,13 +1,7 @@
 ﻿
-@{
-    ViewData["Title"] = "Profile";
-}
+@model IEnumerable<CarpoolingV2.Models.Viaje>
+>
 
-@using Microsoft.AspNetCore.Identity
-
-@inject UserManager<IdentityUser> UserManager
-
-<html>
 
 <head>
     <meta charset="UTF-8">
@@ -27,7 +21,7 @@
             <div class="card-profile_visual"></div>
 
             <div class="card-profile_user-infos">
-                <span class="infos_name">@UserManager.GetUserName(User)</span>
+                <span class="infos_name"></span>
 
 
                 <a href="#"></a>
@@ -79,20 +73,20 @@
                         <td>
                             <div class="user-stats">
                                 <strong>Nombre</strong>
-                                <span>Iron Man</span>
+                                <span></span>
                             </div>
                             <br />
 
 
                             <div class="user-stats">
                                 <strong>Correo electrónico</strong>
-                                <span>@ViewData["Correo"]</span>
+                                <span>@ViewData["Email"]</span>
                             </div>
                             <br />
 
                             <div class="user-stats">
                                 <strong>Teléfono</strong>
-                                <span>1234567890</span>
+                                <span>@ViewData["PhoneNumber"]</span>
                             </div>
                             <br />
 
@@ -171,17 +165,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
     </div>
 
 
@@ -199,22 +182,68 @@
                     <div class="stats-holder">
 
 
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Hora)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoViaje)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cupos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NombreConductor)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                               
+                                @*@foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Hora)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoViaje)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cupos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NombreConductor)
+                                        </td>
+                                       
+                                    </tr>
+                                }*@
+                            </tbody>
+                        </table>
 
-                        <td>
-
-
-                            <div class="user-stats">
-                                <strong>Color Vehiculo</strong>
-                                <span>Negro</span>
-                            </div>
-                            <br />
 
 
 
-                            <br />
-                            <br />
 
-                        </td>
+
+
+
+
+
 
 
 
@@ -261,5 +290,5 @@
 
 
 
-</html>
+
 

@@ -57,7 +57,7 @@
                     @Html.ActionLink(item.NombreConductor,"Profile", "User")
                 </td>
                 <td>
-                    <a class="solicitar" asp-action="Solicitar" asp-route-id="@item.Id">Solicitar</a>
+                    <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>

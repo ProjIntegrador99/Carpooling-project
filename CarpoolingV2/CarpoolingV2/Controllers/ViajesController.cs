@@ -20,6 +20,11 @@ namespace CarpoolingV2.Controllers
         }
 
         // GET: Viajes
+        public void  Solicitar()
+        {
+            
+        }
+
         public async Task<IActionResult> Index()
         {
             return View(await _context.Viaje.ToListAsync());

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -80,7 +81,6 @@ namespace CarpoolingV2.Models
 
     public partial class Vehiculo
     {
-        [Key]
         [Required]
         public string Placa { get; set; }
         [Required]
@@ -89,7 +89,7 @@ namespace CarpoolingV2.Models
         public string Modelo { get; set; }
         [Required]
         public string Color { get; set; }
-        [Required]
+        [NotMapped]
         public int UsuarioId { get; set; }
 
         public virtual Usuario Usuario { get; set; }

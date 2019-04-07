@@ -10,87 +10,85 @@ using CarpoolingV2.Models;
 
 namespace CarpoolingV2.Controllers
 {
-    public class ViajesController : Controller
+    public class VehiculosController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public ViajesController(ApplicationDbContext context)
+        public VehiculosController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Viajes
+        // GET: Vehiculos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Viaje.ToListAsync());
+            return View(await _context.Vehiculo.ToListAsync());
         }
 
-        // GET: Viajes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Vehiculos/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (viaje == null)
+            var vehiculo = await _context.Vehiculo
+                .FirstOrDefaultAsync(m => m.Placa == id);
+            if (vehiculo == null)
             {
                 return NotFound();
             }
 
-            return View(viaje);
+            return View(vehiculo);
         }
 
-        // GET: Viajes/Create
+        // GET: Vehiculos/Create
         public IActionResult Create()
         {
-            ViewData["NombreConductor"] = User.Identity.Name;
-            var valido = _context;
             return View();
         }
 
-        // POST: Viajes/Create
+        // POST: Vehiculos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos,NombreConductor")] Viaje viaje)
+        public async Task<IActionResult> Create([Bind("Placa,Marca,Modelo,Color")] Vehiculo vehiculo)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(viaje);
+                _context.Add(vehiculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(viaje);
+            return View(vehiculo);
         }
 
-        // GET: Viajes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Vehiculos/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje.FindAsync(id);
-            if (viaje == null)
+            var vehiculo = await _context.Vehiculo.FindAsync(id);
+            if (vehiculo == null)
             {
                 return NotFound();
             }
-            return View(viaje);
+            return View(vehiculo);
         }
 
-        // POST: Viajes/Edit/5
+        // POST: Vehiculos/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos,NombreConductor")] Viaje viaje)
+        public async Task<IActionResult> Edit(string id, [Bind("Placa,Marca,Modelo,Color")] Vehiculo vehiculo)
         {
-            if (id != viaje.Id)
+            if (id != vehiculo.Placa)
             {
                 return NotFound();
             }
@@ -99,12 +97,12 @@ namespace CarpoolingV2.Controllers
             {
                 try
                 {
-                    _context.Update(viaje);
+                    _context.Update(vehiculo);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ViajeExists(viaje.Id))
+                    if (!VehiculoExists(vehiculo.Placa))
                     {
                         return NotFound();
                     }
@@ -115,41 +113,41 @@ namespace CarpoolingV2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(viaje);
+            return View(vehiculo);
         }
 
-        // GET: Viajes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Vehiculos/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var viaje = await _context.Viaje
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (viaje == null)
+            var vehiculo = await _context.Vehiculo
+                .FirstOrDefaultAsync(m => m.Placa == id);
+            if (vehiculo == null)
             {
                 return NotFound();
             }
 
-            return View(viaje);
+            return View(vehiculo);
         }
 
-        // POST: Viajes/Delete/5
+        // POST: Vehiculos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var viaje = await _context.Viaje.FindAsync(id);
-            _context.Viaje.Remove(viaje);
+            var vehiculo = await _context.Vehiculo.FindAsync(id);
+            _context.Vehiculo.Remove(vehiculo);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ViajeExists(int id)
+        private bool VehiculoExists(string id)
         {
-            return _context.Viaje.Any(e => e.Id == id);
+            return _context.Vehiculo.Any(e => e.Placa == id);
         }
     }
 }

@@ -54,7 +54,7 @@
                     @Html.DisplayFor(modelItem => item.Cupos)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.NombreConductor)
+                    @Html.ActionLink(item.NombreConductor,"Profile", "User")
                 </td>
                 <td>
                     <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>

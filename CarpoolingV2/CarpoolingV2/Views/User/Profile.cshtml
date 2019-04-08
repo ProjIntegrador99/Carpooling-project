@@ -128,22 +128,7 @@
                             </div>
                             <br />
 
-                            <div class="user-stats">
-                                <strong>Tipo Vehiculo</strong>
-                                <span>Mazda 5</span>
-                            </div>
-                            <br />
-
-                            <div class="user-stats">
-                                <strong>Placa Vehiculo</strong>
-                                <span>MD0-562</span>
-                            </div>
-                            <br />
-
-                            <div class="user-stats">
-                                <strong>Color Vehiculo</strong>
-                                <span>Negro</span>
-                            </div>
+                           
                             <br />
 
 
@@ -215,11 +200,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                             
                                 @foreach (var item in Model)
                                 {
-
-                                    // @Console.WriteLine();
+                                    if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                    {
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Descripcion)
@@ -240,19 +225,20 @@
                                             @Html.DisplayFor(modelItem => item.NombreConductor)
                                         </td>
 
-                                    
 
-                                  
+
+
                                         <td>
                                             @*<a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>*@
                                             <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
                                             <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
                                             <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
                                             @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
                                         </td>
-                                </tr>
+                                    </tr>
+                                    }
                                 }
                             </tbody>
                         </table>

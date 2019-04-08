@@ -29,12 +29,12 @@
 
 
 
-
+            
             <div class="card-profile_user-stats">
                 <div class="stats-holder">
                     <div class="user-stats">
                         <strong>Viajes</strong>
-                        <span>0</span>
+                        <span>@Model.ToList().Count()</span>
                     </div>
 
 
@@ -73,7 +73,7 @@
                         <td>
                             <div class="user-stats">
                                 <strong>Nombre</strong>
-                                <span></span>
+                                <span>@ViewData["Descripcion"]</span>
                             </div>
                             <br />
 
@@ -210,28 +210,35 @@
                                
                                 @foreach (var item in Model)
                                 {
+                                   
                                    // @Console.WriteLine();
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Descripcion)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Hora)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.TipoViaje)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Estado)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Cupos)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NombreConductor)
-                                        </td>
-                                       
-                                    </tr>
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Hora)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TipoViaje)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Estado)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cupos)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreConductor)
+                                    </td>
+                                    <td>
+                                        <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                                    </td>
+                                </tr>
                                 }
                             </tbody>
                         </table>

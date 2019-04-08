@@ -46,6 +46,7 @@ namespace CarpoolingV2.Controllers
         // GET: Vehiculos/Create
         public IActionResult Create()
         {
+            
             return View();
         }
 

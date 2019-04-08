@@ -27,28 +27,81 @@
             <th></th>
         </tr>
     </thead>
+
     <tbody>
-@foreach (var item in Model) {
+
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Marca)
+                MAZDA
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Modelo)
+                1234
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Color)
+                NEGRO
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Placa)
+                1100456
             </td>
-           
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Placa">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Placa">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Placa">Delete</a>
-            </td>
+
+
         </tr>
-}
+        <tr>
+            <td>
+                CHEVROLET
+            </td>
+            <td>
+                134
+            </td>
+            <td>
+                BLANCO
+            </td>
+            <td>
+                11004
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                MAZDA
+            </td>
+            <td>
+                14
+            </td>
+            <td>
+                VERDE
+            </td>
+            <td>
+                23353
+            </td>
+
+
+        </tr>
+
+
+
+        @*@foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Placa">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Placa">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Placa">Delete</a>
+                    </td>
+                </tr>
+        }*@
     </tbody>
 </table>

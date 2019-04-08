@@ -1,5 +1,13 @@
 ﻿
 @model IEnumerable<CarpoolingV2.Models.Viaje>
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
 >
 
 
@@ -21,7 +29,7 @@
             <div class="card-profile_visual"></div>
 
             <div class="card-profile_user-infos">
-                <span class="infos_name"></span>
+                <span class="infos_name">@UserManager.GetUserName(User)</span>
 
 
                 <a href="#"></a>
@@ -207,10 +215,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                               
+
                                 @foreach (var item in Model)
                                 {
-                                   // @Console.WriteLine();
+                                    // @Console.WriteLine();
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Descripcion)
@@ -230,7 +238,7 @@
                                         <td>
                                             @Html.DisplayFor(modelItem => item.NombreConductor)
                                         </td>
-                                       
+
                                     </tr>
                                 }
                             </tbody>

@@ -1,0 +1,302 @@
+﻿
+@model IEnumerable<CarpoolingV2.Models.Viaje>
+
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<IdentityUser> UserManager
+>
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="~/css/Profile.css" />
+    <style>
+        h1 {
+            color: #efefef;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+
+        <div class="card-profile">
+            <div class="card-profile_visual"></div>
+
+            <div class="card-profile_user-infos">
+                <span class="infos_name">@UserManager.GetUserName(User)</span>
+
+
+                <a href="#"></a>
+            </div>
+
+
+
+            
+            <div class="card-profile_user-stats">
+                <div class="stats-holder">
+                    <div class="user-stats">
+                        <strong>Viajes</strong>
+                        <span>@Model.ToList().Count()</span>
+                    </div>
+
+
+                    <div class="avatar">
+                        <img src="https://www.infobae.com/new-resizer/CBId-A7fnDmhj2kKbIX0eTAVV50=/750x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2016/07/06212701/iron-man-1920-1024x576.jpg">
+                    </div>
+
+                    <div class="user-stats">
+                        <strong>Puntuación</strong>
+                        <span>0</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="cont">
+
+
+        <div class="derecha">
+
+
+            <div class="info-profile2">
+                <h1 align="Center" color="#ffffff">Informacion de Usuario </h1>
+                <br /><br /><br />
+
+                <div class="info-profile_user-stats">
+                    <div class="stats-holder">
+
+
+
+                        <td>
+                            <div class="user-stats">
+                                <strong>Nombre</strong>
+                                <span>Miguel</span>
+                            </div>
+                            <br />
+
+
+                            <div class="user-stats">
+                                <strong>Correo electrónico</strong>
+                                <span>miguel980429@gmail.com</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Teléfono</strong>
+                                <span>3147930652</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Área de trabajo</strong>
+                                <span>Dueño</span>
+                            </div>
+
+
+                            <br />
+                            <div class="user-stats">
+                                <strong>Calificación pasajero</strong>
+                                <span>4.5</span>
+                            </div>
+                            <br />
+                        </td>
+
+                        <td>
+
+                            <br />
+                            <br />
+                            <div class="user-stats">
+                                <strong>Calificación conductor</strong>
+                                <span>4.5</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Cantidad de viajes realizados</strong>
+                                <span>50</span>
+                            </div>
+                            <br />
+
+                           
+                            <br />
+
+
+
+                            <br />
+                            <br />
+
+                        </td>
+
+
+                        <div class="text-left">
+
+                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" style="font-family:'Times New Roman', Times, serif ;color: white; background-color:crimson; border: crimson">
+                                Editar
+                            </a>
+
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="cont1">
+
+
+        <div class="derecha">
+
+
+            <div class="info-profile3">
+                <h1 align="Center" color="#ffffff">Publicaciones </h1>
+                <br /><br /><br />
+
+                <div class="info-profile_user-stats">
+                    <div class="stats-holder">
+
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Hora)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoViaje)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cupos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NombreConductor)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                             
+                                @foreach (var item in Model)
+                                {
+                                    if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                    {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Descripcion)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Hora)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoViaje)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Estado)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cupos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.NombreConductor)
+                                        </td>
+
+
+
+
+                                        <td>
+                                            @*<a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>*@
+                                            <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
+                                            <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
+                                            <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
+                                            @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                        </td>
+                                    </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+
+

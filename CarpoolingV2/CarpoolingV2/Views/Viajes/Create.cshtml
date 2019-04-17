@@ -1,0 +1,64 @@
+﻿@model CarpoolingV2.Models.Viaje
+
+@{
+    ViewData["Title"] = "Create";
+}
+<link rel="stylesheet" href="~/css/banner.css" />
+
+<h2>¡Crea tu viaje ahora!</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Hora" class="control-label"></label>
+                <input asp-for="Hora" class="form-control" required />
+                <span asp-validation-for="Hora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoViaje" class="control-label"></label>
+                <select asp-for="TipoViaje" class="form-control" required>
+                    <option value="ida">Ida</option>
+                    <option value="regreso">Regreso</option>
+                </select>
+                <span asp-validation-for="TipoViaje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" class="form-control" required>
+                    <option value="disponible">Disponible</option>
+                    <option value="lleno">Lleno</option>
+                </select>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cupos" class="control-label"></label>
+                <input asp-for="Cupos" class="form-control" type="number" min="1" required />
+                <span asp-validation-for="Cupos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NombreConductor" class="control-label"></label>
+                <select asp-for="NombreConductor" class="form-control" required>
+                    <option value="@ViewData["NombreConductor"]">@ViewData["NombreConductor"]</option>
+                </select>
+                <span asp-validation-for="NombreConductor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,107 @@
+﻿@model IEnumerable<CarpoolingV2.Models.Vehiculo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="~/css/banner.css" />
+<h2>Vehiculos</h2>
+
+<p>
+    <a asp-action="Create">Agregar un nuevo Vehiculo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Color)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>
+                MAZDA
+            </td>
+            <td>
+                1234
+            </td>
+            <td>
+                NEGRO
+            </td>
+            <td>
+                1100456
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                CHEVROLET
+            </td>
+            <td>
+                134
+            </td>
+            <td>
+                BLANCO
+            </td>
+            <td>
+                11004
+            </td>
+
+
+        </tr>
+        <tr>
+            <td>
+                MAZDA
+            </td>
+            <td>
+                14
+            </td>
+            <td>
+                VERDE
+            </td>
+            <td>
+                23353
+            </td>
+
+
+        </tr>
+
+
+
+        @*@foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Marca)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Modelo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Color)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Placa">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.Placa">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Placa">Delete</a>
+                    </td>
+                </tr>
+        }*@
+    </tbody>
+</table>

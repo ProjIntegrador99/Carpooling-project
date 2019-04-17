@@ -1,0 +1,11 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Oxygen');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:600|Oxygen');
+
+body {
+    background-image: url("trafico.jpg");
+    background-size: 100vw 100vh;
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: 20px;
+    color: white;
+}

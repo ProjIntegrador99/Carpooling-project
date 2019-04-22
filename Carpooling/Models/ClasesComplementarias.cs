@@ -65,6 +65,7 @@ namespace Carpooling.Models
         public Viaje()
         {
             this.UsuariosViajes = new HashSet<UsuarioViaje>();
+            
         }
         [Key]
         [Required]
@@ -77,6 +78,7 @@ namespace Carpooling.Models
         public string Estado { get; set; }
         [Required]
         public int Cupos { get; set; }
+
         [Required]
         public string NombreConductor { get; set; }
 

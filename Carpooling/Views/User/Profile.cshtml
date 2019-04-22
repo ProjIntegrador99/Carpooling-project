@@ -5,9 +5,10 @@
     ViewData["Title"] = "Profile";
 }
 
-@*@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Identity
 
-@inject UserManager<IdentityUser> UserManager*@
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
 >
 
 
@@ -29,15 +30,15 @@
             <div class="card-profile_visual"></div>
 
             <div class="card-profile_user-infos">
-                <span class="infos_name"></span>
-
+               
+                <span class="infos_name">@UserManager.GetUserName(User)</span>
 
                 <a href="#"></a>
             </div>
 
 
 
-            
+
             <div class="card-profile_user-stats">
                 <div class="stats-holder">
                     <div class="user-stats">
@@ -81,26 +82,32 @@
                         <td>
                             <div class="user-stats">
                                 <strong>Nombre</strong>
-                                <span>Miguel</span>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Nombre</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Apellido</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Apellido</span>
                             </div>
                             <br />
 
 
                             <div class="user-stats">
                                 <strong>Correo electrónico</strong>
-                                <span>miguel980429@gmail.com</span>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email</span>
                             </div>
                             <br />
 
                             <div class="user-stats">
                                 <strong>Teléfono</strong>
-                                <span>3147930652</span>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).PhoneNumber</span>
                             </div>
                             <br />
 
                             <div class="user-stats">
                                 <strong>Área de trabajo</strong>
-                                <span>Dueño</span>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Area</span>
                             </div>
 
 
@@ -122,13 +129,9 @@
                             </div>
                             <br />
 
-                            <div class="user-stats">
-                                <strong>Cantidad de viajes realizados</strong>
-                                <span>50</span>
-                            </div>
-                            <br />
-
                            
+
+
                             <br />
 
 
@@ -176,71 +179,72 @@
 
 
                         <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Descripcion)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Hora)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.TipoViaje)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Estado)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.Cupos)
-                                    </th>
-                                    <th>
-                                        @Html.DisplayNameFor(model => model.NombreConductor)
-                                    </th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                             
-                                @foreach (var item in Model)
-                                {
-                                   
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Descripcion)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Hora)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.TipoViaje)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Estado)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Cupos)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.NombreConductor)
-                                        </td>
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Descripcion)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Hora)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.TipoViaje)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Estado)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.Cupos)
+                                            </th>
+                                            <th>
+                                                @Html.DisplayNameFor(model => model.NombreConductor)
+                                            </th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var item in Model)
+                                        {
+                                            if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                            {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Descripcion)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Hora)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.TipoViaje)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Estado)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Cupos)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.NombreConductor)
+                                                </td>
 
 
 
 
-                                        <td>
-                                            @*<a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>*@
-                                            <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
-                                            <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
-                                            <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
-                                            @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
-                                        </td>
-                                    </tr>
-                                    
-                                }
-                            </tbody>
-                        </table>
+                                                <td>
+                                                    <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                                                    <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
+                                                    <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
+                                                    <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
+                                                   @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                                </td>
+                                            </tr>
+                                            }
+                                        }
+                                    </tbody>
+                                </table>
 
 
 

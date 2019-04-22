@@ -12538,11 +12538,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Miguel\\Desktop\\CAPOLING MI\\Carpooling\\Carpooling\\Carpooling.csproj",
+      "projectUniqueName": "C:\\Users\\Miguel\\Desktop\\CARR\\Carpooling-project\\Carpooling\\Carpooling.csproj",
       "projectName": "Carpooling",
-      "projectPath": "C:\\Users\\Miguel\\Desktop\\CAPOLING MI\\Carpooling\\Carpooling\\Carpooling.csproj",
+      "projectPath": "C:\\Users\\Miguel\\Desktop\\CARR\\Carpooling-project\\Carpooling\\Carpooling.csproj",
       "packagesPath": "C:\\Users\\Miguel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Miguel\\Desktop\\CAPOLING MI\\Carpooling\\Carpooling\\obj\\",
+      "outputPath": "C:\\Users\\Miguel\\Desktop\\CARR\\Carpooling-project\\Carpooling\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -55,59 +55,62 @@
                         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hola!! @UserManager.GetUserName(User)!</a>
                                 </li>
                                 <li>
                                     <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
                                 </li>
                             </ul>
                         </form>
-                    }
-                    else
-                    {
-                        <a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
+                    <li>
+                        <a href="#"><span an class="bottom"><i class="icon icon-user"></i></span>Perfil</a>
                         <ul>
-                            <li><a asp-area="Identity" asp-page="/Account/Register">Registrar Usuario</a></li>
-                            <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a></li>
-                        </ul>
+                            <li><a asp-controller="User" asp-action="Profile">Ir al Perfil</a></li>
 
-                    }
+                        </ul>
+                    </li>
+
+                    
+                    <li>
+                        <a href="#"><span class="V"><i class="icon icon-truck"></i></span>Vehiculos</a>
+                        <ul>
+                            <li><a asp-controller="Vehiculos" asp-action="Create">Crear Vehiculo</a></li>
+                            <li><a asp-controller="Vehiculos" asp-action="Index">Tabla de vehiculos</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span class="T"><i class="icon icon-make-group"></i></span>Tribus</a>
+                        <ul>
+                            <li><a asp-controller="Tribus" asp-action="Create">Crear Tribu</a></li>
+                            <li><a asp-controller="Tribus" asp-action="Index">Tabla de tribus</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><span an class="VI"><i class="icon icon-airplane"></i></span>Viajes</a>
+                        <ul>
+                            <li><a asp-controller="Viajes" asp-action="Create">Crear Viaje</a></li>
+                            <li><a asp-controller="Viajes" asp-action="Index">Tabla de viajes</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
+                    <ul>
+                        <li><a asp-area="Identity" asp-page="/Account/Register">Registrar Usuario</a></li>
+                        <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a></li>
+                    </ul>
+
+                }
                     @*<a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
             <ul>
                 <li><a href="#">Registrar Usuario</a></li>
                 <li><a href="#">Iniciar Sesion</a></li>
             </ul>*@
-                </li>
-                <li>
-                    <a href="#"><span class="V"><i class="icon icon-truck"></i></span>Vehiculos</a>
-                    <ul>
-                        <li><a asp-controller="Vehiculos" asp-action="Create">Crear Vehiculo</a></li>
-                        <li><a asp-controller="Vehiculos" asp-action="Index">Tabla de vehiculos</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><span class="T"><i class="icon icon-make-group"></i></span>Tribus</a>
-                    <ul>
-                        <li><a asp-controller="Tribus" asp-action="Create">Crear Tribu</a></li>
-                        <li><a asp-controller="Tribus" asp-action="Index">Tabla de tribus</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><span an class="VI"><i class="icon icon-airplane"></i></span>Viajes</a>
-                    <ul>
-                        <li><a asp-controller="Viajes" asp-action="Create">Crear Viaje</a></li>
-                        <li><a asp-controller="Viajes" asp-action="Index">Tabla de viajes</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><span an class="bottom"><i class="icon icon-user"></i></span>Perfil</a>
-                    <ul>
-                        <li><a asp-controller="User" asp-action="Profile">Ir al Perfil</a></li>
-                      
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+
+
+
+</nav>
     </header>
     @*</nav>*@
     <partial name="_CookieConsentPartial" />

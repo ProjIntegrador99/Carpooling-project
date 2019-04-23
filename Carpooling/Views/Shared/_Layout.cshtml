@@ -70,13 +70,13 @@
                             <li><a asp-area="Identity" asp-page="/Account/Register">Registrar Usuario</a></li>
                             <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a></li>
                         </ul>
-                        
+
                     }
                     @*<a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
-                    <ul>
-                        <li><a href="#">Registrar Usuario</a></li>
-                        <li><a href="#">Iniciar Sesion</a></li>
-                    </ul>*@
+            <ul>
+                <li><a href="#">Registrar Usuario</a></li>
+                <li><a href="#">Iniciar Sesion</a></li>
+            </ul>*@
                 </li>
                 <li>
                     <a href="#"><span class="V"><i class="icon icon-airplane"></i></span>Vehiculos</a>
@@ -97,6 +97,13 @@
                     <ul>
                         <li><a asp-controller="Viajes" asp-action="Create">Crear Viaje</a></li>
                         <li><a asp-controller="Viajes" asp-action="Index">Tabla de viajes</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span an class="bottom"><i class="icon icon-airplane"></i></span>Perfil</a>
+                    <ul>
+                        <li><a asp-controller="User" asp-action="Profile">Ir al Perfil</a></li>
+                      
                     </ul>
                 </li>
             </ul>

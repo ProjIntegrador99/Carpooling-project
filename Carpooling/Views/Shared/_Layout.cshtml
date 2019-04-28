@@ -23,7 +23,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="~/css/fonts/styleFonts.css">
-    <link rel="stylesheet" href="~/css/StyleGeneral.css">
+   <!----> <link rel="stylesheet" href="~/css/StyleGeneral.css">
 </head>
 <body>
     @*<nav class="navbar navbar-inverse navbar-fixed-top">
@@ -62,6 +62,11 @@
                                 </li>
                             </ul>
                         </form>
+
+                    <li>
+                        <a href="#"><span an class="bottom"><i class="icon icon-home"></i></span>Home</a>
+                    </li>
+
                     <li>
                         <a href="#"><span an class="bottom"><i class="icon icon-user"></i></span>Perfil</a>
                         <ul>
@@ -70,7 +75,7 @@
                         </ul>
                     </li>
 
-                    
+
                     <li>
                         <a href="#"><span class="V"><i class="icon icon-truck"></i></span>Vehiculos</a>
                         <ul>
@@ -95,12 +100,12 @@
                 }
                 else
                 {
+
                     <a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
                     <ul>
                         <li><a asp-area="Identity" asp-page="/Account/Register">Registrar Usuario</a></li>
                         <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a></li>
                     </ul>
-
                 }
                     @*<a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
             <ul>
@@ -116,10 +121,6 @@
     <partial name="_CookieConsentPartial" />
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2019 - Carpooling</p>
-        </footer>
     </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

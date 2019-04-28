@@ -33,7 +33,7 @@ nav {
         }
 
         /*Submenu*/
-        nav > ul > li:hover > ul {
+        nav > ul > li:hover > ul{
             display: block;
             height: 100%;
         }

@@ -67,7 +67,7 @@ using Carpooling.Models;
             WriteLiteral("\n<h2>Muro de publicaciones</h2>\n\n<p>\n    ");
             EndContext();
             BeginContext(170, 42, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78c6eb9ee28b4bdba55f799680cd95ca", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44f5f04eb5214d599fe4a324a74a64d6", async() => {
                 BeginContext(193, 15, true);
                 WriteLiteral("Publica un cupo");
                 EndContext();
@@ -217,7 +217,7 @@ using Carpooling.Models;
             WriteLiteral("\n            </td>\n            <td>\n                ");
             EndContext();
             BeginContext(1754, 53, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1327f1b2e2ce4b01bdefd9346560be6e", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02118fae812d42aaac27cc1229533fbb", async() => {
                 BeginContext(1799, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -252,7 +252,7 @@ using Carpooling.Models;
             WriteLiteral(" |\n                ");
             EndContext();
             BeginContext(1826, 59, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9dcf6ace336414d8322e6a83e3477bd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d32476ba1e39423cb90b2b05ceab2a00", async() => {
                 BeginContext(1874, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -287,7 +287,7 @@ using Carpooling.Models;
             WriteLiteral(" |\n                ");
             EndContext();
             BeginContext(1904, 57, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "50ab99ccbc054cddae3e9e942e29c1a4", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b12f48ef88614fe69276e6da8601a813", async() => {
                 BeginContext(1951, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

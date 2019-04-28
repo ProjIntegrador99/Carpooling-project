@@ -73,7 +73,7 @@ using Carpooling.Areas.Identity.Pages.Account;
             WriteLiteral("\r\n<!doctype html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(66, 1372, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "13aec5075140499293f282527bfda487", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08dfa96abc644c36940a893d4e9c1fba", async() => {
                 BeginContext(72, 1129, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"">
@@ -116,12 +116,12 @@ using Carpooling.Areas.Identity.Pages.Account;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1440, 7162, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e88c079d33bd4b2cb1b9804343d9d7c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "98f0d2cc2d4b4f618776b1f8f7002604", async() => {
                 BeginContext(1463, 188, true);
                 WriteLiteral("\r\n    <div class=\"container\">\r\n        <div class=\"py-5 text-center\">\r\n             <h2>Register</h2>\r\n             </div>\r\n            <div class=\"col-md-12 order-md-1\">\r\n                ");
                 EndContext();
                 BeginContext(1651, 5603, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d5cb6c87cd224430907a6dcef749a94e", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b281e2660a6f405fb2e1c89f0e28770d", async() => {
                     BeginContext(1693, 3896, true);
                     WriteLiteral(@"
                     <div class=""row"">
@@ -200,7 +200,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                                 ");
                     EndContext();
                     BeginContext(5589, 35, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "04d5a630ea2044a78a72f81c410116e8", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c44949f4c214305894c07157fb2d9fa", async() => {
                         BeginContext(5606, 9, true);
                         WriteLiteral("Choose...");
                         EndContext();
@@ -222,7 +222,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                     WriteLiteral("\r\n                                ");
                     EndContext();
                     BeginContext(5658, 30, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0c8e6a787c6b4702acfb08432f020ef9", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ca926e3a18db45119f7d95319ca3ef2d", async() => {
                         BeginContext(5666, 13, true);
                         WriteLiteral("United States");
                         EndContext();
@@ -242,7 +242,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                     WriteLiteral("\r\n                                ");
                     EndContext();
                     BeginContext(5722, 25, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d4a142cb599d466fad0399fd2ad0d5fc", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "71721f9d4df94d869f66289ca3c34498", async() => {
                         BeginContext(5730, 8, true);
                         WriteLiteral("Colombia");
                         EndContext();
@@ -262,7 +262,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                     WriteLiteral("\r\n                                ");
                     EndContext();
                     BeginContext(5781, 23, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e1affcff9b04311aeae545f6adedbaf", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f6909df6438c42ff9ff8cf6e04027767", async() => {
                         BeginContext(5789, 6, true);
                         WriteLiteral("Mexico");
                         EndContext();
@@ -282,7 +282,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                     WriteLiteral("\r\n                                ");
                     EndContext();
                     BeginContext(5838, 26, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d25e7eb7733d431d930e7816f6a83a07", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c7089025b164fc0bc6ce6279f6d5b18", async() => {
                         BeginContext(5846, 9, true);
                         WriteLiteral("Argentina");
                         EndContext();
@@ -311,7 +311,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                                 ");
                     EndContext();
                     BeginContext(6337, 35, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf4ce37ee2314c22884947d5a88e892b", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "970342d13ded46fa969a4bab3136051f", async() => {
                         BeginContext(6354, 9, true);
                         WriteLiteral("Choose...");
                         EndContext();
@@ -333,7 +333,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                     WriteLiteral("\r\n                                ");
                     EndContext();
                     BeginContext(6406, 27, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b045228a15974632b3051cc9599b5ddc", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e241f26ad764983a6e47f2ec2ed9ec6", async() => {
                         BeginContext(6414, 10, true);
                         WriteLiteral("California");
                         EndContext();
@@ -427,7 +427,7 @@ using Carpooling.Areas.Identity.Pages.Account;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(8639, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "289e183da24149dca7ad5389fbcb66ec", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "329be42d61bb4d279a66e3e88fedf9d8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

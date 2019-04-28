@@ -22,22 +22,25 @@
             </div>
             <div class="form-group">
                 <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" />
+                <input asp-for="Hora" class="form-control"  required/>
                 <span asp-validation-for="Hora" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="TipoViaje" class="control-label"></label>
-                <input asp-for="TipoViaje" class="form-control" />
+                <select name="TipoViaje">
+                    <option>Ida</option>
+                    <option>Venida</option>
+                </select>
                 <span asp-validation-for="TipoViaje" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
-                <input asp-for="Estado" class="form-control" />
+                <input asp-for="Estado" class="form-control" readonly="readonly" value="Disponible"/>
                 <span asp-validation-for="Estado" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cupos" class="control-label"></label>
-                <input asp-for="Cupos" class="form-control" />
+                <input asp-for="Cupos" class="form-control" type="number"  min="1" required/>
                 <span asp-validation-for="Cupos" class="text-danger"></span>
             </div>
             <div class="form-group">

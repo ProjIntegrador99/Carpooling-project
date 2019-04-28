@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Juan\\source\\repos\\Carpooling\\Carpooling\\Carpooling.csproj": {}
+    "C:\\Users\\Alejandro Narvaez\\Source\\Repos\\Carpooling-project\\Carpooling\\Carpooling.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Juan\\source\\repos\\Carpooling\\Carpooling\\Carpooling.csproj": {
+    "C:\\Users\\Alejandro Narvaez\\Source\\Repos\\Carpooling-project\\Carpooling\\Carpooling.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Juan\\source\\repos\\Carpooling\\Carpooling\\Carpooling.csproj",
+        "projectUniqueName": "C:\\Users\\Alejandro Narvaez\\Source\\Repos\\Carpooling-project\\Carpooling\\Carpooling.csproj",
         "projectName": "Carpooling",
-        "projectPath": "C:\\Users\\Juan\\source\\repos\\Carpooling\\Carpooling\\Carpooling.csproj",
-        "packagesPath": "C:\\Users\\Juan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Juan\\source\\repos\\Carpooling\\Carpooling\\obj\\",
+        "projectPath": "C:\\Users\\Alejandro Narvaez\\Source\\Repos\\Carpooling-project\\Carpooling\\Carpooling.csproj",
+        "packagesPath": "C:\\Users\\Alejandro Narvaez\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alejandro Narvaez\\Source\\Repos\\Carpooling-project\\Carpooling\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Juan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alejandro Narvaez\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

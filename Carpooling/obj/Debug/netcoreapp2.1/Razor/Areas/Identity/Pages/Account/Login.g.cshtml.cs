@@ -70,7 +70,7 @@ using Carpooling.Areas.Identity.Pages.Account;
             WriteLiteral("\r\n<!doctype html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(44, 1432, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "30cf6eaacc74429d9753c6a22da90598", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb82ebc2affd4d8f9ff8d60fdef6f666", async() => {
                 BeginContext(50, 1173, true);
                 WriteLiteral(@"
     <meta charset=""utf-8"">
@@ -112,12 +112,12 @@ using Carpooling.Areas.Identity.Pages.Account;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(1478, 1648, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0276e26cc48d4524ac2fe2ff33a34974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9de55773282149f6a8ae6f8a61e8ddd9", async() => {
                 BeginContext(1484, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(1490, 1022, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "438b0d4c5ae74389bbc32a056818cf15", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "370e39dbb10e485993025be0740cc67e", async() => {
                     BeginContext(1516, 847, true);
                     WriteLiteral(@"
         <div class=""text-center mb-4"">
@@ -143,7 +143,7 @@ using Carpooling.Areas.Identity.Pages.Account;
         ");
                     EndContext();
                     BeginContext(2363, 56, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f4983b077f1b4140b114f172673b9fd2", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea2f5582f93040428183bca4b7b817dc", async() => {
                         BeginContext(2394, 21, true);
                         WriteLiteral("Forgot your password?");
                         EndContext();

@@ -64,12 +64,12 @@ using Carpooling.Models;
 #line default
 #line hidden
             BeginContext(131, 192, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22a313a7e73a4b62b42a098fbbd2f4b3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5565d9ba20a34d3d8648ebc746a4d3da", async() => {
                 BeginContext(137, 107, true);
                 WriteLiteral("\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    ");
                 EndContext();
                 BeginContext(244, 51, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ea5727785ddb40b488359032bac81972", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "a8598d1ee93b4b6e9a25c66da0b1c7ca", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -103,12 +103,12 @@ using Carpooling.Models;
             WriteLiteral("\n");
             EndContext();
             BeginContext(324, 1674, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "95a7ad4b40cc4d7fac4c55b66d72dbfe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65f11be1fd3344aa8eb864d374e617ed", async() => {
                 BeginContext(330, 48, true);
                 WriteLiteral("\n    <div id=\"botones\">\n        <p>\n            ");
                 EndContext();
                 BeginContext(378, 59, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83778ac04f0e43e8a43ef573f7769941", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bc26a57a6f8941e5b79b8017fd8e998b", async() => {
                     BeginContext(428, 5, true);
                     WriteLiteral("Crear");
                     EndContext();

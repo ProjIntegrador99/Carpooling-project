@@ -1,0 +1,19 @@
+﻿body {
+    text-align: center;
+
+}
+
+table {
+   
+    border-collapse: separate;
+    
+}
+
+tbody {
+    border-spacing: 40px 10px;
+}
+
+thead {
+    margin: 0;
+    background-color: red;
+}

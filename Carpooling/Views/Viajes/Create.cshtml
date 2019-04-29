@@ -9,25 +9,22 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 
-<link  rel="stylesheet" href="~/css/crearViaje.css" />
+<link rel="stylesheet" href="~/css/crearViaje.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 
-<br />
-<h2>Crea un cupo</h2><br />
-<hr />
-<br />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<div class="row" id="container">
+    <div class="col-md-4" id="hola">
+        <h2>Publica tu cupo</h2>
+        <form asp-action="Create" class="form__reg" id="form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Descripcion" class="control-label"></label>
                 <input asp-for="Descripcion" class="form-control" />
-                <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Hora" class="control-label"></label>
-                <input asp-for="Hora" class="form-control" />
-                <span asp-validation-for="Hora" class="text-danger"></span>
+                <input asp-for="Hora" class="form-control" type="datetime-local" placeholder="&#x231A;" />
             </div>
             <div class="form-group">
                 <label asp-for="TipoViaje" class="control-label"></label>
@@ -35,17 +32,14 @@
                     <option value="Ida">Ida</option>
                     <option value="Regreso">Regreso</option>
                 </select>
-                <span asp-validation-for="TipoViaje" class="text-danger"></span>
-            </div>
+               </div>
             <div class="form-group">
                 <label asp-for="Estado" class="control-label"></label>
                 <input asp-for="Estado" class="form-control" value="Disponible" readonly="readonly" required />
-                <span asp-validation-for="Estado" class="text-danger"></span>
-            </div>
+                </div>
             <div class="form-group">
                 <label asp-for="Cupos" class="control-label"></label>
-                <input asp-for="Cupos" class="form-control" type="number" min="1"/>
-                <span asp-validation-for="Cupos" class="text-danger"></span>
+                <input asp-for="Cupos" class="form-control" type="number" min="1" />
             </div>
             <div class="form-group">
                 <label asp-for="NombreConductor" class="control-label"></label>
@@ -53,11 +47,10 @@
                     SelectList currentUser = new SelectList(new List<String> { UserManager.GetUserName(User) }, "UserName");
                 }
                 <select asp-for="NombreConductor" class="form-control" asp-items=@currentUser ></select>
-                <span asp-validation-for="NombreConductor" class="text-danger"></span>
-            </div>
+               </div>
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Publicar" class="boton" />
             </div>
         </form>
     </div>

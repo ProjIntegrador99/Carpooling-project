@@ -43,10 +43,6 @@ namespace Carpooling.Areas.Identity.Pages.Account
             [Required]
             [Display(Name = "Nombre")]
             public string Nombre { get; set; }
-        
-            [Required]
-            [Display(Name = "UserName")]
-            public string UserName { get; set; }
 
             [Required]
             [Display(Name = "Apellido")]
@@ -105,7 +101,7 @@ namespace Carpooling.Areas.Identity.Pages.Account
             {
                 var user = new Usuario
                 {
-                    UserName = Input.UserName,
+                    UserName = Input.Email,
                     Nombre = Input.Nombre,
                     Nick = Input.Nick,
                     Apellido = Input.Apellido,

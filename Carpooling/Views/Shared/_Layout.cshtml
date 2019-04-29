@@ -55,13 +55,17 @@
                         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hola!! @UserManager.GetUserName(User)!</a>
+                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hola @UserManager.GetUserName(User)</a>
                                 </li>
                                 <li>
                                     <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
                                 </li>
                             </ul>
                         </form>
+
+                    <li>
+                        <a href="/Home/Index/"><span an class="bottom"><i class="icon icon-home"></i></span>Home</a>
+                    </li>
                     <li>
                         <a href="#"><span an class="bottom"><i class="icon icon-user"></i></span>Perfil</a>
                         <ul>
@@ -117,9 +121,6 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; 2019 - Carpooling</p>
-        </footer>
     </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

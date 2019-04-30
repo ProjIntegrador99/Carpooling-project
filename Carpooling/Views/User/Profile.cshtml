@@ -175,8 +175,9 @@
 
                                         @foreach (var item in Model)
                                         {
-                                            if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                            if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
                                             {
+<<<<<<< HEAD
                                             <tr>
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.Descripcion)
@@ -206,6 +207,42 @@
                             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
                                                 </td>
                                             </tr>
+=======
+                                               // @UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Nombre
+                                                <tr>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Hora)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.TipoViaje)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Estado)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Cupos)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.NombreConductor)
+                                                    </td>
+
+
+
+
+                                                    <td>
+                                                        <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                                                        <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
+                                                        <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
+                                                        <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
+                                                        @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                                    </td>
+                                                </tr>
+>>>>>>> b5ce49ea0b2f8ef9e06bda93564285a62c6ffe90
                                             }
                                         }
                             </tbody>

@@ -47,6 +47,7 @@ namespace Carpooling.Controllers
         // GET: Viajes/Create
         public IActionResult Create()
         {
+            ViewData["conductor"] = User.Identity.Name;
             return View();
         }
 

@@ -6,15 +6,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="~/css/StyleTable.css">
+   @* <link rel="stylesheet" href="~/css/StyleTable.css">*@
     <title></title>
 </head>
 <body>
-    <div id="botones">
-        <p>
-            <a asp-controller="Vehiculos" asp-action="Create">Crear</a>
-        </p>
-    </div>
+    <br /><br /><br /><br /><br />
+    <p>
+        <a asp-action="Create">Agrega un vehiculo!</a>
+    </p>
     <div id="container">
         <table>
             <thead>
@@ -48,9 +47,9 @@
                         <a asp-action="Delete" asp-route-id="@item.Placa">Delete</a>
                     </td>
                 </tr>
-                }*@
+                }
             @for (int i = 0; i < 2; i++)
-            {
+                {
                 <tr>
                     <td> Juanda</td>
                     <td> Ppapa</td>
@@ -60,44 +59,5 @@
         </table>
     </div>
 </body>
-@*<!DOCTYPE html>
-    <html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="~/css/StyleTable.css">
-        <title></title>
-    </head>
 
-    <body>
-        <div id="container">
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Descripcion</th>
-                        <th>Mes</th>
-                        <th>Costo</th>
-                    </tr>
-                </thead>
-                <tr>
-                    <td>Agua</td>
-                    <td>Enero</td>
-                    <td>$3,000</td>
-                </tr>
-                <tr>
-                    <td>Agua</td>
-                    <td>Enero</td>
-                    <td>$3,000</td>
-                </tr>
-                <tr>
-                    <td>Agua</td>
-                    <td>Enero</td>
-                    <td>$3,000</td>
-                </tr>
-
-            </table>
-        </div>
-    </body>
-    </html>*@
 

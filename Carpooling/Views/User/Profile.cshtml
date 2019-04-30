@@ -3,14 +3,15 @@
 
 @{
     ViewData["Title"] = "Profile";
+
 }
 
 @using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
->
 
+<br/><br /><br /><br />
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
@@ -34,10 +35,6 @@
 
                 <a href="#"></a>
             </div>
-
-
-
-
             <div class="card-profile_user-stats">
                 <div class="stats-holder">
                     <div class="user-stats">
@@ -61,7 +58,6 @@
         </div>
 
     </div>
-
 
     <div class="cont">
 
@@ -127,20 +123,10 @@
                                 <span>4.5</span>
                             </div>
                             <br />
-
-                           
-
-
-                            <br />
-
-
-
                             <br />
                             <br />
-
+                            <br />
                         </td>
-
-
                         <div class="text-left">
 
                             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" style="font-family:'Times New Roman', Times, serif ;color: white; background-color:crimson; border: crimson">
@@ -148,37 +134,21 @@
                             </a>
 
                         </div>
-
-
-
                     </div>
                 </div>
 
             </div>
-
         </div>
-
-
-
     </div>
-
-
     <div class="cont1">
-
-
         <div class="derecha">
-
-
             <div class="info-profile3">
                 <h1 align="Center" color="#ffffff">Publicaciones </h1>
                 <br /><br /><br />
-
                 <div class="info-profile_user-stats">
                     <div class="stats-holder">
-
-
                         <table class="table">
-                                    <thead>
+                            <thead>
                                         <tr>
                                             <th>
                                                 @Html.DisplayNameFor(model => model.Descripcion)
@@ -200,8 +170,8 @@
                                             </th>
                                             <th></th>
                                         </tr>
-                                    </thead>
-                                    <tbody>
+                            </thead>
+                            <tbody>
 
                                         @foreach (var item in Model)
                                         {
@@ -226,10 +196,6 @@
                                                 <td>
                                                     @Html.DisplayFor(modelItem => item.NombreConductor)
                                                 </td>
-
-
-
-
                                                 <td>
                                                     <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
                                                     <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
@@ -242,60 +208,13 @@
                                             </tr>
                                             }
                                         }
-                                    </tbody>
-                                </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </body>
 
 

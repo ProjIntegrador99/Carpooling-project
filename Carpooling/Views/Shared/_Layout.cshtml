@@ -5,114 +5,68 @@
 
 <!DOCTYPE html>
 <html>
-@*<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="~/css/fonts/styleFonts.css">
-        <link rel="stylesheet" href="~/css/StyleGeneral.css">
-
-        <environment exclude="Development">
-            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        </environment>
-    </head>*@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="~/css/fonts/styleFonts.css">
-    <link rel="stylesheet" href="~/css/StyleGeneral.css">
+    <link rel="stylesheet" href="~/css/combined.css">
+
 </head>
 <body>
-    @*<nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Carpooling</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Vehiculo" asp-action="Index">Vehiculos</a></li>
-                    <li><a asp-area="" asp-controller="Viajes" asp-action="Index">Viajes</a></li>
-                    <li><a asp-area="" asp-controller="Tribus" asp-action="Index">Tribus</a></li>
-                </ul>
-                <partial name="_LoginPartial" />
-            </div>
-        </div>*@
-    <header>
-        <nav>
-            <ul>
-                <li>
+    <header class="nk-header">
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top" style="background-color:black;">
+            <div class="container">
+                <div class="nk-nav-table">
+                    <a href="/Home/Index" class="nk-nav-logo">
+                        <img src="~/images/logo-light.svg" alt="" width="85" class="nk-nav-logo-onscroll">
+                        <img src="~/images/logo.svg" alt="" width="85">
+                    </a>
                     @if (SignInManager.IsSignedIn(User))
                     {
                         <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })" method="post" id="logoutForm" class="navbar-right">
                             <ul class="nav navbar-nav navbar-right">
                                 <li>
-                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hola @UserManager.GetUserName(User)</a>
-                                </li>
-                                <li>
+                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">     &nbsp Hola @UserManager.GetUserName(User)</a>
                                     <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
                                 </li>
                             </ul>
                         </form>
+                    }
+                    <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+                        @if (SignInManager.IsSignedIn(User))
+                        {
 
-                    <li>
-                        <a href="/Home/Index/"><span an class="bottom"><i class="icon icon-home"></i></span>Home</a>
-                    </li>
-                    <li>
-                        <a href="/User/Profile/"><span an class="bottom"><i class="icon icon-user"></i></span>Perfil</a>
-                    </li>
-                    <li>
-                        <a href="#"><span class="V"><i class="icon icon-truck"></i></span>Vehiculos</a>
-                        <ul>
-                            <li><a asp-controller="Vehiculos" asp-action="Create">Crear Vehiculo</a></li>
-                            <li><a asp-controller="Vehiculos" asp-action="Index">Tabla de vehiculos</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span class="T"><i class="icon icon-make-group"></i></span>Tribus</a>
-                        <ul>
-                            <li><a asp-controller="Tribus" asp-action="Create">Crear Tribu</a></li>
-                            <li><a asp-controller="Tribus" asp-action="Index">Tabla de tribus</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><span an class="VI"><i class="icon icon-airplane"></i></span>Viajes</a>
-                        <ul>
-                            <li><a asp-controller="Viajes" asp-action="Create">Crear Viaje</a></li>
-                            <li><a asp-controller="Viajes" asp-action="Index">Tabla de viajes</a></li>
-                        </ul>
-                    </li>
-                }
-                else
-                {
-                    <a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
-                    <ul>
-                        <li><a asp-area="Identity" asp-page="/Account/Register">Registrar Usuario</a></li>
-                        <li><a asp-area="Identity" asp-page="/Account/Login">Iniciar Sesion</a></li>
+                            <li>
+                                <a href="/User/Profile">Mi Perfil</a>
+
+                            </li>
+                            <li>
+                                <a href="/Viajes/Index">Muro de Viajes</a>
+                            </li>
+                            <li>
+                                <a href="/Vehiculos/Index">Mis Vehiculos</a>
+                            </li>
+                            <li>
+                                <a href="/Tribus/Index">Mis Tribus</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="/Identity/Account/Login">Iniciar sesión</a>
+                            </li>
+                            <li>
+                                <a href="/Identity/Account/Register">Registrarse</a>
+                            </li>
+                        }
                     </ul>
-
-                }
-                    @*<a href="#"><span class="I"><i class="icon icon-airplane"></i></span>Inicio</a>
-            <ul>
-                <li><a href="#">Registrar Usuario</a></li>
-                <li><a href="#">Iniciar Sesion</a></li>
-            </ul>*@
-
-
-
-</nav>
+                </div>
+            </div>
+        </nav>
     </header>
-    @*</nav>*@
+
     <partial name="_CookieConsentPartial" />
-    <div class="container-fluid body-content">
+    <div class="">
         @RenderBody()
     </div>
     <environment include="Development">
@@ -136,5 +90,14 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
+    <footer class="nk-footer">
+            <div class="nk-footer-cont">
+                <div class="container text-xs-center">
+                    <div class="nk-footer-text">
+                        <p>2019 &copy; Carpooling</p>
+                    </div>
+                </div>
+            </div>
+    </footer>
 </body>
 </html>

@@ -202,13 +202,12 @@
                                                     <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
                                                     <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
                                                     <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
-                                                   @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+                                                   <a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
                             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>
                                                 </td>
                                             </tr>
-=======
-                                               // @UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Nombre
+                                                @UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Nombre
                                                 <tr>
                                                     <td>
                                                         @Html.DisplayFor(modelItem => item.Descripcion)
@@ -237,12 +236,11 @@
                                                         <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
                                                         <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
                                                         <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
-                                                        @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+                                                        <a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
                         <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>
                                                     </td>
                                                 </tr>
->>>>>>> b5ce49ea0b2f8ef9e06bda93564285a62c6ffe90
                                             }
                                         }
                             </tbody>

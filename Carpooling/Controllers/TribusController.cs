@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Carpooling.Data;
 using Carpooling.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Carpooling.Controllers
 {
@@ -22,7 +23,12 @@ namespace Carpooling.Controllers
         // GET: Tribus
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Tribu.ToListAsync());
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+            //return View(await _context.Tribu.ToListAsync());
+            //return View(await _context.Tribu.Select(m => new { estaContenido = _context.UsuariosTribus.Any(j => j.UsuarioId.Equals(currentUser.Id)), t = m }).Where(k => k.estaContenido).Select(p => p.t).ToListAsync());
+            var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
+            return View(await _context.Tribu.Where(i => m.Contains(i.Id)).ToListAsync());
         }
 
         // GET: Tribus/Details/5
@@ -58,6 +64,16 @@ namespace Carpooling.Controllers
         {
             if (ModelState.IsValid)
             {
+                string currentUserName = User.Identity.Name;
+                Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+                UsuarioTribu m = new UsuarioTribu()
+                {
+                    UsuarioId = currentUser.Id,
+                    TribuId = tribu.Id,
+                    Tribus = tribu,
+                    Usuarios = currentUser
+                };
+                _context.UsuariosTribus.Add(m);     
                 _context.Add(tribu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

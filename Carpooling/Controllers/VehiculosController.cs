@@ -22,9 +22,13 @@ namespace Carpooling.Controllers
         // GET: Vehiculoes
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Vehiculo.ToListAsync());
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+
+            return View(await _context.Vehiculo.Where(i => i.UsuarioId.Equals(currentUser.Id)).ToListAsync());
         }
 
+        ///
         // GET: Vehiculoes/Details/5
         public async Task<IActionResult> Details(string id)
         {
@@ -58,10 +62,14 @@ namespace Carpooling.Controllers
         {
             if (ModelState.IsValid)
             {
+                string currentUserName = User.Identity.Name;
+                Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+                vehiculo.UsuarioId = currentUser.Id;
                 _context.Add(vehiculo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+
             return View(vehiculo);
         }
 

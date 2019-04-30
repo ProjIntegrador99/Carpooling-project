@@ -9,7 +9,11 @@ namespace Carpooling.Models
 {
     public class Usuario : IdentityUser
     {
-        public Usuario() : base() { }
+        public Usuario() : base() {
+            this.UsuariosViajes = new HashSet<UsuarioViaje>();
+            this.Vehiculos = new HashSet<Vehiculo>();
+            this.UsuariosTribus = new HashSet<UsuarioTribu>();
+        }
 
         [Required]
         public String Nombre { get; set; }

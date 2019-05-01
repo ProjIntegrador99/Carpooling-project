@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="~/css/TablaVehiculo.css">
     <title></title>
 </head>
+
 <body>
     <br /><br /><br /><br /><br />
   
@@ -37,9 +38,13 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Marca)
                     </th>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Placa)
+                    </td>
                     <th>
                         @Html.DisplayNameFor(model => model.Modelo)
                     </th>
+
                     <th>
                         @Html.DisplayNameFor(model => model.Color)
                     </th>
@@ -52,17 +57,20 @@
                     @Html.DisplayFor(modelItem => item.Marca)
                 </td>
                 <td>
+                    @Html.DisplayFor(modelItem => item.Placa)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => item.Modelo)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Color)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.Placa" class="btn btn-info">Edit</a> 
+                    <a asp-action="Edit" asp-route-id="@item.Placa" class="btn btn-info">Edit</a>
                 </td>
                 <td>
 
-                    <a asp-action="Details" asp-route-id="@item.Placa" class="btn btn-info">Details</a> 
+                    <a asp-action="Details" asp-route-id="@item.Placa" class="btn btn-info">Details</a>
                 </td>
                 <td>
                     <a asp-action="Delete" asp-route-id="@item.Placa" class="btn btn-info">Delete</a>

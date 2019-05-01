@@ -58,7 +58,7 @@
                 <div class="stats-holder">
                     <div class="user-stats">
                         <strong>Viajes</strong>
-                        <span>@Model.ToList().Count()</span>
+                        <span>@Model.ToList().Where(j=> j.NombreConductor.Equals(@UserManager.GetUserName(User))).Count()</span>
                     </div>
 
 
@@ -226,15 +226,15 @@
                                            
 
                                             <td>
-                                                <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
+                                                <button onclick="location.href='https://localhost:44372/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
                                             </td>
 
                                             <td>
-                                                <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
+                                                <button onclick="location.href='https://localhost:44372/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
                                             </td>
 
                                             <td>
-                                                <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
+                                                <button onclick="location.href='https://localhost:44372/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
                                                 @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
             <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@

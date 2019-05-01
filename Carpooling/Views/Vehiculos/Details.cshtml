@@ -5,17 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>Vehiculo</h4>
-    <hr />
-    <dl class="dl-horizontal">
+<link rel="stylesheet" href="~/css/crearViaje.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
+
+
+
+<div class="row" id="container">
+    
+  
+    <dl class="col-md-4" id="hola">
+        <h4>detalles de Vehiculo</h4>
         <dt>
             @Html.DisplayNameFor(model => model.Marca)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Marca)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Placa)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Modelo)
@@ -29,9 +42,13 @@
         <dd>
             @Html.DisplayFor(model => model.Color)
         </dd>
+
+        <div>
+            <a asp-action="Edit" asp-route-id="@Model.Placa">Edit</a>
+        </div>
+        <div>
+            <a asp-action="Index">Back to List</a>
+        </div>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Placa">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+

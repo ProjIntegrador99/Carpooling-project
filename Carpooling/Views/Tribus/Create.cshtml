@@ -5,14 +5,23 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
 
-<h4>Tribu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+<link rel="stylesheet" href="~/css/crearVehiculo.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<br /><br /><br />
+
+<div class="row" id="container">
+    <div id="particles-js"></div>
+    <div class="col-md-4" id="hola">
+        <h2>Crear tu tribu</h2>
+        <form asp-action="Create" class="form__reg" id="form">
+            <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nombre" class="control-label"></label>
                 <input asp-for="Nombre" class="form-control" />
@@ -31,13 +40,17 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
         </form>
     </div>
 </div>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="particles.min.js"></script>
+<script src="particulas.js"></script>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

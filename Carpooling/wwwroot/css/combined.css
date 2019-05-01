@@ -6259,15 +6259,15 @@ b, strong {
 }
 
     .nk-header.nk-header-opaque, .nk-navbar {
-        position: relative
+        position: relative;
     }
 
 .nk-navbar {
-    padding: 33px 0;
+    padding: 19px 0;
     font-size: .96rem;
     z-index: 1000;
     transition: background-color .3s;
-    will-change: background-color
+    will-change: background-color;
 }
 
     .nk-navbar .container-fluid .nk-nav-table {

@@ -1,5 +1,8 @@
 ﻿body {
-    margin : 0;
+    margin: 0;
+    background: url(../images/fondo_animado2.gif);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 * {
@@ -12,22 +15,24 @@
 }
 
 .formulario {
-     background : #ffffff;
-     margin-top : 150px;
-     padding : 30px;
+    background: #ffffff;
+    margin-top: 150px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
 }
 
-h4 {
+h1 {
     text-align : center;
     color : #1a2537;
     font-size : 40px;
 }
 
-input[type="text"], input[type="password"] {
-    font-size : 20px;
-    width : 82%;
-    padding : 10px;
-    border : none;
+input[type="text"], input[type="password"], input[type="email"], input[type="datetime-local"],
+select, input[type="number"] {
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border: none;
 }
 
 .input-contenedor {

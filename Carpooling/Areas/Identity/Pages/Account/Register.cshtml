@@ -1,77 +1,30 @@
 ﻿@page
 @model RegisterModel
-@{
-    ViewData["Title"] = "Register";
-}
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <link rel="stylesheet" href="~/css/registerStyles.css" />
 
-<h2>@ViewData["Title"]</h2>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <h4>Create a new account.</h4>
-            <hr />
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Input.Nombre"></label>
-                <input asp-for="Input.Nombre" class="form-control" />
-                <span asp-validation-for="Input.Nombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Apellido"></label>
-                <input asp-for="Input.Apellido" class="form-control" />
-                <span asp-validation-for="Input.Apellido" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Nick"></label>
-                <input asp-for="Input.Nick" class="form-control" />
-                <span asp-validation-for="Input.Nick" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Direccion"></label>
-                <input asp-for="Input.Direccion" class="form-control" />
-                <span asp-validation-for="Input.Direccion" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Ciudad"></label>
-                <input asp-for="Input.Ciudad" class="form-control" />
-                <span asp-validation-for="Input.Ciudad" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.PhoneNumber"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Area"></label>
-                <input asp-for="Input.Area" class="form-control" />
-                <span asp-validation-for="Input.Area" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Pais"></label>
-                <input asp-for="Input.Pais" class="form-control" />
-                <span asp-validation-for="Input.Pais" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                <input asp-for="Input.Email" class="form-control" />
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Contraseña"></label>
-                <input asp-for="Input.Contraseña" class="form-control" />
-                <span asp-validation-for="Input.Contraseña" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.ConfirmacionContraseña"></label>
-                <input asp-for="Input.ConfirmacionContraseña" class="form-control" />
-                <span asp-validation-for="Input.ConfirmacionContraseña" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-default">Register</button>
-        </form>
-    </div>
-</div>
-
+</head>
+<body>
+    <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-register">
+        <h1>¡Únete a nosotros!</h1>
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="contenedor-inputs">
+            <input asp-for="Input.Nombre" placeholder="Nombres" type="text" class="input-48" required />
+            <input asp-for="Input.Apellido" placeholder="Apellidos" type="text" class="input-48" required />
+            <input asp-for="Input.Nick" placeholder="Nickname" type="text" class="input-100" required />
+            <input asp-for="Input.PhoneNumber" placeholder="Dirección" type="text" class="input-48" required />
+            <input asp-for="Input.Area" placeholder="Área de Trabajo" type="text" class="input-48" required />
+            <input asp-for="Input.Email" placeholder="Correo Electrónico" type="email" class="input-100" required />
+            <input asp-for="Input.PhoneNumber" placeholder="Teléfono" type="number" class="input-100" required />
+            <input asp-for="Input.Contraseña" placeholder="Contraseña" type="password" class="input-48" required />
+            <input asp-for="Input.ConfirmacionContraseña" placeholder="Confirma tu contraseña" type="password" class="input-48" required />
+            <input type="submit" value="Registrarse" class="button" />
+            <br /><br />
+            <p>¿Ya tienes cuenta?<a class="link" href="/Identity/Account/Register"> Inicia sesión aquí</a></p>
+        </div>
+    </form>
+</body>
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }

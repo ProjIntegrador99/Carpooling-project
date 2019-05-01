@@ -5,12 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<link rel="stylesheet" href="~/css/crearViaje.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 
-<div>
-    <h4>Viaje</h4>
-    <hr />
-    <dl class="dl-horizontal">
+
+
+<div class="row" id="container">
+    
+ 
+    
+    <dl class="col-md-4" id="hola">
+        <h2>Details</h2>
         <dt>
             @Html.DisplayNameFor(model => model.Descripcion)
         </dt>
@@ -48,7 +54,7 @@
             @Html.DisplayFor(model => model.NombreConductor)
         </dd>
     </dl>
-</div>
+</divclass="row">
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>

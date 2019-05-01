@@ -1,22 +1,16 @@
 ﻿@model Carpooling.Models.Viaje
 
-@{
-    ViewData["Title"] = "Details";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
 <head>
-    <link rel="stylesheet" href="~/css/crearViaje.css" />
+    <link rel="stylesheet" href="~/css/detallesStyle.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 </head>
 <body>
-    <div>
-        <h2>Details</h2>
-        <dl>
-
+    <div class="contenedor">
+        <h1>Detalles de la publicación</h1>
+        <dl class="detalles">
             <dt>
-                @Html.DisplayNameFor(model => model.Descripcion)
+                Descripción
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Descripcion)
@@ -28,33 +22,30 @@
                 @Html.DisplayFor(model => model.Hora)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.TipoViaje)
+                Tipo de Viaje
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.TipoViaje)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Estado)
+                Estado del viaje
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Estado)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.Cupos)
+                Número de cupos disponibles
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.Cupos)
             </dd>
             <dt>
-                @Html.DisplayNameFor(model => model.NombreConductor)
+                Nombre del conductor
             </dt>
             <dd>
                 @Html.DisplayFor(model => model.NombreConductor)
             </dd>
         </dl>
-    </div>
-    <div>
-        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-        <a asp-action="Index">Back to List</a>
+        <input type="button" value="Volver al muro" class="button" onclick="location.href='/Viajes/Index'" />
     </div>
 </body>

@@ -60,3 +60,11 @@ tr:hover td {
     color: white;
 }
 
+#bot:active {
+    content: "Solicitado";
+    background: red;
+    opacity : 0.2;
+    cursor : default;
+}
+
+

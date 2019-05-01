@@ -1,0 +1,44 @@
+﻿body {
+    margin: 0;
+    background: url(../images/animado7.gif);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor{
+    background: #ffffff;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 500px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius : 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 30px;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button:hover {
+     background: cadetblue;
+}
+
+
+

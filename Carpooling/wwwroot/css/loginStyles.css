@@ -16,9 +16,10 @@
 
 .formulario {
     background: #ffffff;
-    margin-top: 150px;
+    margin : auto;
     padding: 30px;
     background: rgba(255, 255, 255, 0.8);
+    text-align : center;
 }
 
 h1 {

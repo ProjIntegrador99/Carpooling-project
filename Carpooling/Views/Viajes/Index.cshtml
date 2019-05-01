@@ -69,7 +69,7 @@
                     @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
                     {
                         <td>
-                            <a class="btn btn-info" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                            <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot">Solicitar</a>
                         </td>
                         <td>
                             <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
@@ -78,16 +78,16 @@
                     @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
                     {
                         <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
                         </td>
 
                         <td>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Delete</a>
+                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
                         </td>
                     }
 
                     <td>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
                     </td>
                 </tr>
                 }

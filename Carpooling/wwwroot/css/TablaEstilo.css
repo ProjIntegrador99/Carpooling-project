@@ -1,17 +1,12 @@
-﻿/*
-	Color fondo: #632432;
-	Color header: 246355;
-	Color borde: 0F362D;
-	Color iluminado: 369681;
-*/
-body{
-	background-color: #000000;
-	font-family: Arial;
+﻿.heading {
+    color : #ffffff;
 }
 
-#main-container{
-	margin: 150px 200px;
-	width: 600px;
+#main-container {
+    background: #ffffff;
+    margin-top: 90px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.6);
 }
 
 table{
@@ -19,24 +14,49 @@ table{
 	text-align: left;
 	border-collapse: collapse;
 	width: 100%;
+    border-radius : 15px;
 }
 
 th, td{
 	padding: 20px;
 }
 
-thead{
-	background-color: #246355;
-	border-bottom: solid 5px #0F362D;
-	color: white;
+h2 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #093c51;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.button:hover {
+    background: cadetblue;
+}
+
+thead {
+    background-color: #5e9dc4;
+    border-bottom: solid 5px #14526b;
+    color: white;
+    border-radius: 15px;
 }
 
 tr:nth-child(even){
 	background-color: #ddd;
+    margin : 0;
 }
 
-tr:hover td{
-	background-color: #369681;
-	color: white;
+tr:hover td {
+    background-color: #14526b;
+    color: white;
 }
 

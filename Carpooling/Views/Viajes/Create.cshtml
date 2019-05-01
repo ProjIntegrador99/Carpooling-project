@@ -13,6 +13,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+    <style>
+        body {
+            margin: 0;
+            background: url(../images/animado6.gif);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
     <form asp-action="Create" class="formulario">
@@ -29,7 +37,7 @@
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-truck-pickup icon"></i>
-                <select>
+                <select asp-for="TipoViaje">
                     <option value="Ida">Ida</option>
                     <option value="Regreso">Regreso</option>
                 </select>

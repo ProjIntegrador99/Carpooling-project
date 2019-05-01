@@ -5,7 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <h2>Index</h2>
+
 
 <head>
     <meta charset="utf-8">
@@ -14,29 +16,35 @@
     <title></title>
 </head>
 
+
 <body>
 
     <div id="main-container"
 
-         
-         <head>
+   
+        <head>
+
             <style>
                 .heading {
                     color: #ffffff;
                 }
             </style>
         </head>
-        <h2 class="heading" align="center">Muro de Tribus</h2>
 
-
-          <p>
-        <a asp-action="Create" class="btn btn-info">Agrega una Tribu!</a>
-          </p>
-
-
+     
     <table>
         <thead>
         
+
+        <h2 class="heading" align="center">Tribus</h2>
+
+        <p>
+            <a asp-action="Create" class="btn btn-info"> Crear Tribu</a>
+        </p>
+
+      <table>
+        <thead>
+
             <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.Nombre)
@@ -47,6 +55,7 @@
                 <th>
                     @Html.DisplayNameFor(model => model.GeneroMusical)
                 </th>
+
                 <th></th>
             </tr>
         </thead>

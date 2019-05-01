@@ -27,7 +27,8 @@ h1 {
     font-size : 40px;
 }
 
-input[type="text"], input[type="password"], input[type="email"] {
+input[type="text"], input[type="password"], input[type="email"], input[type="datetime-local"],
+select, input[type="number"] {
     font-size: 20px;
     width: 82%;
     padding: 10px;

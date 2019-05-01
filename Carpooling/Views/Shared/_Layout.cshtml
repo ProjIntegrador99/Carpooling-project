@@ -14,12 +14,12 @@
 </head>
 <body>
     <header class="nk-header">
-        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top" style="background-color:black;">
+        <nav class="nk-navbar nk-navbar-top nk-navbar-sticky nk-navbar-transparent nk-navbar-white-text-on-top">
             <div class="container">
                 <div class="nk-nav-table">
                     <a href="/Home/Index" class="nk-nav-logo">
                         <img src="~/images/Cb.png" alt="" width="45" class="nk-nav-logo-onscroll">
-                        <img src="~/images/logo.svg" alt="" width="85">
+                        <img src="~/images/Cn.png" alt="" width="45">
                     </a>
                     @if (SignInManager.IsSignedIn(User))
                     {
@@ -90,14 +90,15 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
-    <footer class="nk-footer">
-            <div class="nk-footer-cont">
-                <div class="container text-xs-center">
-                    <div class="nk-footer-text">
-                        <p>2019 &copy; Carpooling</p>
+    @*<footer class="nk-footer">
+                <div class="nk-footer-cont">
+                    <div class="container text-xs-center">
+                        <div class="nk-footer-text">
+                            <p>2019 &copy; Carpooling</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-    </footer>
+        </footer>*@
+    <script src="../js/combined.js"></script>
 </body>
 </html>

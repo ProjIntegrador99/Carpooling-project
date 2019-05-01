@@ -11,7 +11,26 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 
-<br/><br /><br /><br />
+<br /><br /><br /><br />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
@@ -30,7 +49,7 @@
             <div class="card-profile_visual"></div>
 
             <div class="card-profile_user-infos">
-               
+
                 <span class="infos_name">@UserManager.GetUserName(User)</span>
 
                 <a href="#"></a>
@@ -149,100 +168,91 @@
                     <div class="stats-holder">
                         <table class="table">
                             <thead>
-                                        <tr>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Descripcion)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Hora)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.TipoViaje)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Estado)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.Cupos)
-                                            </th>
-                                            <th>
-                                                @Html.DisplayNameFor(model => model.NombreConductor)
-                                            </th>
-                                            <th></th>
-                                        </tr>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Hora)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoViaje)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cupos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NombreConductor)
+                                    </th>
+                                    <th></th>
+                                </tr>
                             </thead>
                             <tbody>
 
-                                        @foreach (var item in Model)
-                                        {
-                                            if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
-                                            {
-<<<<<<< HEAD
-                                            <tr>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Descripcion)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Hora)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.TipoViaje)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Estado)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.Cupos)
-                                                </td>
-                                                <td>
-                                                    @Html.DisplayFor(modelItem => item.NombreConductor)
-                                                </td>
-                                                <td>
-                                                    <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
-                                                    <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
-                                                    <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
-                                                    <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
-                                                   <a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>
-                                                </td>
-                                            </tr>
-                                                @UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Nombre
-                                                <tr>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Descripcion)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Hora)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.TipoViaje)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Estado)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.Cupos)
-                                                    </td>
-                                                    <td>
-                                                        @Html.DisplayFor(modelItem => item.NombreConductor)
-                                                    </td>
+                                @foreach (var item in Model)
+                                {
+                                    if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                                    {
+                                      
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Descripcion)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Hora)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.TipoViaje)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Estado)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Cupos)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.NombreConductor)
+                                            </td>
+                                           
+                                        </tr>
+
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+
+                                            <td>
+                                                <a class="btn btn-info" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                                            </td>
+
+                                            <td>
+                                                <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
+                                            </td>
+
+                                            <td>
+                                                <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
+                                            </td>
+
+                                            <td>
+                                                <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
+                                                @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                            </td>
 
 
 
 
-                                                    <td>
-                                                        <a class="solicitar" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
-                                                        <button onclick="location.href='https://localhost:44396/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
-                                                        <button onclick="location.href='https://localhost:44396/Viajes/Details/'+@item.Id" class="btn btn-info">Details</button>
-                                                        <button onclick="location.href='https://localhost:44396/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
-                                                        <a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>
-                                                    </td>
-                                                </tr>
-                                            }
-                                        }
+                                        </tr>
+                                      
+                                        
+
+
+
+                                    }
+                                }
                             </tbody>
                         </table>
                     </div>

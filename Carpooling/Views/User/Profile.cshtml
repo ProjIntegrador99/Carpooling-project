@@ -192,6 +192,7 @@
                             </thead>
                             <tbody>
 
+
                                 @foreach (var item in Model)
                                 {
                                     if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
@@ -251,6 +252,7 @@
 
                                     }
                                 }
+
                             </tbody>
                         </table>
                     </div>

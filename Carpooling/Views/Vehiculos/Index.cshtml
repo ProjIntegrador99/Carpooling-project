@@ -6,15 +6,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   @* <link rel="stylesheet" href="~/css/StyleTable.css">*@
+    <link rel="stylesheet" href="~/css/TablaVehiculo.css">
     <title></title>
 </head>
 <body>
     <br /><br /><br /><br /><br />
-    <p>
-        <a asp-action="Create">Agrega un vehiculo!</a>
-    </p>
-    <div id="container">
+  
+    <div id="main-container">
+
+
+         <head>
+            <style>
+                .heading {
+                    color: #ffffff;
+                }
+            </style>
+        </head>
+        <h2 class="heading" align="center">Muro de Vehiculos</h2>
+
+
+          <p>
+        <a asp-action="Create" class="btn btn-info">Agrega un vehiculo!</a>
+          </p>
+
+
+
         <table>
             <thead>
                 <tr>
@@ -31,31 +47,29 @@
             </thead>
             @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>
-                        @Html.DisplayFor(modelItem => item.Marca)
-                        </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Modelo)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Color)
-                    </td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.Placa">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Placa">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Placa">Delete</a>
-                    </td>
-                </tr>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Marca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Modelo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Placa" class="btn btn-info">Edit</a> 
+                </td>
+                <td>
+
+                    <a asp-action="Details" asp-route-id="@item.Placa" class="btn btn-info">Details</a> 
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.Placa" class="btn btn-info">Delete</a>
+                </td>
+            </tr>
                 }
-            @for (int i = 0; i < 2; i++)
-                {
-                <tr>
-                    <td> Juanda</td>
-                    <td> Ppapa</td>
-                    <td> Leo matsi</td>
-                </tr>
-            }
+          
         </table>
     </div>
 </body>

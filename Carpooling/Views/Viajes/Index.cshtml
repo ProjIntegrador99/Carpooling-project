@@ -5,64 +5,94 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/publicacionesCupos.css"/>
+<link rel="stylesheet" href="~/css/TablaEstilo.css" />
 
-<br /><h2>Muro de publicaciones</h2><br />
+<br>
 
-<p>
-    <a asp-action="Create">Publica tu cupo!</a><br /><br />
-</p>
-<table class="table" style="width: 100%; text-align:center;">
-    <thead>
-        <tr>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.Descripcion)
-            </th>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.Hora)
-            </th>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.TipoViaje)
-            </th>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.Cupos)
-            </th>
-            <th colspan="2">
-                @Html.DisplayNameFor(model => model.NombreConductor)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.Descripcion)
-            </td>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.Hora)
-            </td>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.TipoViaje)
-            </td>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.Cupos)
-            </td>
-            <td colspan="2">
-                @Html.DisplayFor(modelItem => item.NombreConductor)
-            </td>
-            <td colspan="2">
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+
+<br />
+
+
+
+
+<div id="main-container" >
+    <table class="table" style="width: 100%; text-align:center;">
+        <head>
+            <style>
+                .heading {
+                    color: #ffffff;
+                }
+            </style>
+        </head>
+        <h2 class="heading" align="right">Muro de publicaciones</h2>
+        <p >
+            <a asp-action="Create" align="right" class="btn btn-info">Publica tu cupo!</a><br /><br />
+        </p>
+        <br />
+        <thead>
+
+            <tr>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.Descripcion)
+                </th>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.Hora)
+                </th>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.TipoViaje)
+                </th>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.Estado)
+                </th>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.Cupos)
+                </th>
+                <th colspan="2">
+                    @Html.DisplayNameFor(model => model.NombreConductor)
+                </th>
+                <th>
+                    
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.Hora)
+                    </td>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.TipoViaje)
+                    </td>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.Estado)
+                    </td>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.Cupos)
+                    </td>
+                    <td colspan="2">
+                        @Html.DisplayFor(modelItem => item.NombreConductor)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                    </td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Delete</a>
+                    </td>
+                </tr>
+
+
+
+
+            }
+        </tbody>
+    </table>
+</div>

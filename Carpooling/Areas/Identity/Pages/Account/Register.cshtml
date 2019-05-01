@@ -6,16 +6,17 @@
 
 </head>
 <body>
-    <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="formulario">
+    <form asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-register">
         <h1>¡Únete a nosotros!</h1>
         <div asp-validation-summary="All" class="text-danger"></div>
         <div class="contenedor-inputs">
             <input asp-for="Input.Nombre" placeholder="Nombres" type="text" class="input-48" required />
             <input asp-for="Input.Apellido" placeholder="Apellidos" type="text" class="input-48" required />
             <input asp-for="Input.Nick" placeholder="Nickname" type="text" class="input-100" required />
-            <input asp-for="Input.PhoneNumber" placeholder="Dirección de domicilio" type="text" class="input-48" required />
+            <input asp-for="Input.PhoneNumber" placeholder="Dirección" type="text" class="input-48" required />
             <input asp-for="Input.Area" placeholder="Área de Trabajo" type="text" class="input-48" required />
             <input asp-for="Input.Email" placeholder="Correo Electrónico" type="email" class="input-100" required />
+            <input asp-for="Input.PhoneNumber" placeholder="Teléfono" type="number" class="input-100" required />
             <input asp-for="Input.Contraseña" placeholder="Contraseña" type="password" class="input-48" required />
             <input asp-for="Input.ConfirmacionContraseña" placeholder="Confirma tu contraseña" type="password" class="input-48" required />
             <input type="submit" value="Registrarse" class="button" />
@@ -27,4 +28,3 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
-

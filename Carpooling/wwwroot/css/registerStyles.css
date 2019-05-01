@@ -1,2 +1,81 @@
 ﻿body {
+    margin: 0;
+    background: url(../images/fondo_animado2.gif);
+    background-size: cover;
+    background-attachment: fixed;
 }
+
+* {
+    box-sizing : border-box;
+}
+
+h1 {
+    text-align: center;
+    color: #1a2537;
+    font-size: 40px;
+}
+
+.form-register {
+    width: 98%;
+    max-width: 600px;
+    margin: auto;
+    background: #ffffff;
+    margin-top: 150px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius : 7px;
+}
+
+.contenedor-inputs {
+    padding : 10px 30px;
+    display : flex;
+    flex-wrap : wrap;
+    justify-content : space-between;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius : 3px;
+    border : 1px solid darkgray;
+}
+
+.input-48 {
+    width : 48%;
+}
+
+.input-100 {
+    width : 100%;
+}
+
+.button {
+    border: none;
+    width: 100%;
+    color: white;
+    font-size: 20px;
+    background: #1a2537;
+    padding : 15px 20px;
+    border-radius : 5px;
+    cursor : pointer;
+}
+
+.button:active {
+    transform : scale(1.50);
+}
+
+p {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+    color: #1a2537;
+    font-weight: 600;
+}
+
+.link:hover {
+    color: cadetblue;
+}
+
+

@@ -11,13 +11,16 @@
 @inject UserManager<Usuario> UserManager
 
 
-<h2>Create</h2>
 
-<h4>Vehiculo</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
+<link rel="stylesheet" href="~/css/crearVehiculo.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+<br /><br /><br />
+
+<div class="row"  id="container">
+    <div class="col-md-4" id="hola">
+        <h2>Crea tu Vehiculo</h2>
+        <form asp-action="Create" class="form__reg" id="form">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Marca" class="control-label"></label>
@@ -42,20 +45,22 @@
             <div class="form-group">
                 <label asp-for="UsuarioId" class="control-label"> Nickname</label>
                 @{
-                    SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Nick  }, "Nickname");
+                    SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Nick }, "Nickname");
                 }
                 <select asp-for="UsuarioId" class="form-control" asp-items=@currentUser></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-default" />
             </div>
+
+            <div>
+                <a asp-action="Index">Back to List</a>
+            </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

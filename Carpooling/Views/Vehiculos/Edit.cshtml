@@ -5,13 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<link rel="stylesheet" href="~/css/crearViaje.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
 
-<h4>Vehiculo</h4>
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
+<div class="row"  id="container">
+    <div class="col-md-4" id="hola">
+        <h2>Edita tu Vehiculo</h2>
+        <form asp-action="Edit" class="form__reg" id="form">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Placa" />
             <div class="form-group">

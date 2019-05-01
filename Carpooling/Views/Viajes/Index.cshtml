@@ -5,6 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
 <link rel="stylesheet" href="~/css/TablaEstilo.css" />
 
 <br>
@@ -16,7 +21,7 @@
 
 
 
-<div id="main-container" >
+<div id="main-container">
     <table class="table" style="width: 100%; text-align:center;">
         <head>
             <style>
@@ -26,7 +31,7 @@
             </style>
         </head>
         <h2 class="heading" align="right">Muro de publicaciones</h2>
-        <p >
+        <p>
             <a asp-action="Create" align="right" class="btn btn-info">Publica tu cupo!</a><br /><br />
         </p>
         <br />
@@ -52,7 +57,7 @@
                     @Html.DisplayNameFor(model => model.NombreConductor)
                 </th>
                 <th>
-                    
+
                 </th>
             </tr>
         </thead>
@@ -78,17 +83,28 @@
                 <td colspan="2">
                     @Html.DisplayFor(modelItem => item.NombreConductor)
                 </td>
-                <td>
-                    <a class="btn btn-info" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
-                </td>
+
+                @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                {
+                    <td>
+                        <a class="btn btn-info" asp-action="Index" asp-route-id="@item.Id">Solicitar</a>
+                    </td>
+                }
+
+
+                @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Edit</a>
+                    </td>
+
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Delete</a>
+                    </td>
+                }
+
                 <td>
                     <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                </td>
-                <td>
-                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Delete</a>
                 </td>
             </tr>
 

@@ -5,57 +5,56 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/crearViaje.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
-
-
-
-<div class="row" id="container">
-    
- 
-    
-    <dl class="col-md-4" id="hola">
+<head>
+    <link rel="stylesheet" href="~/css/crearViaje.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
+<body>
+    <div>
         <h2>Details</h2>
-        <dt>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Hora)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Hora)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.TipoViaje)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.TipoViaje)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Estado)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Estado)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Cupos)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Cupos)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NombreConductor)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NombreConductor)
-        </dd>
-    </dl>
-</divclass="row">
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+        <dl>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Hora)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Hora)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.TipoViaje)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TipoViaje)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Estado)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cupos)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Cupos)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NombreConductor)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NombreConductor)
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+</body>

@@ -14,10 +14,11 @@
 
 <link rel="stylesheet" href="~/css/crearVehiculo.css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+
 <br /><br /><br />
 
-<div class="row"  id="container">
+<div class="row" id="container">
+    <div id="particles-js"></div>
     <div class="col-md-4" id="hola">
         <h2>Crea tu Vehiculo</h2>
         <form asp-action="Create" class="form__reg" id="form">
@@ -59,7 +60,9 @@
         </form>
     </div>
 </div>
-
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="particles.min.js"></script>
+<script src="particulas.js"></script>
 
 
 @section Scripts {

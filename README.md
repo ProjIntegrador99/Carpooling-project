@@ -9,7 +9,10 @@ Los Dilan :
 
 Equipo Rocket:
 
-  - Miguel 
+  - Miguel Romero
+  - Alejandra Gonzalez
+  - Angie Valentina
+  - Nicolás Taborda
   
 Los Patrones:
 

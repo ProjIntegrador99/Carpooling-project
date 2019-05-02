@@ -71,6 +71,7 @@ namespace Carpooling.Controllers
         // GET: Viajes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["conductor"] = User.Identity.Name;
             if (id == null)
             {
                 return NotFound();

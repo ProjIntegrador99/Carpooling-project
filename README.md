@@ -16,4 +16,8 @@ Equipo Rocket:
   
 Los Patrones:
 
-  - David Campillo
+  - Juan David Campillo
+  - Jhonatan Bellaiza
+  - José Gerley Morales
+  - Alexis Bonilla
+  - Sebastian Correo

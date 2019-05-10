@@ -1,0 +1,17 @@
+﻿body {
+    margin: 0;
+    background: url();
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.contenedor {
+    margin : auto;
+    margin-top : 100px;
+    width : 50%;
+    text-align : center;
+}

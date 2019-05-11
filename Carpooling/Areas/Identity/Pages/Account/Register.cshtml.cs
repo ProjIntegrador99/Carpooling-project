@@ -53,20 +53,9 @@ namespace Carpooling.Areas.Identity.Pages.Account
             public string Nick { get; set; }
 
             [Required]
-            [Display(Name = "Direccion")]
-            public string Direccion { get; set; }
-
-            [Required]
-            [Display(Name = "Ciudad")]
-            public string Ciudad { get; set; }
-
-            [Required]
             [Display(Name = "Area")]
             public string Area { get; set; }
 
-            [Required]
-            [Display(Name = "Pais")]
-            public string Pais { get; set; }
             [Required]
             [Display(Name = "Telefono")]
          
@@ -105,10 +94,10 @@ namespace Carpooling.Areas.Identity.Pages.Account
                     Nombre = Input.Nombre,
                     Nick = Input.Nick,
                     Apellido = Input.Apellido,
-                    Direccion = Input.Direccion,
-                    Ciudad = Input.Ciudad,
+                    Direccion = null,
+                    Ciudad = null,
                     Area = Input.Area,
-                    Pais = Input.Pais,
+                    Pais = null,
                     Email = Input.Email,
                     PhoneNumber=Input.PhoneNumber,
                     PromedioCalificacionConductor = 0.0,

@@ -21,13 +21,10 @@ namespace Carpooling.Models
         public String Nick { get; set; }
         [Required]
         public String Apellido { get; set; }
-        [Required]
         public String Direccion { get; set; }
-        [Required]
         public String Ciudad { get; set; }
         [Required]
         public String Area { get; set; }
-        [Required]
         public String Pais { get; set; }
         public double PromedioCalificacionPasajero { get; set; }
         public double PromedioCalificacionConductor { get; set; }

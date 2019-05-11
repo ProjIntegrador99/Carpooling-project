@@ -1,4 +1,6 @@
 ﻿@model Carpooling.Models.Viaje
+
+
 @using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<Usuario> SignInManager
@@ -9,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
     <style>
+
         body {
             margin: 0;
             background: url(../images/animado6.gif);
@@ -42,14 +45,16 @@
                 <input asp-for="Estado" value="Disponible" readonly="readonly" required />
             </div>
             <div class="input-contenedor">
-                <label ># Cupos</label>
+                <label># Cupos</label>
                 <input asp-for="Cupos" type="number" min="1" required />
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
                 <input asp-for="NombreConductor" value="@ViewData["conductor"]" readonly="readonly" />
             </div>
+
             <input type="submit" value="Publicar" class="button" />
+
             <p>¿Te arrepentiste? <a class="link" href="/Viajes/Index"> Vuelve al muro</a></p>
         </div>
 

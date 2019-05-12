@@ -68,8 +68,10 @@ namespace Carpooling.Controllers
                     _context.Add(viaje);
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
+                   
                 }
             }
+
             return View(viaje);
         }
 

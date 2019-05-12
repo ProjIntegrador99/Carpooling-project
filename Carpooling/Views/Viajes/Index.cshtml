@@ -67,56 +67,67 @@
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.Descripcion)
-                        </td>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.Hora)
-                        </td>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.TipoViaje)
-                        </td>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.Estado)
-                        </td>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.Cupos)
-                        </td>
-                        <td colspan="2">
-                            @Html.DisplayFor(modelItem => item.NombreConductor)
-                        </td>
+                    DateTime hoy = DateTime.Today;
+                    if (hoy.Date < item.Hora.Date)
+                    {
+                        <tr>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Hora)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.TipoViaje)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Cupos)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.NombreConductor)
+                            </td>
+                            }
+                            
 
-                        @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
-                        {
-                            <td>
-                                <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot">Solicitar</a>
-                            </td>
-                            <td>
-                                <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
-                            </td>
-                        }
-                        @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
-                        {
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
-                            </td>
+
+                            @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                            {
+                                <td>
+                                    <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot">Solicitar</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
+                                </td>
+                            }
+                            @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                            {
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
+                                </td>
+
+                                <td>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
+                                </td>
+                            }
 
                             <td>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
                             </td>
-                        }
-
-                        <td>
-                            <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
-                        </td>
-                    </tr>
+                        </tr>
+                    }
                 }
-            </tbody>
+
+
+
+                </tbody>
         </table>
     </div>
 </body>
 
-
+                

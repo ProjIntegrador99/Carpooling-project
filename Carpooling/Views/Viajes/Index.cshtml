@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Carpooling.Models.Viaje>
+@using Carpooling.Models;
 
 @using Microsoft.AspNetCore.Identity
 
@@ -21,21 +22,23 @@
 
         @{
 
-
-        //    var cant = @Model.ToList().Where(x => x.NombreConductor.Equals(UserManager.GetUserName(User)));
-//            var cant = @Model.ToList().Where(x => x.UsuariosViajes.Select(n => n.Viajes.NombreConductor.Equals(UserManager.GetUserName(User))).Select(x=>x.);
+           // var cantidad = @Model.SelectMany(x => x.UsuariosViajes).SelectMany(x => x.Usuarios.Vehiculos).Count(s=>s.UsuarioId.Equals(UserManager.GetUserId(User)));
 
 
-        }
 
-        @if (2 > 1)
-        {
+
+            }
+
+
+            @if (2 >= 1)
+            {
             <input type="button" value="Publica tu cupo" class="button" onclick="location.href='/Viajes/Create'" />
         }
         else
         {
-            <input type="button" value="Publica tu cupo" class="button" disable onclick="location.href='/Viajes/Create'" />
+            <input type="button" disable value=" tu cupo" class="button" onclick="location.href='/Viajes/Create'" />
 
+            
         }
         <table class="table" style="width: 100%; text-align:center;">
             <thead>

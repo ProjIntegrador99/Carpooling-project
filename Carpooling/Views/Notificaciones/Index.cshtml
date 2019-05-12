@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Carpooling.Models.Viaje>
+
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+
+
+</head>
+<body>
+    <br /><br /><br />
+<h2 ><strong>Notificaciones</strong></h2>
+<table border="1">
+    <tr>
+        <th colspan="2" align="center">Nombre    </th>
+        <th colspan="2" align="center">  Hora    </th>
+        <th colspan="2" align="center">  Tipo de Viaje     </th>
+
+    </tr>
+    <tr>
+        @if (true)
+        {
+            <td colspan="2" align="center">Nombre del que solicita </td>
+            <td colspan="2" align="center">  hora de partida  </td>
+            <td colspan="2" align="center">  Tipo de viaje  </td>
+            <td colspan="2" align="center">  <button>Aceptar</button>  </td>
+            <td colspan="2" align="center">   <button>Rechazar</button> </td>
+        }
+    </tr>
+
+
+</table>
+
+    </body>
+
+</html>
+

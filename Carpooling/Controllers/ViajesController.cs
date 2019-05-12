@@ -58,10 +58,11 @@ namespace Carpooling.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Descripcion,Hora,TipoViaje,Estado,Cupos,NombreConductor")] Viaje viaje)
         {
-            //ff
+            //ffgggg
             string currentUserName = User.Identity.Name;
+            DateTime tiempo = new DateTime();
             Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
-            if(_context.Vehiculo.Count(x=> x.UsuarioId.Equals(currentUser.Id))!=0)
+            if(_context.Vehiculo.Count(x=> x.UsuarioId.Equals(currentUser.Id))!=0 && viaje.Hora.Date>tiempo.Date)
             {
                 if (ModelState.IsValid)
                 {
@@ -71,6 +72,7 @@ namespace Carpooling.Controllers
                    
                 }
             }
+
 
             return View(viaje);
         }

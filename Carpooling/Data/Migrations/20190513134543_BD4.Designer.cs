@@ -4,14 +4,16 @@ using Carpooling.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Carpooling.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190513134543_BD4")]
+    partial class BD4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,34 +47,6 @@ namespace Carpooling.Data.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles");
-                });
-
-            modelBuilder.Entity("Carpooling.Models.Solicitud", b =>
-                {
-                    b.Property<string>("SolicitudId")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("Cupos");
-
-                    b.Property<string>("Descripcion");
-
-                    b.Property<string>("Estado")
-                        .IsRequired();
-
-                    b.Property<DateTime>("Hora");
-
-                    b.Property<string>("NombreConductor")
-                        .IsRequired();
-
-                    b.Property<string>("TipoViaje")
-                        .IsRequired();
-
-                    b.Property<string>("UsuarioId")
-                        .IsRequired();
-
-                    b.HasKey("SolicitudId");
-
-                    b.ToTable("Solicitudes");
                 });
 
             modelBuilder.Entity("Carpooling.Models.Tribu", b =>
@@ -165,19 +139,6 @@ namespace Carpooling.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
-                });
-
-            modelBuilder.Entity("Carpooling.Models.UsuarioSolicitud", b =>
-                {
-                    b.Property<string>("UsuarioId");
-
-                    b.Property<string>("SolicitudId");
-
-                    b.HasKey("UsuarioId", "SolicitudId");
-
-                    b.HasIndex("SolicitudId");
-
-                    b.ToTable("UsuariosSolicitudes");
                 });
 
             modelBuilder.Entity("Carpooling.Models.UsuarioTribu", b =>
@@ -343,19 +304,6 @@ namespace Carpooling.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
-                });
-
-            modelBuilder.Entity("Carpooling.Models.UsuarioSolicitud", b =>
-                {
-                    b.HasOne("Carpooling.Models.Solicitud", "Solicitud")
-                        .WithMany()
-                        .HasForeignKey("SolicitudId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("Carpooling.Models.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioId")
-                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Carpooling.Models.UsuarioTribu", b =>

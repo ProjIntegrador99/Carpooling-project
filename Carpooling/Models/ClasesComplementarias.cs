@@ -41,10 +41,43 @@ namespace Carpooling.Models
         public int ViajeId { get; set; }
         [Required]
         public String UsuarioId { get; set; }
-
         public virtual Viaje Viajes { get; set; }
         public virtual Usuario Usuarios { get; set; }
     }
+    public partial class Solicitud
+    {
+        [Key]
+        [Required]
+        public String SolicitudId { get; set; }
+        [Required]
+        public String UsuarioId { get; set; }
+        [Required, DataType(DataType.DateTime)] 
+        public DateTime Hora { get; set; }
+        [Required]
+        public string TipoViaje { get; set; }
+        [Required]
+        public string Estado { get; set; }
+        [Required]
+        public int Cupos { get; set; }
+        [Required]
+        public string NombreConductor { get; set; }
+        public string Descripcion { get; set; }
+    }
+
+    public partial class UsuarioSolicitud
+    {
+       
+        [Required]
+        public String UsuarioId { get; set; }
+        [Required]
+        public String SolicitudId { get; set; }
+        [Required]
+        public virtual Usuario Usuario { get; set; }
+        [Required]
+        public virtual Solicitud Solicitud { get; set; }
+    }
+
+
 
     public partial class Vehiculo
     {

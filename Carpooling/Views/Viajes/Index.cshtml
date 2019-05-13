@@ -71,7 +71,7 @@
                 @foreach (var item in Model)
                 {
                     DateTime hoy = DateTime.Today;
-                    if (hoy.Date < item.Hora.Date)
+                    if (hoy.Date <= item.Hora.Date)
                     {
                         <tr>
                             <td colspan="2">

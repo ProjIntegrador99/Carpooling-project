@@ -132,8 +132,8 @@
                 <tbody>
                     @foreach (var item in Model)
                     {  DateTime hoy = DateTime.Today;
-                          if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email)&&hoy.Date < item.Hora.Date)
-                                {
+                        if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                        {
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Cupos)
@@ -145,7 +145,7 @@
                                             @Html.DisplayFor(modelItem => item.Hora)
                                         </td>
                                         <td>
-                                            <a href="#">Empezar viaje</a>
+                                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
                                         </td>
                                     </tr>
                                 }

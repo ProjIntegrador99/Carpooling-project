@@ -10,8 +10,13 @@
 
 
 <html>
+
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/TablaEstilo.css">
     <style>
+
         body {
             margin: 0;
             background: url();
@@ -59,10 +64,6 @@
             border: 1px solid #000;
             border-collapse: collapse;
             caption-side: bottom;
-        }
-
-        td {
-            background-color : red;
         }
 
         caption {
@@ -114,6 +115,22 @@
                         <th>Hora</th>
                         <th>Tracking</th>
                     </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            Jorge
+                        </td>
+                        <td>
+                         Ida
+                        </td>
+                        <td>
+                            31/05/2019 12:59:00 p. m.
+                        </td>
+                        <td>
+                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Ver viaje.</a>
+                        </td>
+                    </tr>
+                    </tr>
                 </thead>
                 <tbody></tbody>
             </table>
@@ -132,8 +149,8 @@
                 <tbody>
                     @foreach (var item in Model)
                     {  DateTime hoy = DateTime.Today;
-                          if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email)&&hoy.Date < item.Hora.Date)
-                                {
+                        if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                        {
                                     <tr>
                                         <td>
                                             @Html.DisplayFor(modelItem => item.Cupos)
@@ -145,7 +162,7 @@
                                             @Html.DisplayFor(modelItem => item.Hora)
                                         </td>
                                         <td>
-                                            <a href="#">Empezar viaje</a>
+                                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
                                         </td>
                                     </tr>
                                 }

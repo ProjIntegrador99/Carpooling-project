@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<Carpooling.Models.Viaje>
+@using Carpooling.Models;
 
 @using Microsoft.AspNetCore.Identity
 
@@ -18,7 +19,27 @@
 <body>
     <div id="main-container">
         <h2>Muro de publicaciones</h2>
-        <input type="button" value="Publica tu cupo" class="button" onclick="location.href='/Viajes/Create'" />
+
+        @{
+
+            // var cantidad = @Model.SelectMany(x => x.UsuariosViajes).SelectMany(x => x.Usuarios.Vehiculos).Count(s=>s.UsuarioId.Equals(UserManager.GetUserId(User)));
+
+
+
+
+        }
+
+
+        @if (2 >= 1)
+        {
+            <input type="button" value="Publica tu cupo" class="button" onclick="location.href='/Viajes/Create'" />
+        }
+        else
+        {
+            <input type="button" disable value=" tu cupo" class="button" onclick="" />
+
+
+        }
         <table class="table" style="width: 100%; text-align:center;">
             <thead>
                 <tr style="text-align: center;">
@@ -40,57 +61,70 @@
                     <th colspan="2" align="center">
                         @Html.DisplayNameFor(model => model.NombreConductor)
                     </th>
-                    <th></th><th></th><th> </th>
+                    <th></th>
+                    <th></th>
+                    <th> </th>
                 </tr>
             </thead>
             <tbody>
+
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Descripcion)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Hora)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.TipoViaje)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Estado)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Cupos)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.NombreConductor)
-                    </td>
-
-                    @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                    DateTime hoy = DateTime.Today;
+                    if (hoy.Date <= item.Hora.Date)
                     {
-                        <td>
-                            <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot">Solicitar</a>
-                        </td>
-                        <td>
-                            <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
-                        </td>
-                    }
-                    @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
-                    {
-                        <td>
-                            <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
-                        </td>
+                        <tr>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Descripcion)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Hora)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.TipoViaje)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Cupos)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.NombreConductor)
+                            </td>
+                            }
 
-                        <td>
-                            <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
-                        </td>
-                    }
 
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
-                    </td>
-                </tr>
+
+                            @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                            {
+                                <td>
+                                    <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot" onclick="addEventListener">Solicitar</a>
+                                </td>
+                                <td>
+                                    <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
+                                </td>
+                            }
+                            @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                            {
+                                <td>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
+                                </td>
+
+                                <td>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
+                                </td>
+                            }
+
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
+                            </td>
+                        </tr>
+                    }
                 }
+
+
+
             </tbody>
         </table>
     </div>

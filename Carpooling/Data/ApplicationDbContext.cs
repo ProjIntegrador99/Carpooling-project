@@ -23,6 +23,8 @@ namespace Carpooling.Data
             builder.Entity<Vehiculo>().HasKey(d => d.Placa);
             builder.Entity<UsuarioTribu>().HasKey(d => new { d.UsuarioId, d.TribuId });
             builder.Entity<UsuarioViaje>().HasKey(d => new { d.UsuarioId, d.ViajeId });
+            builder.Entity<UsuarioSolicitud>().HasKey(d => new { d.UsuarioId, d.SolicitudId });
+            builder.Entity<Solicitud>().HasKey(d => d.SolicitudId);
 
         }
 
@@ -35,6 +37,10 @@ namespace Carpooling.Data
         public DbSet<UsuarioTribu> UsuariosTribus { get; set; }
 
         public DbSet<UsuarioViaje> UsuariosViajes { get; set; }
+
+        public DbSet<UsuarioSolicitud> UsuariosSolicitudes { get; set; }
+            
+        public DbSet<Solicitud> Solicitudes { get; set; }
 
 
     }

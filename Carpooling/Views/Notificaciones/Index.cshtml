@@ -1,0 +1,143 @@
+﻿@model IEnumerable<Carpooling.Models.Viaje>
+
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/TablaEstilo.css">
+    <style>
+
+        body {
+            margin: 0;
+            background: url();
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .contenedor {
+            margin: auto;
+            margin-top: 100px;
+            width: 95%;
+            text-align: center;
+        }
+
+        .tablaPasajero {
+            width: 48%;
+            float: left;
+        }
+
+        .tablaConductor {
+            width: 48%;
+            float: right;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            width: 25%;
+        }
+
+        table th, table tr {
+            text-align: center;
+        }
+
+        th, td {
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        caption {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        th {
+            background: #eee;
+        }
+
+        table tr {
+            align-content: center;
+        }
+
+        tbody th, tfoot th {
+            border: 0;
+        }
+
+        th.name {
+            width: 25%;
+        }
+
+        th.location {
+            width: 20%;
+        }
+
+        th.lasteruption {
+            width: 30%;
+        }
+
+        th.eruptiontype {
+            width: 25%;
+        }
+    </style>
+    <script>
+        function myFunction() {
+            document.getElementById("fila").style.backgroundColor = "Green";
+            document.getElementById("fila").closest('tr').remove();
+            document.getElementById("fila").style.color = "Black";
+        }
+           function myFunction2() {
+               document.getElementById("fila").style.backgroundColor = "Red";
+                 document.getElementById("fila").style.color = "Black";
+        }
+    </script>
+</head>
+<body>
+    <br /><br /><br />
+<h2 ><strong>Notificaciones</strong></h2>
+<table border="1">
+    <tr>
+        <th align="center">Nombre    </th>
+        <th align="center">  Hora    </th>
+        <th align="center">  Tipo de Viaje     </th>
+        <th align="center">  Descripcion     </th>
+        <th colspan="4" align="center">  Opciones    </th>
+    </tr>
+    <tr id="fila">
+        @if (true)
+        {
+            <td align="center">Jorge </td>
+            <td align="center">  31/05/2019 12:59:00 p. m. </td>
+            <td align="center">  Ida  </td>
+            <td align="center">  Voy de icesi a pance  </td>
+            <td align="center" >  <button onclick="myFunction()">Aceptar</button>  </td>
+            <td align="center">   <button onclick="myFunction2()">Rechazar</button> </td>
+        }
+    </tr>
+
+
+</table>
+
+    </body>
+
+</html>
+

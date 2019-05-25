@@ -17,7 +17,7 @@ h1 {
 
 .form-register {
     width: 98%;
-    max-width: 600px;
+    max-width: 700px;
     margin: auto;
     background: #ffffff;
     margin-top: 150px;
@@ -26,27 +26,30 @@ h1 {
     border-radius: 7px;
 }
 
-.contenedor-inputs {
+.input-contenedor {
     padding: 10px 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    display: flex;
+    align-items: center;
 }
 
 input {
     margin-bottom: 10px;
+    border : none;
     padding: 10px;
     font-size: 20px;
     border-radius: 3px;
-    border: 1px solid darkgray;
 }
 
 .input-48 {
     width: 48%;
 }
 
-.input-100 {
-    width: 100%;
+.input-contenedor input, .input-100 {
+    flex: 1 1;
+    margin-left : 1em;
 }
 
 .button {

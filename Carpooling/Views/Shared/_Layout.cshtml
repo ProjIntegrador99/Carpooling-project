@@ -32,34 +32,42 @@
                             </ul>
                         </form>
                     }
-                    <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
-                        @if (SignInManager.IsSignedIn(User))
-                        {
+                <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
 
-                            <li>
-                                <a href="/User/Profile">Mi Perfil</a>
+                        <li>
+                            <a href="/Notificaciones/Index">Notificaciones</a>
 
-                            </li>
-                            <li>
-                                <a href="/Viajes/Index">Muro de Viajes</a>
-                            </li>
-                            <li>
-                                <a href="/Vehiculos/Index">Mis Vehiculos</a>
-                            </li>
-                            <li>
-                                <a href="/Tribus/Index">Mis Tribus</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li>
-                                <a href="/Identity/Account/Login">Iniciar sesión</a>
-                            </li>
-                            <li>
-                                <a href="/Identity/Account/Register">Registrarse</a>
-                            </li>
-                        }
-                    </ul>
+                        </li>
+                        <li>
+                            <a href="/MisCupos/Index">Mis Cupos</a>
+
+                        </li>
+                        <li>
+                            <a href="/User/Profile">Mi Perfil</a>
+
+                        </li>
+                        <li>
+                            <a href="/Viajes/Index">Muro de Viajes</a>
+                        </li>
+                        <li>
+                            <a href="/Vehiculos/Index">Mis Vehiculos</a>
+                        </li>
+                        <li>
+                            <a href="/Tribus/Index">Mis Tribus</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="/Identity/Account/Login">Iniciar sesión</a>
+                        </li>
+                        <li>
+                            <a href="/Identity/Account/Register">Registrarse</a>
+                        </li>
+                    }
+                </ul>
                 </div>
             </div>
         </nav>

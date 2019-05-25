@@ -1,0 +1,175 @@
+﻿
+@model IEnumerable<Carpooling.Models.Viaje>
+
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/TablaEstilo.css">
+    <style>
+
+        body {
+            margin: 0;
+            background: url();
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .contenedor {
+            margin: auto;
+            margin-top: 100px;
+            width: 95%;
+            text-align: center;
+        }
+
+        .tablaPasajero {
+            width: 48%;
+            float: left;
+        }
+
+        .tablaConductor {
+            width: 48%;
+            float: right;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        th, td {
+            width: 25%;
+        }
+
+        table th, table tr {
+            text-align: center;
+        }
+
+        th, td {
+            width: 25%;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #000;
+            border-collapse: collapse;
+            caption-side: bottom;
+        }
+
+        caption {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        th {
+            background: #eee;
+        }
+
+        table tr {
+            align-content : center;
+        }
+
+        tbody th, tfoot th {
+            border: 0;
+        }
+
+        th.name {
+            width: 25%;
+        }
+
+        th.location {
+            width: 20%;
+        }
+
+        th.lasteruption {
+            width: 30%;
+        }
+
+        th.eruptiontype {
+            width: 25%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Mis cupos activos</h1>
+        <p>Aquí se encuentran los cupos que publicaste y también los que estas inscrito</p>
+        <div class="tablaPasajero">
+            <h3>Como pasajero</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Tipo de Viaje</th>
+                        <th>Hora</th>
+                        <th>Tracking</th>
+                    </tr>
+                    <tr>
+                    <tr>
+                        <td>
+                            Jorge
+                        </td>
+                        <td>
+                         Ida
+                        </td>
+                        <td>
+                            31/05/2019 12:59:00 p. m.
+                        </td>
+                        <td>
+                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Ver viaje.</a>
+                        </td>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div class="tablaConductor">
+            <h3>Como Conductor</h3>
+            <table align="center" style="text-align : center;">
+                <thead>
+                    <tr>
+                        <th>Cupos</th>
+                        <th>Tipo de Viaje</th>
+                        <th>Hora</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {  DateTime hoy = DateTime.Today;
+                        if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                        {
+                                    <tr>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Cupos)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TipoViaje)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Hora)
+                                        </td>
+                                        <td>
+                                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

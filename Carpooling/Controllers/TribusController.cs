@@ -27,8 +27,8 @@ namespace Carpooling.Controllers
             Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
             //return View(await _context.Tribu.ToListAsync());
             //return View(await _context.Tribu.Select(m => new { estaContenido = _context.UsuariosTribus.Any(j => j.UsuarioId.Equals(currentUser.Id)), t = m }).Where(k => k.estaContenido).Select(p => p.t).ToListAsync());
-            var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
-            return View(await _context.Tribu.Where(i => m.Contains(i.Id)).ToListAsync());
+            //var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
+            return View(await _context.Tribu.ToListAsync());
         }
 
         // GET: Tribus/Details/5

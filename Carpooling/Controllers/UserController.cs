@@ -79,6 +79,7 @@ namespace Carpooling.Controllers
 
         public async Task<IActionResult> Profile()
         {
+            
             return View(await _context.Viaje.ToListAsync());
         }
     }

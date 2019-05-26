@@ -53,7 +53,11 @@ namespace Carpooling.Models
 
         }
 
+        public void CambiarNick(String nick)
+        {
+            Nick = nick;
 
+        }
 
 
     }

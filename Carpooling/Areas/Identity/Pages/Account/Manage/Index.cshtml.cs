@@ -74,8 +74,11 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
 
         }
 
+     
 
-        public async Task<IActionResult> OnGetAsync(String are)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+         public async Task<IActionResult> OnGetAsync([Bind("Nombre,Apellido,Area,Email,PhoneNumber")] Usuario u)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -85,8 +88,11 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
 
             var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
-            string area = "PERSONERO";
-             
+            user.CambiarArea("Personero");
+
+            string area = "HEY";
+        
+            await _userManager.UpdateAsync(user);
             var imagen = "./Hito3/EquipoRocketPerfil_Y_Vehiculos/imagenes/uno.JPEG";
 
 
@@ -106,7 +112,7 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
                 Imagen = imagen,
                 Email = email,
                 PhoneNumber = phoneNumber,
-            
+
             };
 
 
@@ -114,6 +120,13 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
 
             return Page();
         }
+
+
+
+
+
+
+
 
         public async Task<IActionResult> OnPostImagenCambiarAsync()
         {

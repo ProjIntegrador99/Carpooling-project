@@ -99,7 +99,9 @@
                             @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
                             {
                                 <td>
-                                    <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot" onclick="addEventListener">Solicitar</a>
+                                    <form action="/" method="post">
+                                        <input type="submit" value="Solicitar" class="button" />
+                                    </form>
                                 </td>
                                 <td>
                                     <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>

@@ -6,49 +6,53 @@
 }
 
 
-<link rel="stylesheet" href="~/css/crearViaje.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+<head>
+    <link rel="stylesheet" href="~/css/detallesStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
 
+<body>
+    <div class="contenedor">
 
+        <h1>Detalles del vehiculo</h1>
+        <dl class="conetnedor">
 
+            <dt>
+                @Html.DisplayNameFor(model => model.Marca)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Marca)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Placa)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Placa)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Modelo)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Color)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Color)
+            </dd>
 
-<div class="row" id="container">
-    
-  
-    <dl class="col-md-4" id="hola">
-        <h4>detalles de Vehiculo</h4>
-        <dt>
-            @Html.DisplayNameFor(model => model.Marca)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Marca)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Placa)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Placa)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Modelo)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Modelo)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Color)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Color)
-        </dd>
-
-        <div>
-            <a asp-action="Edit" asp-route-id="@Model.Placa">Edit</a>
-        </div>
-        <div>
-            <a asp-action="Index">Back to List</a>
-        </div>
-    </dl>
-</div>
-
+        </dl>
+        </br>
+            <div>
+                <a asp-action="Edit" asp-route-id="@Model.Placa" class="button">Edit</a>
+            </div>
+        </br>
+        </br>
+            <div>
+                <a asp-action="Index" class="button">Back to List</a>
+            </div>
+       
+    </div>
+</body>

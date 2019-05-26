@@ -11,53 +11,57 @@
 @inject UserManager<Usuario> UserManager
 
 
-<link rel="stylesheet" href="~/css/crearViaje.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+<head>
+    <link rel="stylesheet" href="~/css/loginStyles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
 
-<hr />
-<div class="row" id="container">
-    <div class="col-md-4" id="hola">
+</head>
+
+
+<body>
+   
+    <form asp-action="Edit" class="formulario">
         <h2>Edita tu Vehiculo</h2>
-        <form asp-action="Edit" class="form__reg" id="form">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Placa" />
-            <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
-                <span asp-validation-for="Marca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Modelo" class="control-label"></label>
-                <input asp-for="Modelo" class="form-control" />
-                <span asp-validation-for="Modelo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Placa" />
+       <div class="contenedor">
+        <div class="input-contenedor">
+            <label asp-for="Marca" class="control-label"></label>
+            <input asp-for="Marca"  />
+            <span asp-validation-for="Marca" class="text-danger"></span>
+        </div>
+        <div class="input-contenedor">
+            <label asp-for="Modelo" class="control-label"></label>
+            <input asp-for="Modelo"  />
+            <span asp-validation-for="Modelo" class="text-danger"></span>
+        </div>
+        <div class="input-contenedor">
+            <label asp-for="Color" class="control-label"></label>
+            <input asp-for="Color"  />
+            <span asp-validation-for="Color" class="text-danger"></span>
+        </div>
 
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
+        
+            <input type="submit" value="Save" class="button" />
+        
 
-            <div class="form-group" style="visibility: hidden">
-                <label asp-for="UsuarioId" class="control-label"> Nickname</label>
-                @{
-                    SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Id }, "Nickname");
-                }
-                <select asp-for="UsuarioId" class="form-control" asp-items=@currentUser></select>
-            </div>
+        <div class="input-contenedor" style="visibility: hidden">
+            <label asp-for="UsuarioId" class="control-label"> Nickname</label>
+            @{
+                SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Id }, "Nickname");
+            }
+            <select asp-for="UsuarioId" class="form-control" asp-items=@currentUser></select>
+        </div>
+       </div>
+    </form>
 
-        </form>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
+</body>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

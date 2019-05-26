@@ -5,41 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/crearViaje.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+<head>
+    <link rel="stylesheet" href="~/css/detallesStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
 
 
+<body>
+    <div class="contenedor">
+       
+            <h3> Está seguro que quiere eliminar este vehiculo?</h3>
+            <form asp-action="Delete" class="detalles">
 
+                <dl class="detalles">
 
-<div class="row" id="container">
-    <hr />
-    <dl class="col-md-4" id="hola">
-        <h3>Are you sure you want to delete this?</h3>
-        <form asp-action="Delete" class="form__reg" id="form">
-            <dt>
-                @Html.DisplayNameFor(model => model.Marca)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Marca)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Modelo)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Modelo)
-            </dd>
-            <dt>
-                @Html.DisplayNameFor(model => model.Color)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Color)
-            </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Marca)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Marca)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Modelo)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Modelo)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Color)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Color)
+                    </dd>
 
+                </dl>
 
-            <input type="hidden" asp-for="Placa" />
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            <a asp-action="Index">Back to List</a>
-        </form>
-    </dl>
-</div>
+                    <input type="hidden" asp-for="Placa" />
+                    <input type="submit" value="Delete" class="button" /> |
+                    <a asp-action="Index">Back to List</a>
+            </form>
+        
+    </div>
+</body>

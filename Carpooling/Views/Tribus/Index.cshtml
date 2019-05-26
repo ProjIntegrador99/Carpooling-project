@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -44,9 +45,9 @@
 
         <h2 class="heading" align="center">Tribus</h2>
 
-        <p>
-            <a asp-action="Create" class="btn btn-info"> Crear Tribu</a>
-        </p>
+        <div>
+            <a asp-action="Create" class="btn btn-info">Crear Tribu</a>
+        </div>
 
       <table>
         <thead>
@@ -79,9 +80,10 @@
                         @Html.DisplayFor(modelItem => item.GeneroMusical)
                     </td>
                     <td>
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id">Elimiar</a> |
+                        <a asp-action="Join" asp-route-id="@item.Id">Unirse</a> |
                     </td>
                 </tr>
             }

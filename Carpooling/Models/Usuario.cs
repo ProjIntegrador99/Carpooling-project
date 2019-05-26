@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +16,7 @@ namespace Carpooling.Models
             this.UsuariosTribus = new HashSet<UsuarioTribu>();
         }
 
+
         [Required]
         public String Nombre { get; set; }
         [Required]
@@ -23,6 +25,8 @@ namespace Carpooling.Models
         public String Apellido { get; set; }
         public String Direccion { get; set; }
         public String Ciudad { get; set; }
+
+        //public Byte[] imagenPre { get; set; }
         [Required]
         public String Area { get; set; }
         public String Pais { get; set; }
@@ -32,5 +36,30 @@ namespace Carpooling.Models
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
         public virtual ICollection<Vehiculo> Vehiculos { get; set; }
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }
+
+        [NotMapped]
+        public object ImagenPerfil { get;  set; }
+
+
+        public void CambiarImagen(String imagen)
+        {
+            ImagenPerfil = imagen;
+
+        }
+
+        public void CambiarArea(String area)
+        {
+            Area = area;
+
+        }
+
+
+
+
     }
+
+
+
+
+
 }

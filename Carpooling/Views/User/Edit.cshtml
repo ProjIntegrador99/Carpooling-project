@@ -1,10 +1,12 @@
 ﻿@page
 @model Carpooling.Models.Usuario
+
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h4>@ViewData["Title"]</h4>
+
 @*@Html.Partial("_StatusMessage", Model.StatusMessage)*@
 <div class="row">
     <div class="col-md-6">
@@ -55,7 +57,7 @@
             <div class="form-group">
 
                 @*<label asp-for="Input.Imagen"></label>
-            <input asp-for="Input.Imagen" type="File" class="form-control" />*@
+                    <input asp-for="Input.Imagen" type="File" class="form-control" />*@
 
                 <label asp-for="PhoneNumber"></label>
                 <input asp-for="PhoneNumber" class="form-control" />
@@ -65,7 +67,3 @@
         </form>
     </div>
 </div>
-
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}

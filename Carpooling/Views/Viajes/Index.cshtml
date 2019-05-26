@@ -70,9 +70,10 @@
 
                 @foreach (var item in Model)
                 {
-                    DateTime hoy = DateTime.Today;
-                    if (hoy.Date <= item.Hora.Date)
-                    {
+                    if(item.EsMio)
+                    { DateTime hoy = DateTime.Today;
+                        if (hoy.Date <= item.Hora.Date)
+                        {
                         <tr>
                             <td colspan="2">
                                 @Html.DisplayFor(modelItem => item.Descripcion)
@@ -99,8 +100,9 @@
                             @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
                             {
                                 <td>
-                                    <a class="btn btn-info" asp-action="Index" asp-route-id="" id="bot" onclick="addEventListener">Solicitar</a>
+                                    <a asp-action="Solicitar" asp-route-id="@item.Id" class="btn btn-info" >solicitar</a>
                                 </td>
+
                                 <td>
                                     <a class="btn btn-info" asp-action="#" asp-route-id="#">Perfil</a>
                                 </td>
@@ -119,7 +121,11 @@
                             <td>
                                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
                             </td>
+
                         </tr>
+
+                        }
+
                     }
                 }
 

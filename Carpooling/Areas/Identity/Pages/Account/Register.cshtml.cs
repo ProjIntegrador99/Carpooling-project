@@ -56,17 +56,20 @@ namespace Carpooling.Areas.Identity.Pages.Account
             [Display(Name = "Area")]
             public string Area { get; set; }
 
+       
+
+
             [Required]
             [Display(Name = "Telefono")]
          
             public string PhoneNumber { get; set; }
 
-            [Required]
+            //[Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Required]
+            //[Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Contraseña")]
@@ -76,6 +79,10 @@ namespace Carpooling.Areas.Identity.Pages.Account
             [Display(Name = "Confirmar Contraseña")]
             [Compare("Contraseña", ErrorMessage = "Las contraseña no coinciden.")]
             public string ConfirmacionContraseña { get; set; }
+
+         
+
+
         }
 
         public void OnGet(string returnUrl = null)
@@ -98,6 +105,7 @@ namespace Carpooling.Areas.Identity.Pages.Account
                     Ciudad = null,
                     Area = Input.Area,
                     Pais = null,
+                    ImagenPerfil=null,
                     Email = Input.Email,
                     PhoneNumber=Input.PhoneNumber,
                     PromedioCalificacionConductor = 0.0,
@@ -120,6 +128,7 @@ namespace Carpooling.Areas.Identity.Pages.Account
                         $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
+                  
                     return LocalRedirect(returnUrl);
                 }
                 foreach (var error in result.Errors)

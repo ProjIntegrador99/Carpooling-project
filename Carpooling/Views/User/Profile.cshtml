@@ -1,9 +1,10 @@
 ﻿
 @model IEnumerable<Carpooling.Models.Viaje>
 
+
 @{
     ViewData["Title"] = "Profile";
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using Microsoft.AspNetCore.Identity
@@ -55,19 +56,30 @@
 
                 <span class="infos_name">@UserManager.GetUserName(User)</span>
 
+
                 <a href="#"></a>
             </div>
             <div class="card-profile_user-stats">
                 <div class="stats-holder">
                     <div class="user-stats">
                         <strong>Viajes</strong>
-                        <span>@Model.ToList().Where(j=> j.NombreConductor.Equals(@UserManager.GetUserName(User))).Count()</span>
+                        <span>@Model.ToList().Where(j => j.NombreConductor.Equals(@UserManager.GetUserName(User))).Count()</span>
                     </div>
 
 
                     <div class="avatar">
-                        <img src="https://pngimage.net/wp-content/uploads/2018/06/no-avatar-png-8.png">
+                        <img src=@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).ImagenPerfil>
                     </div>
+
+                    <input id="File1" type="file" />
+
+                    <a  asp-area="Identity" asp-page="/Account/Manage/Index"  class="btn btn-info" style="font-family:'Times New Roman', Times, serif ;color: white; background-color:crimson; border: crimson">
+                        Subir foto
+                    </a>
+
+
+                    @*<input asp-for="Usu" type="File" class="form-control" />*@
+
 
                     <div class="user-stats">
                         <strong>Puntuación</strong>
@@ -200,7 +212,7 @@
                                 {
                                     if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
                                     {
-                                      
+
                                         <tr>
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.Descripcion)
@@ -220,14 +232,14 @@
                                             <td>
                                                 @Html.DisplayFor(modelItem => item.NombreConductor)
                                             </td>
-                                           
+
                                         </tr>
 
                                         <tr>
                                             <td></td>
                                             <td></td>
 
-                                           
+
 
                                             <td>
                                                 <button onclick="location.href='https://localhost:44372/Viajes/Edit/'+@item.Id" class="btn btn-info">Edit</button>
@@ -240,16 +252,16 @@
                                             <td>
                                                 <button onclick="location.href='https://localhost:44372/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
                                                 @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-            <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
                                             </td>
 
 
 
 
                                         </tr>
-                                      
-                                        
+
+
 
 
 

@@ -15,7 +15,7 @@ namespace Carpooling.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.1.8-servicing-32085")
+                .HasAnnotation("ProductVersion", "2.2.2-servicing-10034")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -240,6 +240,8 @@ namespace Carpooling.Data.Migrations
 
                     b.Property<string>("Descripcion");
 
+                    b.Property<bool>("EsMio");
+
                     b.Property<string>("Estado")
                         .IsRequired();
 
@@ -249,6 +251,8 @@ namespace Carpooling.Data.Migrations
                         .IsRequired();
 
                     b.Property<string>("TipoViaje");
+
+                    b.Property<string>("emailotro");
 
                     b.HasKey("Id");
 

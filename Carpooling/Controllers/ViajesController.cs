@@ -14,10 +14,12 @@ namespace Carpooling.Controllers
     public class ViajesController : Controller
     {
         private readonly ApplicationDbContext _context;
+       
 
         public ViajesController(ApplicationDbContext context)
         {
             _context = context;
+           
         }
 
         // GET: Viajes
@@ -62,20 +64,70 @@ namespace Carpooling.Controllers
             string currentUserName = User.Identity.Name;
             DateTime tiempo = new DateTime();
             Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
-            if(_context.Vehiculo.Count(x=> x.UsuarioId.Equals(currentUser.Id))!=0 && viaje.Hora.Date>tiempo.Date)
+            if (_context.Vehiculo.Count(x => x.UsuarioId.Equals(currentUser.Id)) != 0 && viaje.Hora.Date > tiempo.Date)
             {
                 if (ModelState.IsValid)
                 {
-                    _context.Add(viaje);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                   
+
+                    if (_context.Viaje.Where(j => j.Descripcion.Equals(viaje.Descripcion) && j.NombreConductor.Equals(viaje.NombreConductor) && j.Hora.Equals(viaje.Hora)).Any())
+                    {
+                        viaje.cambiarTipoViaje(false);
+                        viaje.cambiarEmailotro(currentUser.Email);
+                        _context.Add(viaje);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+
+                    }
+                    else
+                    {
+
+                        viaje.cambiarTipoViaje(true);
+                        _context.Add(viaje);
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+
+                    }
+
+
                 }
             }
+
+           
 
 
             return View(viaje);
         }
+
+      
+
+        public async Task<IActionResult> Solicitar(int? id)
+        {
+            ViewData["conductor"] = User.Identity.Name;
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var viaje = await _context.Viaje
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+
+
+            if (viaje == null)
+            {
+                return NotFound();
+            }
+
+            return View(viaje);
+        }
+
+
+       
+
+
+
+
+
 
         // GET: Viajes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -105,6 +157,12 @@ namespace Carpooling.Controllers
             {
                 return NotFound();
             }
+
+
+
+
+     
+
 
             if (ModelState.IsValid)
             {

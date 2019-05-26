@@ -8,31 +8,28 @@
     <style>
         body {
             margin: 0;
-            background-color : red;
+            background-color: red;
             background-size: cover;
             background-attachment: fixed;
         }
     </style>
 </head>
 <body>
-    <form asp-action="Edit" class="formulario" >
-        <h1>Edita tu cupo</h1>
+    <form asp-action="Create" class="formulario" method="post">
+        <h1>Solicita  tu cupo</h1>
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="contenedor">
             <div class="input-contenedor">
                 <i class="fas fa-info-circle icon"></i>
-                <input asp-for="Descripcion" type="text" placeholder="Descripción" />
+                <input asp-for="Descripcion" type="text" />
             </div>
             <div class="input-contenedor">
                 <i class="far fa-clock icon"></i>
-                <input asp-for="Hora" type="datetime-local" placeholder="&#x231A;" />
+                <input asp-for="Hora" type="datetime-local"  />
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-truck-pickup icon"></i>
-                <select asp-for="TipoViaje">
-                    <option value="Ida">Ida</option>
-                    <option value="Regreso">Regreso</option>
-                </select>
+                <input asp-for="TipoViaje"  />
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-star-half-alt icon"></i>
@@ -44,9 +41,9 @@
             </div>
             <div class="input-contenedor">
                 <i class="fas fa-user icon"></i>
-                <input asp-for="NombreConductor" value="@ViewData["conductor"]" readonly="readonly" />
+                <input asp-for="NombreConductor" readonly="readonly" />
             </div>
-            <input type="submit" value="Guardar" class="button" />
+            <input type="submit" value="Solicitar" class="button" />
             <p>¿Te arrepentiste? <a class="link" href="/Viajes/Index"> Vuelve al muro</a></p>
         </div>
 

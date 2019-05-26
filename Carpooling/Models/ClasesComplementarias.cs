@@ -112,10 +112,26 @@ namespace Carpooling.Models
         [Required]
         public int Cupos { get; set; }
 
+        public bool EsMio { get; set; }
+
+        public string emailotro { get; set; }
+    
         [Required]
         public string NombreConductor { get; set; }
 
+        public void cambiarId(int id)
+        {
+            Id = id;
+        }
 
+        public void cambiarEmailotro(string otro)
+        {
+            emailotro = otro;
+        }
+        public void cambiarTipoViaje(bool es)
+        {
+            EsMio = es;
+        }
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
     }
 

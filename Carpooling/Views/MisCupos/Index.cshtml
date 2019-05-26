@@ -19,7 +19,7 @@
 
         body {
             margin: 0;
-            background: url();
+            background: url(../images/animado7.gif);
             background-size: cover;
             background-attachment: fixed;
         }
@@ -103,39 +103,76 @@
 </head>
 <body>
     <div class="contenedor">
-        <h1>Mis cupos activos</h1>
+        <head>
+            <style>
+                h1 {
+                    color: #eee;
+                }
+            </style>
+        </head>
+        <body>
+            <h1>Mis Cupos Activos</h1>
+            
+        </body>
         <p>Aquí se encuentran los cupos que publicaste y también los que estas inscrito</p>
         <div class="tablaPasajero">
+            <head>
+                <style>
+                    h3 {
+                        color: #eee;
+                    }
+                </style>
+            </head>
             <h3>Como pasajero</h3>
             <table>
-                <thead>
+                
+                @*<thead>
                     <tr>
-                        <th>Nombre</th>
+                        <th>Nombre del Conductor</th>
+                        <th>Cupos</th>
                         <th>Tipo de Viaje</th>
                         <th>Hora</th>
-                        <th>Tracking</th>
+                        <th></th>
                     </tr>
-                    <tr>
-                    <tr>
-                        <td>
-                            Jorge
-                        </td>
-                        <td>
-                         Ida
-                        </td>
-                        <td>
-                            31/05/2019 12:59:00 p. m.
-                        </td>
-                        <td>
-                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Ver viaje.</a>
-                        </td>
-                    </tr>
-                    </tr>
-                </thead>
-                <tbody></tbody>
+                </thead>*@
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        DateTime hoy = DateTime.Today;
+                        if (item.emailotro != null && item.emailotro.Equals(@UserManager.GetUserName(User)) && !item.EsMio)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreConductor)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cupos)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoViaje)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Hora)
+                                </td>
+                                <td>
+                                    <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+       
             </table>
         </div>
         <div class="tablaConductor">
+            <head>
+                <style>
+                    h3 {
+                        color: #eee;
+                    }
+                </style>
+            </head>
             <h3>Como Conductor</h3>
             <table align="center" style="text-align : center;">
                 <thead>
@@ -148,26 +185,27 @@
                 </thead>
                 <tbody>
                     @foreach (var item in Model)
-                    {  DateTime hoy = DateTime.Today;
+                    {
+                        DateTime hoy = DateTime.Today;
                         if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
                         {
-                                    <tr>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Cupos)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.TipoViaje)
-                                        </td>
-                                        <td>
-                                            @Html.DisplayFor(modelItem => item.Hora)
-                                        </td>
-                                        <td>
-                                            <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
-                                        </td>
-                                    </tr>
-                                }
-                            }
-                        </tbody>
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Cupos)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TipoViaje)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Hora)
+                                </td>
+                                <td>
+                                    <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
             </table>
         </div>
     </div>

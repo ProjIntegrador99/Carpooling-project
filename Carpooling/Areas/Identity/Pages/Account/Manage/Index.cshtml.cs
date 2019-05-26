@@ -38,18 +38,44 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
         [BindProperty]
         public InputModel Input { get; set; }
 
+        
+
         public class InputModel
         {
             [Required]
+            [Display(Name = "Nombre")]
+            public string Nombre { get; set; }
+
+            [Required]
+            [Display(Name = "Apellido")]
+            public string Apellido { get; set; }
+
+            [Required]
+            [Display(Name = "Nick")]
+            public string Nick { get; set; }
+
+            [Required]
+            [Display(Name = "Area")]
+            public string Area { get; set; }
+
+            [Required]
+            [Display(Name = "Telefono")]
+
+            public string PhoneNumber { get; set; }
+
+            public string Imagen { get; set; }
+
+            //[Required]
             [EmailAddress]
+            [Display(Name = "Email")]
             public string Email { get; set; }
 
-            [Phone]
-            [Display(Name = "Phone number")]
-            public string PhoneNumber { get; set; }
+      
+
         }
 
-        public async Task<IActionResult> OnGetAsync()
+
+        public async Task<IActionResult> OnGetAsync(String are)
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
@@ -59,20 +85,58 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
 
             var userName = await _userManager.GetUserNameAsync(user);
             var email = await _userManager.GetEmailAsync(user);
+            string area = "PERSONERO";
+             
+            var imagen = "./Hito3/EquipoRocketPerfil_Y_Vehiculos/imagenes/uno.JPEG";
+
+
+            _userManager.Users.First(j => j.Email.Equals(email)).CambiarImagen(imagen);
+            _userManager.Users.First(j => j.Email.Equals(email)).CambiarArea(area);
+
+
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
             Username = userName;
 
             Input = new InputModel
             {
+
+
+                Area = area,
+                Imagen = imagen,
                 Email = email,
-                PhoneNumber = phoneNumber
+                PhoneNumber = phoneNumber,
+            
             };
+
 
             IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostImagenCambiarAsync()
+        {
+
+         
+            //byte[] imagenoriginal = new byte[tamano];
+            
+
+
+
+
+
+
+            return null;
+        }
+
+
+
+
+
+
+
+
 
         public async Task<IActionResult> OnPostAsync()
         {
@@ -124,6 +188,7 @@ namespace Carpooling.Areas.Identity.Pages.Account.Manage
             var user = await _userManager.GetUserAsync(User);
             if (user == null)
             {
+                
                 return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
 

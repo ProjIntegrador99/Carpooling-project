@@ -1,0 +1,41 @@
+﻿@model Carpooling.Models.Viaje
+
+<head>
+    <link rel="stylesheet" href="~/css/detallesStyle.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+</head>
+<body>
+    <div class="contenedor">
+      
+        <dl class="contenedor">
+            <h1>Detalles del Pasajero</h1>
+            <dt>
+                @Html.DisplayNameFor(model => model.Hora)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Hora)
+            </dd>
+            <dt>
+                Tipo de Viaje
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.TipoViaje)
+            </dd>
+            <dt>
+                Estado del viaje
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+
+            <dt>
+                Nombre del pasajero
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.emailotro)
+            </dd>
+        </dl>
+        <input type="button" value="Volver al muro" class="button" onclick="location.href='/Viajes/Index'" />
+    </div>
+</body>

@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Carpooling.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Carpooling.Models;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using Microsoft.AspNetCore.Authentication.Facebook;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Carpooling
 {
@@ -45,6 +44,22 @@ namespace Carpooling
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
+            services.AddAuthentication(options =>
+            {
+                options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme; 
+
+            }
+            ).AddFacebook(googleOptions =>
+            {
+                googleOptions.AppId = "356330385086801";
+                googleOptions.AppSecret = "d155a577cde3dd0d97a384c62a212903";
+
+            }).AddCookie();
+
+            //services.AddTransient<IEmailSender, EmailSender>();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -53,6 +68,7 @@ namespace Carpooling
         {
             if (env.IsDevelopment())
             {
+                //app.UseDirectoryBrowser();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }

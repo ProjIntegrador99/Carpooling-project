@@ -1,41 +1,218 @@
 ﻿@model Carpooling.Models.Viaje
 
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<Usuario> SignInManager
+@inject UserManager<Usuario> UserManager
+
+<br /><br /><br /><br />
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <head>
-    <link rel="stylesheet" href="~/css/detallesStyle.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,900" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="~/css/Profile.css" />
+    <style>
+        body {
+            margin: 0;
+            background: url(../images/animado7.gif);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="contenedor">
-      
-        <dl class="contenedor">
-            <h1>Detalles del Pasajero</h1>
-            <dt>
-                @Html.DisplayNameFor(model => model.Hora)
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Hora)
-            </dd>
-            <dt>
-                Tipo de Viaje
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.TipoViaje)
-            </dd>
-            <dt>
-                Estado del viaje
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.Estado)
-            </dd>
+    <div class="container">
 
-            <dt>
-                Nombre del pasajero
-            </dt>
-            <dd>
-                @Html.DisplayFor(model => model.emailotro)
-            </dd>
-        </dl>
-        <input type="button" value="Volver al muro" class="button" onclick="location.href='/Viajes/Index'" />
+        <div class="card-profile">
+            <div class="card-profile_visual"></div>
+
+            <div class="card-profile_user-infos">
+
+                <span class="infos_name">@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).Email</span>
+
+
+                <a href="#"></a>
+            </div>
+            <div class="card-profile_user-stats">
+                <div class="stats-holder">
+                    <div class="user-stats">
+                        <strong>Viajes</strong>
+                        <span></span>
+                    </div>
+
+
+                    <div class="avatar">
+                        <img src="http://www.esek.org.gr/images/ESET/eset_user.png">
+                    </div>
+
+
+
+                    @*<input asp-for="Usu" type="File" class="form-control" />*@
+
+
+                    <div class="user-stats">
+                        <strong>Puntuación</strong>
+                        <span>0</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="cont">
+
+
+        <div class="derecha">
+
+
+            <div class="info-profile2">
+                <head>
+                    <style>
+                        h1 {
+                            color: white;
+                        }
+                    </style>
+                </head>
+                <h1 align="Center">Informacion de Usuario </h1>
+                <br /><br /><br />
+
+                <div class="info-profile_user-stats">
+                    <div class="stats-holder">
+
+
+
+                        <td>
+                            <div class="user-stats">
+                                <strong>Nombre</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).Nombre</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Apellido</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).Apellido</span>
+                            </div>
+                            <br />
+
+
+                            <div class="user-stats">
+                                <strong>Correo electrónico</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).Email</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Teléfono</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).PhoneNumber</span>
+                            </div>
+                            <br />
+
+                            <div class="user-stats">
+                                <strong>Área de trabajo</strong>
+                                <span>@UserManager.Users.First(j => j.UserName.Equals(Model.emailotro)).Area</span>
+                            </div>
+
+
+                            <br />
+                            <div class="user-stats">
+                                <strong>Calificación pasajero</strong>
+                                <span>4.5</span>
+                            </div>
+                            <br />
+                        </td>
+
+                        <td>
+
+                            <br />
+                            <br />
+                            <div class="user-stats">
+                                <strong>Calificación conductor</strong>
+                                <span>4.5</span>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                        </td>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="cont1">
+        <div class="derecha">
+            <div class="info-profile3">
+                <head>
+                    <style>
+                        h1 {
+                            color: white;
+                        }
+                    </style>
+                </head>
+                <h1 align="Center">Publicaciones </h1>
+                <br /><br /><br />
+                <div class="info-profile_user-stats">
+                    <div class="stats-holder">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Descripcion)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Hora)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TipoViaje)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Estado)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Cupos)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.NombreConductor)
+                                    </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
+

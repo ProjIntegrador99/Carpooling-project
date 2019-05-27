@@ -84,6 +84,22 @@
                         <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
                         <a asp-action="Delete" asp-route-id="@item.Id">Elimiar</a> |
                         <a asp-action="Join" asp-route-id="@item.Id">Unirse</a> |
+                        @if (ViewBag.Saved != null)
+                        {
+                            if (ViewBag.Saved)
+                            {
+                                <script>
+                                    alert('Ya te habias unido a esta tribu');
+                                </script>
+                            }
+                            else
+                            {
+                                <script>
+                                    alert('Has sido agregado a la tribu');
+                                </script>
+                            }
+
+                        }
                     </td>
                 </tr>
             }

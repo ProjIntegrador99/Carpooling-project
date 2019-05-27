@@ -174,6 +174,7 @@ namespace Carpooling.Controllers
 
             if (_context.UsuariosTribus.Any(x => x.UsuarioId.Equals(currentUser.Id) && x.TribuId == id))
             {
+                ViewBag.Saved = true;
                 return View("Index", _context.Tribu);
             }
             else
@@ -183,6 +184,7 @@ namespace Carpooling.Controllers
                     UsuarioId = currentUser.Id
                 });
                 _context.SaveChanges();
+                ViewBag.Saved = false;
                 return View("Index", _context.Tribu);
             }
         }

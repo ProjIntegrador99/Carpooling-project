@@ -16,7 +16,6 @@ namespace Carpooling.Models
             this.UsuariosTribus = new HashSet<UsuarioTribu>();
         }
 
-
         [Required]
         public String Nombre { get; set; }
         [Required]
@@ -25,6 +24,9 @@ namespace Carpooling.Models
         public String Apellido { get; set; }
         public String Direccion { get; set; }
         public String Ciudad { get; set; }
+        [NotMapped]
+        public Tribu TribuAgregar { get; set; }
+
 
         //public Byte[] imagenPre { get; set; }
         [Required]
@@ -53,7 +55,11 @@ namespace Carpooling.Models
 
         }
 
+        public void CambiarNick(String nick)
+        {
+            Nick = nick;
 
+        }
 
 
     }

@@ -1,0 +1,35 @@
+﻿@model Carpooling.Data.ApplicationDbContext
+@{
+    ViewData["Title"] = "JoinTribu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/TablaEstilo.css">
+    <style>
+        body {
+            margin: 0;
+            background: url(../images/animado7.gif);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+    <div>
+        <h3>Selecciona la tribu a la cual deseas unirte</h3>
+        @{string currentUserName = User.Identity.Name;
+          Usuario currentUser = Model.Users.FirstOrDefault(x => x.UserName == currentUserName);
+        }
+        <select asp-for =@currentUser.TribuAgregar asp-items="@new SelectList(Model.Tribu.Select(m => m.Nombre).ToList())"></select>
+    </div>
+    <div>
+
+    </div>
+
+
+</body>
+

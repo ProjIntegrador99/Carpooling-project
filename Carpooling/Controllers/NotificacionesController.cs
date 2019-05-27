@@ -55,7 +55,22 @@ namespace Carpooling.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
+            var viaje = await _context.Viaje
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (viaje == null)
+            {
+                return NotFound();
+            }
+
+            return View(viaje);
+        }
 
 
 

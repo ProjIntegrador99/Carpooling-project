@@ -23,8 +23,8 @@ namespace Carpooling.Controllers
         // GET: Tribus
         public async Task<IActionResult> Index()
         {
-            string currentUserName = User.Identity.Name;
-            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+             //string currentUserName = User.Identity.Name;
+            //Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
             //return View(await _context.Tribu.ToListAsync());
             //return View(await _context.Tribu.Select(m => new { estaContenido = _context.UsuariosTribus.Any(j => j.UsuarioId.Equals(currentUser.Id)), t = m }).Where(k => k.estaContenido).Select(p => p.t).ToListAsync());
             //var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
@@ -164,6 +164,27 @@ namespace Carpooling.Controllers
         private bool TribuExists(int id)
         {
             return _context.Tribu.Any(e => e.Id == id);
+        }
+
+       
+        public IActionResult Join(int id)
+        {
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+
+            if (_context.UsuariosTribus.Any(x => x.UsuarioId.Equals(currentUser.Id) && x.TribuId == id))
+            {
+                return View("Index", _context.Tribu);
+            }
+            else
+            {
+                _context.UsuariosTribus.Add(new UsuarioTribu{
+                    TribuId = id,
+                    UsuarioId = currentUser.Id
+                });
+                _context.SaveChanges();
+                return View("Index", _context.Tribu);
+            }
         }
     }
 }

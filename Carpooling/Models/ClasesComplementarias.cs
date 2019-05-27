@@ -22,6 +22,7 @@ namespace Carpooling.Models
         public string GeneroMusical { get; set; }
 
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }
+<<<<<<< HEAD
     }
 
     public partial class UsuarioTribu
@@ -35,6 +36,21 @@ namespace Carpooling.Models
         public virtual Usuario Usuarios { get; set; }
     }
 
+=======
+    }
+
+    public partial class UsuarioTribu
+    {
+        [Required]
+        public int TribuId { get; set; }
+        [Required]
+        public String UsuarioId { get; set; }
+
+        public virtual Tribu Tribus { get; set; }
+        public virtual Usuario Usuarios { get; set; }
+    }
+
+>>>>>>> f7395f20a30bab1778c996ed050e73a8fd47246d
     public partial class UsuarioViaje
     {
         [Required]

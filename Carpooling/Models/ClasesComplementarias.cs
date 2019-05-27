@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Carpooling.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Carpooling.Models;
 
 namespace Carpooling.Models
 {
@@ -38,7 +38,7 @@ namespace Carpooling.Models
     }
 
 
-
+    
 
     //public partial class UsuarioTribu
     //{
@@ -164,7 +164,3 @@ namespace Carpooling.Models
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
     }
 }
-
-
-
-

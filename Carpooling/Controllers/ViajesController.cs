@@ -64,13 +64,17 @@ namespace Carpooling.Controllers
             string currentUserName = User.Identity.Name;
             DateTime tiempo = new DateTime();
             Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
-            if (_context.Vehiculo.Count(x => x.UsuarioId.Equals(currentUser.Id)) != 0 && viaje.Hora.Date > tiempo.Date)
-            {
+            
                 if (ModelState.IsValid)
                 {
 
                     if (_context.Viaje.Where(j => j.Descripcion.Equals(viaje.Descripcion) && j.NombreConductor.Equals(viaje.NombreConductor) && j.Hora.Equals(viaje.Hora)).Any())
                     {
+
+                    
+                        //viaje.cambiarCupos();
+                        //_context.Update(viaje);
+                        //await _context.SaveChangesAsync();
                         viaje.cambiarTipoViaje(false);
                         viaje.cambiarEmailotro(currentUser.Email);
                         _context.Add(viaje);
@@ -79,6 +83,9 @@ namespace Carpooling.Controllers
 
                     }
                     else
+                    {
+
+                    if (_context.Vehiculo.Count(x => x.UsuarioId.Equals(currentUser.Id)) != 0 && viaje.Hora.Date > tiempo.Date)
                     {
 
                         viaje.cambiarTipoViaje(true);
@@ -98,7 +105,7 @@ namespace Carpooling.Controllers
             return View(viaje);
         }
 
-      
+     
 
         public async Task<IActionResult> Solicitar(int? id)
         {
@@ -120,14 +127,6 @@ namespace Carpooling.Controllers
 
             return View(viaje);
         }
-
-
-       
-
-
-
-
-
 
         // GET: Viajes/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -157,12 +156,6 @@ namespace Carpooling.Controllers
             {
                 return NotFound();
             }
-
-
-
-
-     
-
 
             if (ModelState.IsValid)
             {

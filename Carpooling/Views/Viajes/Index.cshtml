@@ -70,7 +70,7 @@
 
                 @foreach (var item in Model)
                 {
-                    if(item.EsMio)
+                    if(item.EsMio && item.Cupos > 0)
                     { DateTime hoy = DateTime.Today;
                         if (hoy.Date <= item.Hora.Date)
                         {

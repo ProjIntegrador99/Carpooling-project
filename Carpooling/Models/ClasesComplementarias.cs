@@ -124,6 +124,19 @@ namespace Carpooling.Models
             Id = id;
         }
 
+        public void cambiarCupos()
+        {
+
+            if(Cupos > 0)
+            {
+
+              Cupos = Cupos - 1;
+
+            }
+            
+
+        }
+
         public void cambiarEmailotro(string otro)
         {
             emailotro = otro;

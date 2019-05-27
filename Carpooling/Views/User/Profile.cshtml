@@ -63,7 +63,7 @@
                 <div class="stats-holder">
                     <div class="user-stats">
                         <strong>Viajes</strong>
-                        <span>@Model.ToList().Where(j => j.NombreConductor.Equals(@UserManager.GetUserName(User))).Count()</span>
+                        <span>@Model.ToList().Where(j => j.NombreConductor.Equals(@UserManager.GetUserName(User))&& j.EsMio == true).Count()</span>
                     </div>
 
 
@@ -210,7 +210,7 @@
 
                                 @foreach (var item in Model)
                                 {
-                                    if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                                    if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email)&& item.EsMio == true)
                                     {
 
                                         <tr>

@@ -39,13 +39,12 @@ namespace Carpooling.Models
         public virtual ICollection<Vehiculo> Vehiculos { get; set; }
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }
 
-        [NotMapped]
-        public object ImagenPerfil { get;  set; }
+        public string ImagenFinal { get; set; }
 
 
         public void CambiarImagen(String imagen)
         {
-            ImagenPerfil = imagen;
+            ImagenFinal = imagen;
 
         }
 

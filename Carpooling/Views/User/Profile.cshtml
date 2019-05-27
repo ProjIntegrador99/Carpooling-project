@@ -68,7 +68,7 @@
 
 
                     <div class="avatar">
-                        <img src="http://www.esek.org.gr/images/ESET/eset_user.png">
+                        <img src=@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).ImagenFinal>
                     </div>
 
                     <input id="File1" type="file" />

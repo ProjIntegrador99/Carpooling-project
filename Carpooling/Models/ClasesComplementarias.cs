@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Carpooling.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Carpooling.Models 
+namespace Carpooling.Models
 {
     public partial class Tribu
     {
@@ -22,7 +23,7 @@ namespace Carpooling.Models
         public string GeneroMusical { get; set; }
 
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }
-<<<<<<< HEAD
+
     }
 
     public partial class UsuarioTribu
@@ -36,21 +37,11 @@ namespace Carpooling.Models
         public virtual Usuario Usuarios { get; set; }
     }
 
-=======
-    }
 
-    public partial class UsuarioTribu
-    {
-        [Required]
-        public int TribuId { get; set; }
-        [Required]
-        public String UsuarioId { get; set; }
 
-        public virtual Tribu Tribus { get; set; }
-        public virtual Usuario Usuarios { get; set; }
-    }
 
->>>>>>> f7395f20a30bab1778c996ed050e73a8fd47246d
+  
+
     public partial class UsuarioViaje
     {
         [Required]
@@ -67,7 +58,7 @@ namespace Carpooling.Models
         public String SolicitudId { get; set; }
         [Required]
         public String UsuarioId { get; set; }
-        [Required, DataType(DataType.DateTime)] 
+        [Required, DataType(DataType.DateTime)]
         public DateTime Hora { get; set; }
         [Required]
         public string TipoViaje { get; set; }
@@ -82,7 +73,7 @@ namespace Carpooling.Models
 
     public partial class UsuarioSolicitud
     {
-       
+
         [Required]
         public String UsuarioId { get; set; }
         [Required]
@@ -114,7 +105,7 @@ namespace Carpooling.Models
         public Viaje()
         {
             this.UsuariosViajes = new HashSet<UsuarioViaje>();
-            
+
         }
         [Key]
         [Required]
@@ -131,7 +122,7 @@ namespace Carpooling.Models
         public bool EsMio { get; set; }
 
         public string emailotro { get; set; }
-    
+
         [Required]
         public string NombreConductor { get; set; }
 
@@ -143,13 +134,13 @@ namespace Carpooling.Models
         public void cambiarCupos()
         {
 
-            if(Cupos > 0)
+            if (Cupos > 0)
             {
 
-              Cupos = Cupos - 1;
+                Cupos = Cupos - 1;
 
             }
-            
+
 
         }
 
@@ -164,6 +155,6 @@ namespace Carpooling.Models
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
     }
 
-
-
 }
+
+

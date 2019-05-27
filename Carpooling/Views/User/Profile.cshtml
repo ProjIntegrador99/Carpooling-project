@@ -68,7 +68,7 @@
 
 
                     <div class="avatar">
-                        <img src=@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).ImagenPerfil>
+                        <img src="http://www.esek.org.gr/images/ESET/eset_user.png">
                     </div>
 
                     <input id="File1" type="file" />
@@ -100,7 +100,14 @@
 
 
             <div class="info-profile2">
-                <h1 align="Center" color="#ffffff">Informacion de Usuario </h1>
+                <head>
+                    <style>
+                        h1 {
+                            color: white;
+                        }
+                    </style>
+                </head>
+                <h1 align="Center">Informacion de Usuario </h1>
                 <br /><br /><br />
 
                 <div class="info-profile_user-stats">
@@ -177,7 +184,14 @@
     <div class="cont1">
         <div class="derecha">
             <div class="info-profile3">
-                <h1 align="Center" color="#ffffff">Publicaciones </h1>
+                <head>
+                    <style>
+                        h1 {
+                            color: white;
+                        }
+                    </style>
+                </head>
+                <h1 align="Center">Publicaciones </h1>
                 <br /><br /><br />
                 <div class="info-profile_user-stats">
                     <div class="stats-holder">
@@ -210,7 +224,7 @@
 
                                 @foreach (var item in Model)
                                 {
-                                    if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email)&& item.EsMio == true)
+                                    if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email) && item.EsMio == true)
                                     {
 
                                         <tr>
@@ -252,8 +266,8 @@
                                             <td>
                                                 <button onclick="location.href='https://localhost:44372/Viajes/Delete/'+@item.Id" class="btn btn-info">Delete</button>
                                                 @*<a asp-area="Identity" asp-page="/Viajes/Edit/8" title="Edit" class="btn btn-info" asp-route-id="@item.Id">Edit</a> |
-                                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
-                                                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
+                                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Details</a> |
+                                        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" class="btn btn-info" asp-route-id="@item.Id">Delete</a>*@
                                             </td>
 
 

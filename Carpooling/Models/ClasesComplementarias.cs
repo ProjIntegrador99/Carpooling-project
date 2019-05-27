@@ -38,10 +38,6 @@ namespace Carpooling.Models
     }
 
 
-
-
-  
-
     public partial class UsuarioViaje
     {
         [Required]
@@ -155,6 +151,10 @@ namespace Carpooling.Models
         public virtual ICollection<UsuarioViaje> UsuariosViajes { get; set; }
     }
 
+
 }
+
+
+
 
 

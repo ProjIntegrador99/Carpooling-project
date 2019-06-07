@@ -44,19 +44,19 @@ namespace Carpooling
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
 
-            services.AddAuthentication(options =>
-            {
-                options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
-                options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-                options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme; 
+            //services.AddAuthentication(options =>
+            //{
+            //    options.DefaultChallengeScheme = FacebookDefaults.AuthenticationScheme;
+            //    options.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            //    options.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme; 
 
-            }
-            ).AddFacebook(googleOptions =>
-            {
-                googleOptions.AppId = "356330385086801";
-                googleOptions.AppSecret = "d155a577cde3dd0d97a384c62a212903";
+            //}
+            //).AddFacebook(googleOptions =>
+            //{
+            //    googleOptions.AppId = "356330385086801";
+            //    googleOptions.AppSecret = "d155a577cde3dd0d97a384c62a212903";
 
-            }).AddCookie();
+            //}).AddCookie();
 
             //services.AddTransient<IEmailSender, EmailSender>();
 

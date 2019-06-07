@@ -16,11 +16,14 @@ namespace Carpooling.Models
         [Key]
         [Required]
         public int Id { get; set; }
+        [Required]
         public string Nombre { get; set; }
         [Required]
         public string Descripcion { get; set; }
         [Required]
         public string GeneroMusical { get; set; }
+        [Required]
+        public string Creator { get; set; }
 
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }
 

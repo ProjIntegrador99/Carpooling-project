@@ -5,6 +5,7 @@
 
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
+
 <head>
     <link rel="stylesheet" href="~/css/TablaEstilo.css" />
     <style>
@@ -70,61 +71,62 @@
 
                 @foreach (var item in Model)
                 {
-                    if(item.EsMio && item.Cupos > 0)
-                    { DateTime hoy = DateTime.Today;
+                    if (item.EsMio && item.Cupos > 0)
+                    {
+                        DateTime hoy = DateTime.Today;
                         if (hoy.Date <= item.Hora.Date)
                         {
-                        <tr>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.Descripcion)
-                            </td>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.Hora)
-                            </td>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.TipoViaje)
-                            </td>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.Estado)
-                            </td>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.Cupos)
-                            </td>
-                            <td colspan="2">
-                                @Html.DisplayFor(modelItem => item.NombreConductor)
-                            </td>
-                            }
+                            <tr>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.Descripcion)
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.Hora)
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.TipoViaje)
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.Estado)
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.Cupos)
+                                </td>
+                                <td colspan="2">
+                                    @Html.DisplayFor(modelItem => item.NombreConductor)
+                                </td>
+                                }
 
 
 
-                            @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
-                            {
+                                @if (!item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                {
+                                    <td>
+
+                                        <a asp-action="Solicitar" asp-route-id="@item.Id" class="btn btn-info">solicitar</a>
+
+
+
+                                    </td>
+
+
+                                }
+                                @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
+                                {
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
+                                    </td>
+
+                                    <td>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
+                                    </td>
+                                }
+
                                 <td>
-
-                                    <a asp-action="Solicitar" asp-route-id="@item.Id" class="btn btn-info" >solicitar</a>
-
-                                   
-
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
                                 </td>
 
-                               
-                            }
-                            @if (item.NombreConductor.Equals(@UserManager.GetUserName(User)))
-                            {
-                                <td>
-                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-info">Editar</a>
-                                </td>
-
-                                <td>
-                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
-                                </td>
-                            }
-
-                            <td>
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Detalles</a>
-                            </td>
-
-                        </tr>
+                            </tr>
 
                         }
 

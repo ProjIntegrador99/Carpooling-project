@@ -5,6 +5,7 @@
 
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
+
 <head>
     <link rel="stylesheet" href="~/css/TablaEstilo.css" />
     <style>
@@ -24,7 +25,7 @@
         <table class="table" style="width: 100%; text-align:center;">
             <thead>
                 <tr style="text-align: center;">
-                   
+
 
 
                     <th colspan="2" align="center">
@@ -37,7 +38,7 @@
                     <th colspan="2" align="center">
                         @Html.DisplayNameFor(model => model.Estado)
                     </th>
-                    
+
                     <th colspan="2" align="center">
                         Nombre del Pasajero
                     </th>
@@ -52,40 +53,40 @@
 
                 @foreach (var item in Model)
                 {
-                    if (!item.EsMio&&item.NombreConductor.Equals(UserManager.GetUserName(User)))
+                    if (!item.EsMio && item.NombreConductor.Equals(UserManager.GetUserName(User)))
                     {
-                        
-                <tr>
-                    
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Hora)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.TipoViaje)
-                    </td>
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.Estado)
-                    </td>
-                  
-                    <td colspan="2">
-                        @Html.DisplayFor(modelItem => item.emailotro)
-                    </td>
 
-                    <td>
-                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
-                    </td>
+                        <tr>
 
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Hora)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.TipoViaje)
+                            </td>
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.Estado)
+                            </td>
 
-                    <td>
-                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Ir al Perfil</a>
-                    </td>
-                    }
+                            <td colspan="2">
+                                @Html.DisplayFor(modelItem => item.emailotro)
+                            </td>
+
+                            <td>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-info">Eliminar</a>
+                            </td>
 
 
+                            <td>
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Ir al Perfil</a>
+                            </td>
+                            }
 
-                </tr>
 
-                        
+
+                        </tr>
+
+
 
                     }
                 }

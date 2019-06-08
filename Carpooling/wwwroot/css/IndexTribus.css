@@ -1,6 +1,7 @@
 ﻿body{
-    margin: 0;
+    margin: 30px;
     background: url(../images/animado7.gif);
     background-size: cover;
     background-attachment: fixed;
 }
+

@@ -11,10 +11,17 @@
 
 table{
 	background-color: white;
-	text-align: left;
 	border-collapse: collapse;
 	width: 100%;
     border-radius : 15px;
+}
+
+.Trib{
+    text-align: left;
+}
+
+.Join{
+    text-align: right;
 }
 
 th, td{
@@ -25,6 +32,14 @@ h2 {
     text-align: center;
     color: #1a2537;
     font-size: 40px;
+}
+
+.nombre{
+    text-align:center;
+}
+
+tr{
+    text-align: center;
 }
 
 .button {
@@ -48,6 +63,7 @@ thead {
     border-bottom: solid 5px #14526b;
     color: white;
     border-radius: 15px;
+   
 }
 
 tr:nth-child(even){

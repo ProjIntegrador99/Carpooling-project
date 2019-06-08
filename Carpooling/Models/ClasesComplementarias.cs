@@ -1,6 +1,7 @@
 ﻿using Carpooling.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,8 +22,10 @@ namespace Carpooling.Models
         [Required]
         public string Descripcion { get; set; }
         [Required]
+        [DisplayName("Genero Musical")]
         public string GeneroMusical { get; set; }
         [Required]
+        [DisplayName("Creador")]
         public string Creator { get; set; }
 
         public virtual ICollection<UsuarioTribu> UsuariosTribus { get; set; }

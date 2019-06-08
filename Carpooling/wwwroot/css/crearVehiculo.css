@@ -3,8 +3,13 @@
     font-family: 'Lato', sans-serif;
 }
 
-body {
-    background-color: black;
+div{
+    width: 20px;
+    height: 10px;
+}
+
+body{
+    padding: 40px 20px 20px 20px;
 }
 
 #container {
@@ -64,5 +69,10 @@ body {
 
 .boton:hover {
     background-color: #4C9ED9;
+}
+
+label{
+    margin: 5px;
+    padding: 5px;
 }
 

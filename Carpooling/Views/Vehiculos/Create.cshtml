@@ -10,59 +10,68 @@
 @inject SignInManager<Usuario> SignInManager
 @inject UserManager<Usuario> UserManager
 
+<html>
+    <head>
+        <link rel="stylesheet" href="~/css/crearVehiculo.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                background: url(../images/animado7.gif);
+                background-size: cover;
+                background-attachment: fixed;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row" id="container">
+            <div id="particles-js"></div>
+            <div class="col-md-4" id="hola">
+                <h2>Crea tu Vehiculo</h2>
+                <form asp-action="Create" class="form__reg" id="form" style="margin: 100px">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Marca" class="control-label"></label>
+                        <input asp-for="Marca" class="form-control" />
+                        <span asp-validation-for="Marca" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Placa" class="control-label"></label>
+                        <input asp-for="Placa" class="form-control" />
+                        <span asp-validation-for="Placa" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Modelo" class="control-label"></label>
+                        <input asp-for="Modelo" class="form-control" />
+                        <span asp-validation-for="Modelo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Color" class="control-label"></label>
+                        <input asp-for="Color" class="form-control" />
+                        <span asp-validation-for="Color" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UsuarioId" class="control-label"> Nickname</label>
+                        @{
+                            SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Nick }, "Nickname");
+                        }
+                        <select asp-for="UsuarioId" class="form-control" asp-items=@currentUser></select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
 
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="http://code.jquery.com/jquery-latest.js"></script>
+        <script src="particles.min.js"></script>
+        <script src="particulas.js"></script>
+    </body>
+</html>
 
-<link rel="stylesheet" href="~/css/crearVehiculo.css" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<br /><br /><br />
-
-<div class="row" id="container">
-    <div id="particles-js"></div>
-    <div class="col-md-4" id="hola">
-        <h2>Crea tu Vehiculo</h2>
-        <form asp-action="Create" class="form__reg" id="form">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Marca" class="control-label"></label>
-                <input asp-for="Marca" class="form-control" />
-                <span asp-validation-for="Marca" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Placa" class="control-label"></label>
-                <input asp-for="Placa" class="form-control" />
-                <span asp-validation-for="Placa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Modelo" class="control-label"></label>
-                <input asp-for="Modelo" class="form-control" />
-                <span asp-validation-for="Modelo" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Color" class="control-label"></label>
-                <input asp-for="Color" class="form-control" />
-                <span asp-validation-for="Color" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UsuarioId" class="control-label"> Nickname</label>
-                @{
-                    SelectList currentUser = new SelectList(new List<String> { UserManager.FindByNameAsync(User.Identity.Name).Result.Nick }, "Nickname");
-                }
-                <select asp-for="UsuarioId" class="form-control" asp-items=@currentUser></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-
-            <div>
-                <a asp-action="Index">Back to List</a>
-            </div>
-        </form>
-    </div>
-</div>
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script src="particles.min.js"></script>
-<script src="particulas.js"></script>
 
 
 @section Scripts {

@@ -15,13 +15,13 @@
     <body>
         <div id="main-container">
 
-        <h2 class="heading" align="center">Muro de Tribus Creadas</h2>
+            <h2 class="heading" align="center">Tribus a las que puedo unirme</h2>
 
-        <div>
-            <a asp-action="Create" class="btn btn-info">Crear Tribu</a>
-            <a asp-action="ReviewTribus" class="btn btn-info">Revisar otras tribus</a>
-            <a asp-action="TribusBelong" class="btn btn-info">Tribus en las que estoy unido</a>
-        </div>
+            <div>
+                <a asp-action="Create" class="btn btn-info">Crear Tribu</a>
+                <a asp-action="ReviewTribus" class="btn btn-info">Revisar otras tribus</a>
+                <a asp-action="TribusBelong" class="btn btn-info">Tribus en las que estoy unido</a>
+            </div>
 
             <table>
                 <thead>
@@ -35,7 +35,12 @@
                 {
                     <tr>
                         <td style="text-align:center">
-                            @Html.DisplayFor(modelItem => item.Nombre)
+                            <div class="Trib">
+                                @Html.DisplayFor(modelItem => item.Nombre)
+                            </div>
+                            <div class="Join">
+                                <a asp-action="JoinAnotherTribu" class="btn btn-info">Unirse</a>
+                            </div>
                         </td>
                     </tr>
                 }
@@ -43,3 +48,4 @@
         </div>
     </body>
 </html>
+

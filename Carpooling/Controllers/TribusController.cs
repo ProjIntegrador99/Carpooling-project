@@ -23,12 +23,14 @@ namespace Carpooling.Controllers
         // GET: Tribus
         public async Task<IActionResult> Index()
         {
-             //string currentUserName = User.Identity.Name;
-            //Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+
+            return View(await _context.Tribu.Where(m => m.Creator.Equals(currentUser.Email)).ToListAsync());
+            ////return View(await _context.Tribu.ToListAsync());
+            ////return View(await _context.Tribu.Select(m => new { estaContenido = _context.UsuariosTribus.Any(j => j.UsuarioId.Equals(currentUser.Id)), t = m }).Where(k => k.estaContenido).Select(p => p.t).ToListAsync());
+            ////var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
             //return View(await _context.Tribu.ToListAsync());
-            //return View(await _context.Tribu.Select(m => new { estaContenido = _context.UsuariosTribus.Any(j => j.UsuarioId.Equals(currentUser.Id)), t = m }).Where(k => k.estaContenido).Select(p => p.t).ToListAsync());
-            //var m = _context.UsuariosTribus.Where(u => u.UsuarioId.Equals(currentUser.Id)).Select(k => k.TribuId).ToList();
-            return View(await _context.Tribu.ToListAsync());
         }
 
         // GET: Tribus/Details/5
@@ -52,6 +54,9 @@ namespace Carpooling.Controllers
         // GET: Tribus/Create
         public IActionResult Create()
         {
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+            ViewBag.Creator = currentUser.Email;
             return View();
         }
 
@@ -60,12 +65,13 @@ namespace Carpooling.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion,GeneroMusical")] Tribu tribu)
+        public async Task<IActionResult> Create([Bind("Id,Nombre,Descripcion,GeneroMusical,Creator")] Tribu tribu)
         {
             if (ModelState.IsValid)
             {
                 string currentUserName = User.Identity.Name;
                 Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+                tribu.Creator = currentUser.Email;
                 UsuarioTribu m = new UsuarioTribu()
                 {
                     UsuarioId = currentUser.Id,
@@ -187,6 +193,33 @@ namespace Carpooling.Controllers
                 ViewBag.Saved = false;
                 return View("Index", _context.Tribu);
             }
+        }
+
+        public IActionResult ReviewTribus()
+        {
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+
+            var tribusContainsMe = new List<int>();
+
+            foreach(var j in _context.UsuariosTribus)
+            {
+                if (j.UsuarioId.Equals(currentUser.Id))
+                {
+                    tribusContainsMe.Add(j.TribuId);
+                }
+            }
+
+            return View(_context.Tribu.Where(i => !tribusContainsMe.Contains(i.Id)));
+        }
+
+        public IActionResult TribusBelong()
+        {
+            string currentUserName = User.Identity.Name;
+            Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
+            var UsuariosTribusFilter = _context.UsuariosTribus.Where(i => i.UsuarioId.Equals(currentUser.Id)).Select(m => m.TribuId);
+
+            return View(_context.Tribu.Where(i => UsuariosTribusFilter.Contains(i.Id)));
         }
     }
 }

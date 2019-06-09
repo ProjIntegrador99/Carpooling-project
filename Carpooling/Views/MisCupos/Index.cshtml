@@ -16,7 +16,7 @@
 
         body {
             margin: 0;
-            background: url(../images/animado7.gif);
+            background: url(../images/numero.jpg);
             background-size: cover;
             background-attachment: fixed;
         }
@@ -99,108 +99,119 @@
     </style>
 </head>
 <body>
-    <div class="contenedor">
-        <head>
-            <style>
-                h1 {
-                    color: #eee;
-                }
-            </style>
-        </head>
-        <body>
-            <h1>Mis Cupos Activos</h1>
+    <div id="main-container">
+        
             
-        </body>
-        <p>Aquí se encuentran los cupos que publicaste y también los que estas inscrito</p>
-        <div class="tablaPasajero">
+            <body>
+                <h2>Mis Cupos Activos</h2>
+
+            </body>
             <head>
                 <style>
                     h3 {
-                        color: #eee;
+                        color: #000000;
+                        text-align:center;
+                       
                     }
                 </style>
             </head>
-            <h3>Como pasajero</h3>
-            <table>
-                
-                @*<thead>
-                    <tr>
-                        <th>Nombre del Conductor</th>
-                        <th>Cupos</th>
-                        <th>Tipo de Viaje</th>
-                        <th>Hora</th>
-                        <th></th>
-                    </tr>
-                </thead>*@
 
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        DateTime hoy = DateTime.Today;
-                        if (item.emailotro != null && item.emailotro.Equals(@UserManager.GetUserName(User)) && !item.EsMio)
+            <h3>Aquí se encuentran los cupos que publicaste y también en los que estas inscrito</h3>
+            <div class="tablaPasajero">
+
+                <h3>Como pasajero</h3>
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Nombre del Conductor</th>
+                            <th>Cupos</th>
+                            <th>Tipo de Viaje</th>
+                            <th>Hora de Viaje</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.NombreConductor)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Cupos)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.TipoViaje)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Hora)
-                                </td>
-                                <td>
-                                    <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
-                                </td>
-                            </tr>
+                            DateTime hoy = DateTime.Today;
+                            if (item.emailotro != null && item.emailotro.Equals(@UserManager.GetUserName(User)) && !item.EsMio)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreConductor)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cupos)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TipoViaje)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Hora)
+                                    </td>
+                                    <td>
+                                        <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
+                                    </td>
+                                </tr>
+                            }
                         }
+                    </tbody>
+
+                </table>
+            </div>
+            <head>
+                <style>
+                    th {
+                        color: #000;
                     }
-                </tbody>
-       
-            </table>
-        </div>
-       
-
-        <div class="tablaConductor">
-            <h3>Como Conductor</h3>
-            <table align="center" style="text-align : center;">
-                <thead>
-                    <tr>
-                        <th>Cupos</th>
-                        <th>Tipo de Viaje</th>
-                        <th>Hora</th>
-                        <th></th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    @foreach (var item in Model)
-                    {
-                        DateTime hoy = DateTime.Today;
-                        if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                </style>
+            </head>
+            <head>
+                <style>
+                    td {
+                        color: #000;
+                    }
+                </style>
+            </head>
+            <div class="tablaConductor">
+                <h3>Como Conductor</h3>
+                <table align="center" style="text-align : center;">
+                    <thead>
+                        <tr>
+                            <th>Cupos</th>
+                            <th>Tipo de Viaje</th>
+                            <th>Hora</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
                         {
-                            <tr>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Cupos)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.TipoViaje)
-                                </td>
-                                <td>
-                                    @Html.DisplayFor(modelItem => item.Hora)
-                                </td>
-                                <td>
-                                    <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
-                                </td>
-                            </tr>
+                            DateTime hoy = DateTime.Today;
+                            if (item.NombreConductor.Equals(@UserManager.Users.First(j => j.UserName.Equals(@UserManager.GetUserName(User))).Email))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Cupos)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TipoViaje)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Hora)
+                                    </td>
+                                    <td>
+                                        <a asp-action="../Tracking/Index" asp-route-id="" class="btn btn-info">Empezar viaje.</a>
+                                    </td>
+                                </tr>
+                            }
                         }
-                    }
-                </tbody>
-            </table>
-        </div>
+                    </tbody>
+                </table>
+            </div>
+        
     </div>
 </body>
 </html>

@@ -172,27 +172,33 @@ namespace Carpooling.Controllers
             return _context.Tribu.Any(e => e.Id == id);
         }
 
-       
-        public IActionResult Join(int id)
+        [HttpPost]
+        public IActionResult Join(String tribuName)
         {
             string currentUserName = User.Identity.Name;
             Usuario currentUser = _context.Users.FirstOrDefault(x => x.UserName == currentUserName);
 
-            if (_context.UsuariosTribus.Any(x => x.UsuarioId.Equals(currentUser.Id) && x.TribuId == id))
+            int tribuId = _context.Tribu.Where(m => m.Nombre.Equals(tribuName)).Select(k => k.Id).Single();
+            _context.UsuariosTribus.Add(new UsuarioTribu
             {
-                ViewBag.Saved = true;
-                return View("Index", _context.Tribu);
-            }
-            else
+                TribuId = tribuId,
+                Tribus = _context.Tribu.Where(x => x.Id == tribuId).Single(),
+                UsuarioId = currentUser.Id,
+                Usuarios = currentUser
+            });
+            _context.SaveChanges();
+
+            var tribusContainsMe = new List<int>();
+
+            foreach (var j in _context.UsuariosTribus)
             {
-                _context.UsuariosTribus.Add(new UsuarioTribu{
-                    TribuId = id,
-                    UsuarioId = currentUser.Id
-                });
-                _context.SaveChanges();
-                ViewBag.Saved = false;
-                return View("Index", _context.Tribu);
+                if (j.UsuarioId.Equals(currentUser.Id))
+                {
+                    tribusContainsMe.Add(j.TribuId);
+                }
             }
+
+            return View("ReviewTribus",_context.Tribu.Where(i => !tribusContainsMe.Contains(i.Id)));
         }
 
         public IActionResult ReviewTribus()

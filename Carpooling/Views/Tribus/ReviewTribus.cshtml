@@ -15,7 +15,8 @@
     <body>
         <div id="main-container">
 
-            <h2 class="heading" align="center">Tribus a las que puedo unirme</h2>
+            <h2 style="font-family: Arial">Tribus a las que puedo unirme</h2>
+
 
             <div>
                 <a asp-action="Create" class="btn btn-info">Crear Tribu</a>
@@ -39,7 +40,11 @@
                                 @Html.DisplayFor(modelItem => item.Nombre)
                             </div>
                             <div class="Join">
-                                <a asp-action="JoinAnotherTribu" class="btn btn-info">Unirse</a>
+                                @using (Html.BeginForm("Join", "Tribus"))
+                                {
+                                    <input type="hidden" value="@item.Nombre" name="tribuName"/>
+                                    <input type="submit" id="btnEmpFormSubmit" value="Unirse" class="btn btn-default" />
+                                }
                             </div>
                         </td>
                     </tr>

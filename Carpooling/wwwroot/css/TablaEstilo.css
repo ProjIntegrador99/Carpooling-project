@@ -1,7 +1,4 @@
-﻿.heading {
-    color : red;
-}
-
+﻿
 #main-container {
     background: #ffffff;
     margin-top: 90px;
@@ -10,6 +7,7 @@
 }
 
 table{
+    font-family: Arial;
 	background-color: white;
 	border-collapse: collapse;
 	width: 100%;
@@ -30,8 +28,9 @@ th, td{
 
 h2 {
     text-align: center;
-    color: #1a2537;
+    color: cadetblue;
     font-size: 40px;
+    font-family: Arial;
 }
 
 .nombre{
@@ -63,7 +62,6 @@ thead {
     border-bottom: solid 5px #14526b;
     color: white;
     border-radius: 15px;
-   
 }
 
 tr:nth-child(even){
@@ -78,7 +76,6 @@ tr:hover td {
 
 #bot:active {
     content: "Solicitado";
-    background: red;
     opacity : 0.2;
     cursor : default;
 }

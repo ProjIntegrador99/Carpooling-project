@@ -23,6 +23,7 @@
 }
 
 h1 {
+    font-family: Arial;
     text-align : center;
     color : #1a2537;
     font-size : 40px;
@@ -39,6 +40,7 @@ select, input[type="number"] {
 .input-contenedor {
     margin-bottom : 15px;
     border : 1px solid #aaa;
+    font-family: Arial;
 }
 
 .icon {
